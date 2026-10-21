@@ -29,6 +29,8 @@ python3 -m http.server -d docs 8000
 ```
 
 ## Deploy on GitHub Pages
+`index.html` at the repo root and `docs/index.html` are the same generated page, so Pages works from the root, from `/docs`, or via the workflow.
+
 Push to `main`. The included workflow builds and deploys `docs/`.
 In the repo: **Settings → Pages → Source: GitHub Actions**.
 

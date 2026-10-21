@@ -76,6 +76,7 @@ page = ('<!doctype html>\n<html lang="ar" dir="rtl"><head><meta charset="utf-8">
 page = page.replace('<div id="app"', '</head><body>\n<div id="app"', 1)
 out = root / 'docs'; out.mkdir(exist_ok=True)
 (out / 'index.html').write_text(page, encoding='utf-8')
+(root / 'index.html').write_text(page, encoding='utf-8')
 (out / '.nojekyll').write_text('', encoding='utf-8')
 tot = 0
 for k in kitabs:

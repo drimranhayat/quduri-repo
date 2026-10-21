@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="مختصر القدوري: متن الفقه الحنفي مرتبًا للتعلم والحفظ والمراجعة">
+<title>مختصر القدوري</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+/* Layout concept: a manuscript-like reading column on a tinted ground; each Kitab owns a colour world; a floating study dock switches between read / memorize / flashcards. */
+:root {
+  --bg: #eef1f4; --surface: #ffffff; --surface-2: #f6f8fa; --ink: #18232e; --muted: #596875; --line: #d8e0e7;
+  --shadow: 0 1px 2px rgba(20,32,44,.06), 0 10px 28px rgba(20,32,44,.07);
+  --ay: #7a4e00; --ay-bg: #fbf1d6; --ha: #3b4a5a; --ha-bg: #eef2f6;
+  --im-h: #1d4ed8; --im-y: #15803d; --im-m: #b45309; --im-z: #7e22ce;
+  --r-must: #b3261e; --r-sun: #17794b; --r-ok: #1d63b0; --r-mak: #a85800; --r-bad: #8e1f64; --r-num: #0e7490;
+  --k: #34506f; --k-h: #34506f; --k-soft: #e4ebf3; --k-deep: #162a40; --k-bg: #f2f5f8;
+  --f-display: 'Aref Ruqaa', 'Amiri', 'Noto Naskh Arabic', serif;
+  --f-text: 'Amiri', 'Scheherazade New', 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+  --f-ui: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif;
+  --fs: 1.3rem;
+}
+.k0{--k:#34506f;--k-h:#34506f;--k-soft:#e4ebf3;--k-deep:#162a40;--k-bg:#f2f5f8;}
+.k1{--k:#0369a1;--k-h:#0369a1;--k-soft:#dceff9;--k-deep:#053a58;--k-bg:#eef6fb;}
+.k2{--k:#15803d;--k-h:#15803d;--k-soft:#dff3e6;--k-deep:#0a4a24;--k-bg:#eff8f2;}
+.k3{--k:#a16207;--k-h:#a16207;--k-soft:#f8ecc8;--k-deep:#523003;--k-bg:#fbf6e8;}
+.k4{--k:#6d3fc0;--k-h:#6d3fc0;--k-soft:#e9e1f8;--k-deep:#38206b;--k-bg:#f4f0fb;}
+.k5{--k:#b0173f;--k-h:#b0173f;--k-soft:#f9dfe6;--k-deep:#5e0b22;--k-bg:#fbeff2;}
+.k1 .hero::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M0 20Q16 8 32 20T64 20M0 44Q16 32 32 44T64 44' fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.4'/%3E%3C/svg%3E")}.tile.k1::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M0 20Q16 8 32 20T64 20M0 44Q16 32 32 44T64 44' fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.4'/%3E%3C/svg%3E")}
+.k2 .hero::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M6 62V32a26 26 0 0 1 52 0v30M18 62V34a14 14 0 0 1 28 0v28' fill='none' stroke='%23fff' stroke-opacity='.15' stroke-width='1.3'/%3E%3C/svg%3E")}.tile.k2::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M6 62V32a26 26 0 0 1 52 0v30M18 62V34a14 14 0 0 1 28 0v28' fill='none' stroke='%23fff' stroke-opacity='.15' stroke-width='1.3'/%3E%3C/svg%3E")}
+.k3 .hero::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.3'%3E%3Ccircle cx='20' cy='20' r='14'/%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Ccircle cx='50' cy='46' r='10'/%3E%3Ccircle cx='50' cy='46' r='5'/%3E%3C/g%3E%3C/svg%3E")}.tile.k3::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.3'%3E%3Ccircle cx='20' cy='20' r='14'/%3E%3Ccircle cx='20' cy='20' r='9'/%3E%3Ccircle cx='50' cy='46' r='10'/%3E%3Ccircle cx='50' cy='46' r='5'/%3E%3C/g%3E%3C/svg%3E")}
+.k4 .hero::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.17' stroke-width='1.3'%3E%3Cpath d='M30 8a22 22 0 1 0 24 32a18 18 0 1 1-24-32z'/%3E%3Cpath d='M54 10l1.8 4.6 4.9.2-3.8 3 1.3 4.8-4.2-2.7-4.2 2.7 1.3-4.8-3.8-3 4.9-.2z'/%3E%3C/g%3E%3C/svg%3E")}.tile.k4::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.17' stroke-width='1.3'%3E%3Cpath d='M30 8a22 22 0 1 0 24 32a18 18 0 1 1-24-32z'/%3E%3Cpath d='M54 10l1.8 4.6 4.9.2-3.8 3 1.3 4.8-4.2-2.7-4.2 2.7 1.3-4.8-3.8-3 4.9-.2z'/%3E%3C/g%3E%3C/svg%3E")}
+.k5 .hero::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 8l22 12v24L32 56 10 44V20zM10 20l22 12 22-12M32 32v24' fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.3'/%3E%3C/svg%3E")}.tile.k5::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M32 8l22 12v24L32 56 10 44V20zM10 20l22 12 22-12M32 32v24' fill='none' stroke='%23fff' stroke-opacity='.16' stroke-width='1.3'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#0d1217;--surface:#151c23;--surface-2:#1b242d;--ink:#e6ecf1;--muted:#9aa8b5;--line:#27323c;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);--ay:#f0c46a;--ay-bg:#2b2410;--ha:#b7c5d3;--ha-bg:#1f2a34;--im-h:#8db0ff;--im-y:#62d08e;--im-m:#f3ae52;--im-z:#c7a0ff;--r-must:#ff8a80;--r-sun:#5fd08c;--r-ok:#7db8f5;--r-mak:#f5b25a;--r-bad:#e48bd0;--r-num:#55d0e0; color-scheme: dark; }
+  :root:not([data-theme="light"]) .k0{--k:#8fb0d6;--k-h:#2a4566;--k-soft:#1c2937;--k-deep:#0c1722;--k-bg:#0d1217;}
+  :root:not([data-theme="light"]) .k1{--k:#5bbcf0;--k-h:#0a5f8f;--k-soft:#12293a;--k-deep:#08202f;--k-bg:#0a141b;}
+  :root:not([data-theme="light"]) .k2{--k:#5fd08c;--k-h:#146b36;--k-soft:#11291b;--k-deep:#08200f;--k-bg:#0a150e;}
+  :root:not([data-theme="light"]) .k3{--k:#f0bd4a;--k-h:#86520a;--k-soft:#2b2106;--k-deep:#221a05;--k-bg:#16120a;}
+  :root:not([data-theme="light"]) .k4{--k:#b69cf5;--k-h:#5a35a0;--k-soft:#231a3a;--k-deep:#17102b;--k-bg:#110d1c;}
+  :root:not([data-theme="light"]) .k5{--k:#fb7f9a;--k-h:#8f1433;--k-soft:#301018;--k-deep:#240a12;--k-bg:#170a0f;}
+}
+:root[data-theme="dark"] { --bg:#0d1217;--surface:#151c23;--surface-2:#1b242d;--ink:#e6ecf1;--muted:#9aa8b5;--line:#27323c;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);--ay:#f0c46a;--ay-bg:#2b2410;--ha:#b7c5d3;--ha-bg:#1f2a34;--im-h:#8db0ff;--im-y:#62d08e;--im-m:#f3ae52;--im-z:#c7a0ff;--r-must:#ff8a80;--r-sun:#5fd08c;--r-ok:#7db8f5;--r-mak:#f5b25a;--r-bad:#e48bd0;--r-num:#55d0e0; color-scheme: dark; }
+:root[data-theme="dark"] .k0{--k:#8fb0d6;--k-h:#2a4566;--k-soft:#1c2937;--k-deep:#0c1722;--k-bg:#0d1217;}
+:root[data-theme="dark"] .k1{--k:#5bbcf0;--k-h:#0a5f8f;--k-soft:#12293a;--k-deep:#08202f;--k-bg:#0a141b;}
+:root[data-theme="dark"] .k2{--k:#5fd08c;--k-h:#146b36;--k-soft:#11291b;--k-deep:#08200f;--k-bg:#0a150e;}
+:root[data-theme="dark"] .k3{--k:#f0bd4a;--k-h:#86520a;--k-soft:#2b2106;--k-deep:#221a05;--k-bg:#16120a;}
+:root[data-theme="dark"] .k4{--k:#b69cf5;--k-h:#5a35a0;--k-soft:#231a3a;--k-deep:#17102b;--k-bg:#110d1c;}
+:root[data-theme="dark"] .k5{--k:#fb7f9a;--k-h:#8f1433;--k-soft:#301018;--k-deep:#240a12;--k-bg:#170a0f;}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-ui); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--k-deep); }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--k); outline-offset: 2px; border-radius: 6px; }
+[hidden] { display: none !important; }
+
+#app { min-height: 100dvh; background: var(--k-bg); transition: background-color .35s; padding-bottom: 120px; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; }
+
+/* ---------- Top bar ---------- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--k-deep); color: #fff; }
+.top .wrap { display: flex; align-items: center; gap: 10px; height: 54px; }
+.brand { font-family: var(--f-display); font-size: 1.55rem; line-height: 1; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.brand svg { width: 26px; height: 26px; flex: none; }
+.top .sp { flex: 1; }
+.ibtn { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; background: rgba(255,255,255,.1); transition: background .2s; flex: none; }
+.ibtn:hover { background: rgba(255,255,255,.2); }
+.ibtn svg { width: 20px; height: 20px; }
+.rail { display: flex; gap: 8px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
+.rail::-webkit-scrollbar { display: none; }
+.pill { flex: none; display: flex; align-items: center; gap: 8px; padding: 7px 14px 7px 12px; border-radius: 999px; background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); font-weight: 500; font-size: .92rem; transition: transform .15s, border-color .2s; }
+.pill i { width: 12px; height: 12px; border-radius: 50%; background: var(--k); display: block; }
+.pill:hover { transform: translateY(-1px); }
+.pill[aria-current="true"] { background: var(--k); color: #fff; border-color: var(--k); }
+.pill[aria-current="true"] i { background: #fff; }
+
+/* ---------- Heroes ---------- */
+.hero { background: linear-gradient(135deg, var(--k-deep), var(--k-h)); color: #fff; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; opacity: .9; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.13' stroke-width='1.2'%3E%3Crect x='14' y='14' width='36' height='36'/%3E%3Crect x='14' y='14' width='36' height='36' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3C/g%3E%3C/svg%3E"); -webkit-mask-image: linear-gradient(to left, #000 10%, transparent 85%); mask-image: linear-gradient(to left, #000 10%, transparent 85%); }
+.hero .wrap { position: relative; padding-block: 34px 38px; }
+.eyebrow { font-size: .82rem; letter-spacing: .04em; opacity: .85; }
+.hero h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 1.25; margin: 6px 0 4px; text-wrap: balance; }
+.hero .sub { font-family: var(--f-text); font-size: 1.2rem; opacity: .92; max-width: 46ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 5px 13px; font-size: .88rem; }
+.en { font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; direction: ltr; unicode-bidi: isolate; }
+.bar { height: 8px; border-radius: 99px; background: rgba(255,255,255,.2); overflow: hidden; margin-top: 18px; max-width: 420px; }
+.bar b { display: block; height: 100%; background: #fff; border-radius: 99px; width: 0; transition: width .5s; }
+
+/* ---------- Home ---------- */
+.sec-t { font-family: var(--f-display); font-size: 1.7rem; margin: 34px 0 14px; display: flex; align-items: center; gap: 10px; }
+.sec-t::after { content: ""; flex: 1; height: 1.5px; background: var(--line); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 16px; }
+.tile { position: relative; display: flex; flex-direction: column; gap: 6px; min-height: 176px; padding: 20px 20px 18px; border-radius: 22px; color: #fff; overflow: hidden; background: linear-gradient(145deg, var(--k-h), var(--k-deep)); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+.tile::before { content: ""; position: absolute; inset: 0; opacity: .85; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.12' stroke-width='1.2'%3E%3Crect x='14' y='14' width='36' height='36'/%3E%3Crect x='14' y='14' width='36' height='36' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3C/g%3E%3C/svg%3E"); -webkit-mask-image: radial-gradient(circle at 12% 18%, #000, transparent 70%); mask-image: radial-gradient(circle at 12% 18%, #000, transparent 70%); }
+.tile:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.2); }
+.tile > * { position: relative; }
+.tile .no { font-size: .8rem; opacity: .8; }
+.tile h3 { font-family: var(--f-display); font-size: 2.1rem; line-height: 1.2; margin: 0; font-weight: 700; }
+.tile p { margin: 0; font-size: .92rem; opacity: .9; }
+.tile .ft { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: .85rem; }
+.ring { width: 44px; height: 44px; flex: none; }
+.ring circle { fill: none; stroke-width: 5; }
+.ring .tr { stroke: rgba(255,255,255,.25); }
+.ring .pg { stroke: #fff; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset .6s; }
+.ring text { fill: #fff; font-size: 13px; font-weight: 600; text-anchor: middle; dominant-baseline: central; font-family: var(--f-ui); }
+.resume { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding: 14px 18px; border-radius: 16px; background: var(--surface); border: 1.5px solid var(--line); box-shadow: var(--shadow); }
+.resume strong { font-family: var(--f-display); font-size: 1.25rem; }
+.resume span { color: var(--muted); font-size: .9rem; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 14px; }
+.step { background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; text-align: right; }
+.step .n { font-family: var(--f-display); font-size: 2rem; line-height: 1; color: var(--k); }
+.step h4 { margin: 0; font-size: 1.05rem; }
+.step p { margin: 0; color: var(--muted); font-size: .92rem; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; }
+.lg { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px 6px 8px; font-size: .92rem; }
+.note { color: var(--muted); font-size: .9rem; max-width: 70ch; margin-top: 30px; padding-top: 16px; border-top: 1.5px dashed var(--line); }
+
+/* ---------- Kitab layout ---------- */
+.cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px; }
+.side { display: none; }
+@media (min-width: 940px) {
+  .cols { grid-template-columns: 290px minmax(0, 1fr); }
+  .side { display: block; position: sticky; top: calc(74px + env(safe-area-inset-top, 0px)); align-self: start; max-height: calc(100dvh - 100px - env(safe-area-inset-top, 0px)); overflow-y: auto; padding-inline-end: 6px; }
+}
+.toc { display: flex; flex-direction: column; gap: 2px; }
+.toc h5 { margin: 0 0 8px; font-family: var(--f-display); font-size: 1.25rem; color: var(--k); }
+.toc a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 12px; border-radius: 12px; font-size: .95rem; color: var(--ink); transition: background .15s; }
+.toc a:hover { background: var(--k-soft); }
+.toc a.on { background: var(--k); color: #fff; }
+.toc a small { font-size: .75rem; opacity: .75; font-variant-numeric: tabular-nums; }
+.toc a.ed { color: var(--muted); }
+.toc a.on.ed { color: #fff; }
+
+.bab { margin-bottom: 38px; scroll-margin-top: 80px; }
+.bab-h { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; padding: 8px 0 12px; border-bottom: 2.5px solid var(--k); margin-bottom: 18px; }
+.bab-h h2 { font-family: var(--f-display); font-size: clamp(1.8rem, 4.6vw, 2.5rem); line-height: 1.3; margin: 0; color: var(--k); font-weight: 700; }
+.bab-h .meta { color: var(--muted); font-size: .85rem; }
+.bab-h .tag { font-size: .74rem; padding: 2px 10px; border-radius: 99px; background: var(--k-soft); color: var(--k); }
+.bab-h .sp { flex: 1; }
+.bab-h .mini { font-size: .8rem; color: var(--k); padding: 4px 10px; border-radius: 99px; border: 1.5px solid var(--k); }
+.bab-h .mini:hover { background: var(--k); color: #fff; }
+
+.fasl { font-size: 1.02rem; font-weight: 600; margin: 26px 0 10px; display: flex; align-items: center; gap: 10px; color: var(--ink); }
+.fasl::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--k); transform: rotate(45deg); flex: none; }
+.fasl::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.lbl { font-family: var(--f-text); font-weight: 700; font-size: calc(var(--fs) * 1.04); color: var(--k); margin: 18px 4px 8px; line-height: 1.7; }
+.ayah-q { font-family: var(--f-text); font-size: calc(var(--fs) * 1.1); line-height: 2.1; text-align: center; background: var(--ay-bg); color: var(--ay); border-radius: 18px; padding: 16px 20px; margin: 8px 0 16px; border: 1.5px solid color-mix(in srgb, var(--ay) 22%, transparent); text-wrap: balance; }
+
+.m { position: relative; background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; padding: 12px 16px 14px; margin-bottom: 12px; box-shadow: 0 1px 0 rgba(0,0,0,.02); transition: border-color .2s, box-shadow .2s, background .3s; scroll-margin-top: 90px; }
+.m:hover { border-color: color-mix(in srgb, var(--k) 45%, var(--line)); }
+.m.done { border-color: color-mix(in srgb, var(--k) 55%, var(--line)); background: linear-gradient(var(--k-soft), var(--k-soft)) , var(--surface); background-blend-mode: normal; }
+.m.hit { box-shadow: 0 0 0 4px color-mix(in srgb, var(--k) 35%, transparent); }
+.m-h { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; min-height: 30px; }
+.num { min-width: 30px; height: 30px; padding: 0 8px; border-radius: 10px; background: var(--k-soft); color: var(--k); font-weight: 600; font-size: .85rem; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
+.term { font-family: var(--f-text); font-weight: 700; font-size: calc(var(--fs) * .9); color: var(--k); background: var(--k-soft); padding: 0 12px; border-radius: 10px; line-height: 1.9; }
+.ims { display: flex; gap: 4px; }
+.imc { width: 24px; height: 24px; flex: none; border-radius: 50%; font-family: var(--f-ui); font-size: .8rem; line-height: 24px; text-align: center; font-weight: 600; display: block; overflow: hidden; padding: 0; color: #fff; }
+.lgm { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-size: .88rem; color: var(--muted); margin-bottom: 14px; }
+.rv { color: var(--k); background: color-mix(in srgb, var(--k) 12%, transparent); border-radius: 6px; padding: 0 3px; }
+.imc.h { background: var(--im-h); } .imc.y { background: var(--im-y); } .imc.m { background: var(--im-m); } .imc.z { background: var(--im-z); }
+.m-h .sp { flex: 1; }
+.act { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; color: var(--muted); transition: background .15s, color .15s; }
+.act:hover { background: var(--k-soft); color: var(--k); }
+.act svg { width: 19px; height: 19px; }
+.act[aria-pressed="true"] { color: #fff; background: var(--k); }
+.act.bm[aria-pressed="true"] { color: var(--k); background: var(--k-soft); }
+.act.bm[aria-pressed="true"] svg { fill: currentColor; }
+.mt { font-family: var(--f-text); font-size: var(--fs); line-height: 2.15; text-wrap: pretty; }
+.mt .ay { color: var(--ay); background: var(--ay-bg); border-radius: 6px; padding: 0 4px; }
+.mt .ha { color: var(--ha); background: var(--ha-bg); border-radius: 6px; padding: 0 3px; }
+.mt .im { font-weight: 700; border-radius: 6px; padding: 0 3px; }
+.mt .im.h { color: var(--im-h); background: color-mix(in srgb, var(--im-h) 13%, transparent); }
+.mt .im.y { color: var(--im-y); background: color-mix(in srgb, var(--im-y) 13%, transparent); }
+.mt .im.m { color: var(--im-m); background: color-mix(in srgb, var(--im-m) 14%, transparent); }
+.mt .im.z { color: var(--im-z); background: color-mix(in srgb, var(--im-z) 13%, transparent); }
+.mt .gap { color: var(--muted); border-bottom: 2px dotted var(--muted); cursor: help; padding: 0 4px; }
+.dis { margin-top: 6px; padding: 4px 14px 4px 6px; border-inline-start: 4px solid var(--k); background: var(--surface-2); border-radius: 10px; }
+.bl { display: inline-block; vertical-align: baseline; min-width: 1.6em; width: calc(var(--n) * .52em + .6em); height: 1.15em; margin: 0 1px; border-radius: 6px; background: color-mix(in srgb, var(--k) 20%, transparent); border-bottom: 2.5px solid var(--k); position: relative; top: .22em; transition: background .15s; }
+.bl:hover { background: color-mix(in srgb, var(--k) 34%, transparent); }
+.bl.rv { all: unset; color: var(--k); background: color-mix(in srgb, var(--k) 12%, transparent); border-radius: 6px; padding: 0 3px; }
+.mode-hint { margin: 0 0 14px; padding: 10px 14px; border-radius: 14px; background: var(--k-soft); color: var(--k); font-size: .92rem; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.mode-hint button { margin-inline-start: auto; background: var(--k); color: #fff; border-radius: 99px; padding: 4px 14px; font-size: .85rem; }
+.empty { text-align: center; color: var(--muted); padding: 40px 10px; }
+
+.bab-nav { display: flex; gap: 12px; margin-top: 22px; }
+.bab-nav a { flex: 1; border: 1.5px solid var(--line); background: var(--surface); border-radius: 16px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; }
+.bab-nav a:hover { border-color: var(--k); }
+.bab-nav small { color: var(--muted); font-size: .78rem; }
+.bab-nav b { font-family: var(--f-display); font-size: 1.2rem; color: var(--k); font-weight: 700; }
+.bab-nav .nx { text-align: left; }
+
+/* ---------- Dock, sheets, overlays ---------- */
+.dock { position: fixed; z-index: 55; left: 50%; transform: translateX(-50%); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 6px; padding: 6px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 22px; box-shadow: 0 10px 34px rgba(0,0,0,.22); max-width: calc(100vw - 24px); }
+.seg { display: flex; gap: 4px; background: var(--surface-2); border-radius: 16px; padding: 3px; }
+.seg button { padding: 8px 15px; border-radius: 13px; font-weight: 600; font-size: .92rem; color: var(--muted); white-space: nowrap; transition: background .15s, color .15s; }
+.seg button[aria-pressed="true"] { background: var(--k); color: #fff; }
+.dock .tbtn { height: 42px; padding: 0 14px; border-radius: 14px; display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: .9rem; color: var(--k); background: var(--k-soft); white-space: nowrap; }
+.dock .tbtn svg { width: 18px; height: 18px; }
+@media (min-width: 940px) { .dock .tbtn.idx { display: none; } }
+.pop { position: fixed; z-index: 56; left: 50%; transform: translateX(-50%); bottom: calc(76px + env(safe-area-inset-bottom, 0px)); width: min(420px, calc(100vw - 24px)); background: var(--surface); border: 1.5px solid var(--line); border-radius: 20px; box-shadow: 0 16px 44px rgba(0,0,0,.28); padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: .95rem; }
+.row .seg button { padding: 6px 12px; font-size: .88rem; }
+.sw { width: 46px; height: 28px; border-radius: 99px; background: var(--line); position: relative; flex: none; transition: background .2s; }
+.sw::after { content: ""; position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,.3); }
+.sw[aria-pressed="true"] { background: var(--k); }
+.sw[aria-pressed="true"]::after { transform: translateX(-18px); }
+
+.scrim { position: fixed; inset: 0; z-index: 70; background: rgba(8,14,20,.55); display: flex; align-items: flex-end; justify-content: center; backdrop-filter: blur(2px); }
+.sheet { background: var(--surface); width: min(640px, 100%); max-height: 86dvh; overflow-y: auto; border-radius: 26px 26px 0 0; padding: 18px max(18px, env(safe-area-inset-left, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -10px 40px rgba(0,0,0,.3); }
+.sheet h3 { font-family: var(--f-display); font-size: 1.6rem; margin: 0 0 10px; color: var(--k); }
+.sheet .grab { width: 44px; height: 5px; border-radius: 9px; background: var(--line); margin: 0 auto 14px; }
+@media (min-width: 700px) { .scrim { align-items: center; } .sheet { border-radius: 26px; max-height: 80dvh; } }
+.sq { display: flex; gap: 8px; margin-bottom: 14px; }
+.sq input { flex: 1; min-width: 0; font: inherit; font-family: var(--f-text); font-size: 1.25rem; padding: 10px 16px; border-radius: 14px; border: 2px solid var(--line); background: var(--surface-2); color: var(--ink); }
+.sq input:focus { border-color: var(--k); outline: none; }
+.res { display: flex; flex-direction: column; gap: 8px; }
+.res a { display: block; padding: 10px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--surface); border-inline-start: 6px solid var(--rk, var(--k)); }
+.res a:hover { background: var(--surface-2); }
+.res small { color: var(--muted); font-size: .78rem; display: block; }
+.res p { font-family: var(--f-text); font-size: 1.12rem; line-height: 1.9; margin: 2px 0 0; }
+.res mark { background: color-mix(in srgb, var(--k) 25%, transparent); color: inherit; border-radius: 4px; padding: 0 2px; }
+
+.fc { position: fixed; inset: 0; z-index: 80; background: linear-gradient(160deg, var(--k-deep), var(--k-h)); color: #fff; display: flex; flex-direction: column; padding: calc(14px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-left, 0px)) calc(18px + env(safe-area-inset-bottom, 0px)); }
+.fc-top { display: flex; align-items: center; gap: 12px; }
+.fc-top .bar { flex: 1; margin: 0; max-width: none; }
+.fc-card { flex: 1; display: grid; place-items: center; padding: 18px 0; min-height: 0; }
+.card { width: min(680px, 100%); max-height: 100%; overflow-y: auto; background: var(--surface); color: var(--ink); border-radius: 26px; padding: 26px 24px; box-shadow: 0 18px 50px rgba(0,0,0,.35); text-align: right; }
+.card .q { font-family: var(--f-display); font-size: .95rem; color: var(--k); opacity: .9; margin-bottom: 8px; font-family: var(--f-ui); font-weight: 600; }
+.card .mt { font-size: calc(var(--fs) * 1.1); }
+.card .fade { color: var(--muted); }
+.card .tap { margin-top: 16px; color: var(--muted); font-size: .85rem; text-align: center; }
+.fc-act { display: flex; gap: 12px; justify-content: center; }
+.fc-act button { flex: 1; max-width: 240px; padding: 14px; border-radius: 16px; font-weight: 600; font-size: 1rem; }
+.fc-act .no { background: rgba(255,255,255,.16); border: 1.5px solid rgba(255,255,255,.35); }
+.fc-act .ok { background: #fff; color: var(--k-deep); }
+.fc-done { text-align: center; display: grid; gap: 14px; place-items: center; }
+.fc-done h3 { font-family: var(--f-display); font-size: 2.4rem; margin: 0; }
+
+@media (max-width: 520px) {
+  .seg button { padding: 8px 11px; font-size: .86rem; }
+  .dock .tbtn span { display: none; }
+  .dock .tbtn { padding: 0 11px; }
+  .m { padding: 10px 12px 12px; }
+  .hero .wrap { padding-block: 22px 24px; }
+  .hero.kit .sub { display: none; }
+  .hero.kit h1 { margin-bottom: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* ================= v2: meaning colours, parts, overviews, review, quizzes ================= */
+.r { font-weight: 700; border-radius: 6px; padding: 0 3px; }
+.r.must { color: var(--r-must); background: color-mix(in srgb, var(--r-must) 12%, transparent); }
+.r.sun { color: var(--r-sun); background: color-mix(in srgb, var(--r-sun) 12%, transparent); }
+.r.ok { color: var(--r-ok); background: color-mix(in srgb, var(--r-ok) 12%, transparent); }
+.r.mak { color: var(--r-mak); background: color-mix(in srgb, var(--r-mak) 14%, transparent); }
+.r.bad { color: var(--r-bad); background: color-mix(in srgb, var(--r-bad) 12%, transparent); text-decoration: underline wavy color-mix(in srgb, var(--r-bad) 55%, transparent) 1.5px; text-underline-offset: 6px; }
+.nm { color: var(--r-num); font-weight: 700; border-bottom: 2.5px solid color-mix(in srgb, var(--r-num) 50%, transparent); }
+:root[data-rc="off"] .r, :root[data-rc="off"] .nm { color: inherit; background: none; font-weight: inherit; border: 0; padding: 0; text-decoration: none; }
+.lgm .mt { font-size: 1.05rem; line-height: 1.5; }
+.vsep { width: 1px; height: 18px; background: var(--line); }
+
+.part { position: relative; overflow: hidden; margin: 54px 0 22px; padding: 20px 22px 22px; border-radius: 24px; background: linear-gradient(135deg, var(--k-deep), var(--k-h)); color: #fff; scroll-margin-top: 80px; box-shadow: var(--shadow); }
+.part:first-of-type { margin-top: 8px; }
+.part .pn { font-size: .8rem; opacity: .85; letter-spacing: .03em; }
+.part h2 { font-family: var(--f-display); font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.3; margin: 2px 0; }
+.part p { margin: 0; opacity: .92; }
+.pb { height: 6px; max-width: 280px; border-radius: 9px; background: rgba(255,255,255,.22); overflow: hidden; margin-top: 14px; }
+.pb b { display: block; height: 100%; background: #fff; border-radius: 9px; transition: width .5s; }
+.bab-h .bno { width: 34px; height: 34px; flex: none; border-radius: 50%; border: 2px solid var(--k); color: var(--k); display: grid; place-items: center; font-weight: 700; align-self: center; font-size: .95rem; }
+.mini { font-size: .8rem; color: var(--k); padding: 4px 12px; border-radius: 99px; border: 1.5px solid var(--k); }
+.mini:hover, .mini.fill { background: var(--k); color: #fff; }
+
+.ov { background: var(--surface); border: 1.5px solid var(--line); border-inline-start: 6px solid var(--k); border-radius: 18px; padding: 14px 16px; margin-bottom: 18px; }
+.ov .map { margin: 0 0 10px; font-family: var(--f-text); font-size: 1.18rem; line-height: 1.9; }
+.ov .map span { display: block; font-family: var(--f-ui); font-size: .74rem; font-weight: 600; color: var(--k); letter-spacing: .04em; }
+.ovm { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; }
+.rcs, .ova { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cnt { font-size: .8rem; color: var(--muted); margin-inline-end: 4px; }
+.rcc { --c: var(--muted); display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; padding: 2px 10px; border-radius: 99px; background: color-mix(in srgb, var(--c) 12%, transparent); color: var(--c); font-weight: 600; }
+.rcc i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.rcc.must { --c: var(--r-must); } .rcc.sun { --c: var(--r-sun); } .rcc.ok { --c: var(--r-ok); } .rcc.mak { --c: var(--r-mak); } .rcc.bad { --c: var(--r-bad); } .rcc.num { --c: var(--r-num); }
+.route { list-style: none; margin: 0 0 12px; padding: 2px 0 6px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; }
+.route a { display: flex; align-items: center; gap: 8px; white-space: nowrap; padding: 5px 12px 5px 6px; border-radius: 99px; background: var(--k-soft); color: var(--k); font-size: .9rem; font-weight: 500; }
+.route b { width: 22px; height: 22px; border-radius: 50%; background: var(--k); color: #fff; display: grid; place-items: center; font-size: .75rem; }
+.route a:hover { background: color-mix(in srgb, var(--k) 22%, var(--surface)); }
+@media (min-width: 700px) { .route { flex-wrap: wrap; overflow: visible; } }
+
+.pcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 14px; }
+.pcard { background: var(--surface); border: 1.5px solid var(--line); border-top: 6px solid var(--k); border-radius: 20px; padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.ph { display: flex; gap: 12px; align-items: flex-start; }
+.pn2 { width: 38px; height: 38px; border-radius: 12px; background: var(--k); color: #fff; font-family: var(--f-display); font-size: 1.5rem; display: grid; place-items: center; flex: none; line-height: 1; }
+.ph h3 { margin: 0; font-family: var(--f-display); font-size: 1.45rem; line-height: 1.3; color: var(--k); }
+.ph p { margin: 2px 0 0; color: var(--muted); font-size: .85rem; }
+.pcard ul { list-style: none; margin: 0; padding: 0; }
+.pcard li a { display: flex; justify-content: space-between; gap: 8px; padding: 5px 8px; border-radius: 9px; font-size: .92rem; }
+.pcard li a:hover { background: var(--k-soft); }
+.pcard li small { color: var(--muted); }
+.mp { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.sq2 { width: 12px; height: 12px; border-radius: 3px; display: block; background: color-mix(in srgb, var(--k) 12%, var(--surface-2)); border: 1px solid color-mix(in srgb, var(--k) 28%, transparent); }
+.sq2.l { background: color-mix(in srgb, var(--k) 48%, var(--surface)); }
+.sq2.k { background: var(--k); border-color: var(--k); }
+.sq2.d { outline: 2px solid #e08a00; outline-offset: 1px; }
+.mpl { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; font-size: .82rem; color: var(--muted); }
+.mpl span { display: flex; align-items: center; gap: 6px; }
+.hm { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+.hn { width: 120px; flex: none; font-family: var(--f-display); font-size: 1.35rem; color: var(--k); line-height: 1.4; }
+@media (max-width: 520px) { .hm { flex-direction: column; gap: 6px; } }
+
+.plan { background: var(--surface); border: 1.5px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); padding: 16px; }
+.pl-top { display: flex; gap: 14px; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.goal { display: flex; align-items: center; gap: 12px; }
+.plan .ring .tr { stroke: var(--line); } .plan .ring .pg { stroke: var(--k); } .plan .ring text { fill: var(--ink); }
+.goal small, .strk small { display: block; color: var(--muted); font-size: .78rem; }
+.strk { text-align: center; padding: 6px 16px; border-radius: 16px; background: color-mix(in srgb, #e08a00 14%, transparent); }
+.strk b { font-family: var(--f-display); font-size: 1.9rem; line-height: 1.1; color: var(--r-mak); }
+.pl-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pl-steps li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 16px; background: var(--surface-2); }
+.pl-steps .n { width: 32px; height: 32px; border-radius: 50%; background: var(--k); color: #fff; display: grid; place-items: center; font-weight: 700; flex: none; }
+.pl-steps div { flex: 1; min-width: 0; }
+.pl-steps small { display: block; color: var(--muted); font-size: .82rem; }
+.go { background: var(--k); color: #fff; border-radius: 12px; padding: 8px 16px; font-weight: 600; font-size: .9rem; white-space: nowrap; }
+
+.toc a.tp { margin-top: 12px; font-family: var(--f-display); font-size: 1.12rem; font-weight: 700; color: var(--k); justify-content: flex-start; gap: 8px; }
+.toc a.tp:first-of-type { margin-top: 0; }
+.pn3 { width: 22px; height: 22px; border-radius: 7px; background: var(--k); color: #fff; font: 600 .75rem var(--f-ui); display: grid; place-items: center; flex: none; }
+.toc a.sb { padding: 3px 10px; margin-inline-start: 16px; font-size: .82rem; color: var(--muted); border-inline-start: 2px solid var(--line); border-radius: 0 8px 8px 0; }
+.toc a.sb:hover { color: var(--k); border-color: var(--k); }
+
+.card .q { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.bdg { font-style: normal; font-size: .74rem; padding: 2px 10px; border-radius: 99px; font-weight: 600; white-space: nowrap; }
+.bdg.nw { background: var(--k-soft); color: var(--k); }
+.bdg.rv2 { background: color-mix(in srgb, #e08a00 18%, transparent); color: var(--r-mak); }
+.fc-act .mid { background: rgba(255,255,255,.26); color: #fff; border: 1.5px solid rgba(255,255,255,.5); }
+.fc-act { gap: 10px; }
+.fc-act button { max-width: 200px; }
+.fc-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.fc-btns button { padding: 12px 22px; border-radius: 14px; font-weight: 600; }
+.fc-btns .ok { background: #fff; color: var(--k-deep); }
+.fc-btns .no { background: rgba(255,255,255,.16); border: 1.5px solid rgba(255,255,255,.35); }
+.fc-done p { margin: 0; opacity: .95; }
+.qctx { font-family: var(--f-text); color: var(--muted); font-size: calc(var(--fs) * .82); border-inline-start: 3px solid var(--line); padding-inline-start: 10px; margin-bottom: 8px; line-height: 1.9; }
+.blank { display: inline-block; min-width: 3.2em; text-align: center; color: var(--k); background: var(--k-soft); border-radius: 8px; border-bottom: 2.5px solid var(--k); padding: 0 6px; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.opts.col { grid-template-columns: 1fr; }
+.opt { min-height: 52px; padding: 10px 14px; border-radius: 14px; border: 2px solid var(--line); background: var(--surface-2); display: flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--f-text); font-size: 1.15rem; color: var(--ink); transition: border-color .15s, background .15s; }
+.opt:hover:not(:disabled) { border-color: var(--k); }
+.opt:disabled { cursor: default; }
+.opt.right { border-color: #1a9150; background: color-mix(in srgb, #1a9150 18%, transparent); }
+.opt.wrong { border-color: #c62828; background: color-mix(in srgb, #c62828 14%, transparent); }
+.opt.dim { opacity: .5; }
+.expl { margin-top: 16px; padding: 12px 14px; border-radius: 14px; background: var(--k-soft); }
+.expl > b { color: var(--k); font-size: .9rem; }
+.qres { display: flex; flex-direction: column; gap: 6px; width: min(420px, 100%); max-height: 28vh; overflow: auto; }
+.qres a { background: rgba(255,255,255,.14); padding: 8px 14px; border-radius: 12px; font-size: .9rem; }
+@media (max-width: 520px) { .opts { grid-template-columns: 1fr; } .part { padding: 16px 16px 18px; border-radius: 20px; } .fc-act button { padding: 12px 6px; } }
+@media (max-width: 400px) { .dock { gap: 3px; padding: 5px; } .dock .tbtn { padding: 0 9px; } .seg button { padding: 8px 9px; } }
+
+</style>
+</head><body>
+<div id="app" class="k0" dir="rtl" lang="ar"></div>
+<script>
+(function () {
+'use strict';
+const D = [{"n":1,"title":"كتاب الطهارة","babs":[{"t":"أحكام الوضوء والغسل والمياه","ed":true,"items":[["f","فرائض الوضوء وسننه ومستحباته"],["q","﴿يا أيها الذين آمنوا إذا قمتم إلى الصلاة فاغسلوا وجوهكم وأيديكم إلى المرافق وامسحوا برؤوسكم وأرجلكم إلى الكعبين﴾"],["l","ففرض الطهارة:"],["m","غسل الأعضاء الثلاثة ومسح الرأس والمرفقان والكعبان يدخلان في الغسل والمفروض في مسح الرأس مقدار الناصية لما روى المغيرة بن شعبة [أن النبي ﷺ أتى سباطة قوم فبال وتوضأ ومسح على ناصيته وخفيه]"],["l","وسنن الطهارة:"],["m","وغسل اليدين قبل إدخالها إذا استيقظ المتوضئ من نومه وتسمية الله تعالى في ابتداء الوضوء"],["m","والسواك والمضمضة والاستنشاق ومسح الأذنين وتخليل اللحية والأصابع وتكرار الغسل إلى الثلاث"],["m","ويستحب للمتوضئ أن ينوي الطهارة ويستوعب رأسه بالمسح ويرتب الوضوء فيبدأ بما بدأ الله تعالى بذكره وبالميامن"],["f","نواقض الوضوء"],["l","والمعاني الناقضة للوضوء:"],["m","كل ما خرج من السبيلين والدم والقيح والصديد إذا خرج من البدن فتجاوز إلى موضع يلحقه حكم التطهير والقيء إذا كان ملء الفم والنوم مضطجعا أو متكئا أو مستندا إلى شيء لو أزيل عنه لسقط والغلبة على العقل بالإغماء والجنون والقهقهة في كل صلاة ذات ركوع وسجود"],["f","الغسل: فرضه وسنته وموجباته"],["m","وفرض الغسل: المضمضة والاستنشاق وغسل سائر البدن"],["l","وسنة الغسل:"],["m","أن يبدأ المغتسل يديه وفرجه ويزيل النجاسة إن كانت على بدنه ثم يتوضأ وضوءه للصلاة إلا رجليه ثم يفيض الماء على رأسه وسائر جسده ثلاثا ثم يتنحى عن ذلك المكان فيغتسل رجليه"],["m","وليس على المرأة أن تنقض ضفائرها في الغسل إذا بلغ الماء أصول الشعر"],["l","والمعاني الموجبة للغسل:"],["m","إنزال المني على وجه الدفق والشهوة من الرجل والمرأة والتقاء الختانين من غير إنزال والحيض والنفاس"],["m","وسن رسول الله ﷺ الغسل للجمعة والعيدين والإحرام"],["m","وليس في المذي والودي غسل وفيهما الوضوء"],["f","المياه التي تجوز بها الطهارة وما لا تجوز"],["m","والطهارة من الأحداث جائزة بماء السماء والأودية والعيون والآبار وماء البحار ولا تجوز بما اعتصر من الشجر والثمر ولا بماء غلب عليه غيره وأخرجه عن طبع الماء كالأشربة والخل وماء الورد وماء الباقلاء والمرق وماء الزردج"],["m","وتجوز الطهارة بماء خالطه شيء طاهر فغير أحد أوصافه كماء المد والماء الذي يختلط به الأشنان والصابون والزعفران"],["m","وكل ماء وقعت فيه نجاسة لم يجز الوضوء به قليلا أو كثيرا [لأن النبي ﷺ أمر بحفظ الماء من النجاسة فقال لا يبولن أحدكم في الماء الدائم ولا يغتسلن فيه من الجنابة] و [قال ﷺ: إذا استيقظ أحدكم من منامه فلا يغمسن يده في الإناء حتى يغسلها ثلاثا فإنه لا يدري أين باتت يده]"],["m","وأما الماء الجاري إذا وقعت فيه نجاسة جاز الوضوء منه إذا لم ير لها أثر لا تستقر مع جريان الماء"],["m","والغدير العظيم الذي لا يتحرك أحد طرفيه بتحريك الطرف الآخر إذا وقعت نجاسة في أحد جانبيه جاز الوضوء من الجانب الآخر لأن الظاهر أن النجاسة لا تصل إليه"],["m","وموت ما ليس له نفس سائلة في الماء لا ينجسه كالبق والذباب والزنابير والعقارب وموت ما يعيش في الماء فيه لا يفسده كالسمك والضفدع والسرطان"],["m","والماء المستعمل لا يجوز استعماله في طهارة الأحداث"],["m","والمستعمل: كل ماء أزيل به حدث أو استعمل في البدن على وجه القربة"],["f","الدباغ والأجزاء الطاهرة من الميتة"],["m","وكل إهاب دبغ فقد طهر وجازت الصلاة فيه والوضوء منه إلا جلد الخنزير والآدمي"],["m","وشعر الميتة وعظمها وعصبها وحافرها وقرنها طاهر"],["f","أحكام الآبار"],["m","وإذا وقعت في البئر نجاسة نزحت وكان نزح ما فيها من الماء طهارة لها"],["m","فإن ماتت فيها فأرة أو عصفورة أو صعوة أو سوادنية أو سام أبرص نزح منها ما بين عشرين دلوا إلى ثلاثين دلوا بحسب كبر الحيوان وصغره"],["m","وإن ماتت فيها حمامة أو دجاجة أو سنور نزح منها ما بين أربعين دلوا إلى ستين"],["m","وإن مات فيها كلب أو شاة أو آدمي نزح جميع ما فيها من الماء"],["m","وإن انتفخ الحيوان فيها أو تفسخ نزح جميع ما فيها من الماء صغر الحيوان أو كبر"],["m","وعدد الدلاء يعتبر بالدلو الوسط المستعمل للآبار في البلدان فإن نزح منها بدلو عظيم قدر ما يسع عشرين دلوا من الدلو الوسط احتسب به"],["m","وإن كانت البئر معينا لا تنزح ما فيها من الماء أخرجوا مقدار ما كان فيها من الماء وقد روي عن محمد بن الحسن رحمه الله أنه قال: ينزح منها مائتا دلو إلى ثلاثمائة دلو"],["m","وإذا وجد في البئر أو غيرها ولا يدرون متى وقعت ولم تنتفخ ولم تتفسخ أعادوا صلاة يوم وليلة إذا كانوا توضئوا منها وغسلوا كل شيء أصابه ماؤها"],["m","وإن كانت انتفخت أو تفسخت أعادوا صلاة ثلاثة أيام ولياليها في قول أبي حنيفة رحمه الله وقال أبو يوسف ومحمد رحمهما الله: ليس عليهم إعادة شيء حتى يتحققوا متى وقعت"],["f","الأسآر"],["m","وسؤر الآدمي وما يؤكل لحمه طاهر وسؤر الكلب والخنزير وسباع البهائم نجس وسؤر الهرة والدجاجة المخلاة وسباع الطير وما يسكن في البيوت مثل الحية والفأرة مكروه"],["m","وسؤر الحمار والبغل مشكوك فيهما فإن لم يجد غيرهما توضأ بهما وتيمم بأيهما بدأ جاز"]]},{"t":"باب التيمم","ed":false,"items":[["m","ومن لم يجد الماء وهو مسافر أو خارج المصر بينه وبين المصر نحو الميل أو أكثر أو كان يجد الماء إلا أنه مريض فخاف إن استعمل الماء اشتد مرضه أو خاف الجنب إن غسل بالماء أن يقتله البرد أو يمرضه فإنه يتيمم بالصعيد"],["l","والتيمم ضربتان:"],["m","يمسح بإحداهما وجهه وبالأخرى يديه إلى المرفقين والتيمم من الجنابة والحدث سواء"],["m","ويجوز التيمم عند أبي حنيفة ومحمد بكل ما كان من جنس الأرض كالتراب والرمل والحجر والجص والنورة والكحل والزرنيخ"],["m","وقال أبو يوسف رحمه الله: لا يجوز إلا بالتراب والرمل خاصة"],["m","والنية فرض في التيمم مستحبة في الوضوء"],["m","وينقض التيمم كل شيء ينقض الوضوء وينقضه أيضا رؤية الماء إذا قدر على استعماله ولا يجوز التيمم إلا بصعيد طاهر"],["m","ويستحب لمن لا يجد الماء وهو يرجو أن يجده في آخر الوقت أن يؤخر الصلاة إلى آخر الوقت فإن وجد الماء توضأ به وصلى وإلا تيمم"],["m","ويصلي بتيممه ما شاء من الفرائض والنوافل"],["m","ويجوز التيمم للصحيح في المصر إذا حضرت جنازة والولي غيره فخاف إن اشتغل بالطهارة أن تفوته الصلاة فإنه يتيمم ويصلي وكذلك من حضر العيد فخاف إن اشتغل بالطهارة أن تفوته صلاة العيدين فإنه يتيمم ويصلي"],["m","وإن خاف من شهد الجمعة إن اشتغل بالطهارة أن تفوته صلاة الجمعة لم يتيمم ولكنه يتوضأ فإن أدرك الجمعة صلاها وإلا صلى الظهر أربعا"],["m","وكذلك إذا ضاق الوقت فخشي إن توضأ فات الوقت لم يتيمم ولكنه يتوضأ ويصلي فائتة"],["m","والمسافر إذا نسي الماء في رحله فتيمم وصلى ثم ذكر الماء في الوقت لم يعد الصلاة عند أبي حنيفة ومحمد رحمهما الله"],["m","وقال أبو يوسف: يعيدها"],["m","وليس على المتيمم إذا لم يغلب على ظنه أن بقربه ماء أن يطلب الماء فإن غلب على ظنه أن هناك ماء لم يجز له أن يتيمم حتى يطلبه وإن كان مع رفيقه ماء طلبه منه قبل أن يتيمم فإن منعه منه تيمم وصلى"]]},{"t":"باب المسح على الخفين","ed":false,"items":[["m","المسح على الخفين جائز بالسنة من كل حدث موجب للوضوء إذا لبس الخفين على طهارة كاملة ثم أحدث"],["m","فإن كان مقيما مسح يوما وليلة وإن كان مسافرا مسح ثلاثة أيام ولياليها وابتداؤها عقيب الحدث"],["m","والمسح على الخفين على ظاهرهما خطوطا بالأصابع يبدأ من رؤوس أصابع الرجل إلى الساق"],["m","وفرض ذلك مقدار ثلاث أصابع من أصغر أصابع اليد"],["m","ولا يجوز المسح على خف فيه خرق كبير يبين منه مقدار ثلاث أصابع من أصابع الرجل وإن كان أقل من ذلك جاز"],["m","ولا يجوز المسح على الخفين لمن وجب عليه الغسل"],["m","ونقض المسح ما ينقض الوضوء وينقضه أيضا نزع الخف ومضي المدة فإذا مضت المدة نزع خفيه وغسل رجليه وصلى وليس عليه إعادة بقية الوضوء"],["m","ومن ابتدأ المسح وهو مقيم فسافر قبل تمام يوم وليلة مسح ثلاثة أيام ولياليها ومن ابتدأ المسح وهو مسافر ثم أقام فإن كان مسح يوما وليلة أو أكثر لزمه نزع خفيه وغسل رجليه وإن كان مسح أقل من يوم وليلة تمم مسح يوم وليلة"],["m","ومن لبس الجرموق فوق الخف مسح عليه"],["m","ولا يجوز المسح على الجوربين عند أبي حنيفة رحمه الله إلا أن يكونا منعلين أو مجلدين وقال أبو يوسف ومحمد رحمهما الله: يجوز المسح على الجوربين إذا كانا ثخينين لا يشفان الماء"],["m","ولا يجوز المسح على العمامة والقلنسوة والبرقع والقفازين"],["m","ويجوز المسح على الجبائر وإن شدها على غير وضوء فإن سقطت عن غير برء لم يبطل المسح وإن سقطت عن برء بطل المسح"]]},{"t":"باب الحيض","ed":false,"items":[["f","مدة الحيض وألوانه وأحكامه"],["m","أقل الحيض ثلاثة أيام ولياليها وما نقص عن ذلك فليس بحيض وهو استحاضة"],["m","وأكثر الحيض عشرة أيام ولياليها وما زاد على ذلك فهو استحاضة"],["m","وما تراه المرأة من الحمرة والصفرة والكدرة في أيام الحيض فهو حيض حتى ترى البياض الخالص"],["m","والحيض يسقط عن الحائض الصلاة ويحرم عليها الصوم وتقضي الصوم ولا تقضي الصلاة ولا تدخل المسجد ولا تطوف بالبيت ولا يأتيها زوجها"],["m","ولا يجوز لحائض ولا جنب قراءة القرآن"],["m","ولا يجوز لمحدث مس المصحف إلا أن يأخذه بغلافه"],["m","وإذا انقطع دم الحيض لأقل من عشرة أيام لم يجز وطؤها حتى تغتسل أو يمضي عليها وقت صلاة كامل فإن انقطع دمها لعشرة أيام جاز وطؤها قبل الغسل"],["m","والطهر إذا تخلل بين الدمين في مدة الحيض فهو كالدم الجاري"],["m","وأقل الطهر خمسة عشر يوما ولا غاية لأكثره"],["f","الاستحاضة"],["m","ودم الاستحاضة هو ما تراه المرأة أقل من ثلاثة أيام أو أكثر من عشرة أيام فحكمه حكم الرعاف الدائم: لا يمنع الصوم ولا الصلاة ولا الوطء"],["m","وإذا زاد الدم على عشرة أيام وللمرأة عادة معروفة ردت إلى أيام عادتها وما زاد على ذلك فهو استحاضة وإن ابتدأت مع البلوغ مستحاضة فحيضها عشرة أيام من كل شهر والباقي استحاضة"],["m","والمستحاضة ومن به سلس البول والرعاف الدائم والجرح الذي لا يرقأ يتوضئون لوقت كل صلاة فيصلون بذلك الوضوء في الوقت ما شاءوا من الفرائض والنوافل فإذا خرج الوقت بطل وضوءهم وكان عليهم استئناف الوضوء لصلاة أخرى"],["f","النفاس"],["m","والنفاس: هو الدم الخارج عقيب الولادة والدم الذي تراه الحامل وما تراه المرأة في حال ولادتها قبل خروج الولد استحاضة"],["m","وأقل النفاس لا حد له وأكثره أربعون يوما وما زاد على ذلك فهو استحاضة وإذا تجاوز الدم الأربعين وقد كانت هذه المرأة ولدت قبل ذلك ولها عادة في النفاس ردت إلى أيام عادتها وإن لم تكن لها عادة فابتداء نفاسها أربعون يوما"],["m","ومن ولدت ولدين في بطن واحد فنفاسها ما خرج من الدم عقيب الولد الأول عند أبي حنيفة وأبي يوسف وقال محمد وزفر: نفاسها ما خرج من الدم عقيب الولد الثاني"]]},{"t":"باب الأنجاس","ed":false,"items":[["m","تطهير النجاسة واجب من بدن المصلي وثوبه والمكان الذي يصلي عليه"],["m","ويجوز تطهير النجاسة بالماء وبكل مائع طاهر يمكن إزالتها به كالخل وماء الورد"],["m","وإذا أصابت الخف نجاسة ولها جرم فجفت فدلكه بالأرض جاز"],["m","والمني نجس يجب غسل رطبه فإذا جف على الثوب أجزأ فيه الفرك"],["m","والنجاسة إذا أصابت المرآة أو السيف اكتفي بمسحهما"],["m","وإذا أصابت الأرض نجاسة فجفت بالشمس وذهب أثرها جازت الصلاة بمكانها ولا يجوز التيمم منها"],["m","ومن أصابه من النجاسة المغلظة كالدم والبول والغائط والخمر مقدار الدرهم فما دونه جازت الصلاة معه فإن زاد لم تجز وإن أصابته نجاسة مخففة كبول ما يؤكل لحمه جازت الصلاة معه ما لم يبلغ ربع الثوب"],["l","وتطهير النجاسة التي يجب غسلها على وجهين:"],["m","فما كان له منها عين مرئية فطهارتها زوال عينها إلا أن يبقى من أثرها ما يشق إزالته وما ليس له عين مرئية فطهارتها أن يغسل حتى يغلب على ظن الغاسل أنه قد طهر"],["m","والاستنجاء سنة يجزئ فيه الحجر وما يقوم مقامه يمسحه حتى ينقيه وليس فيه عدد مسنون وغسله بالماء أفضل فإن تجاوزت النجاسة مخرجها لم يجز فيه إلا الماء ولا يستنجي بعظم ولا بروث ولا بطعام ولا بيمينه إلا بعذر"]]}]},{"n":2,"title":"كتاب الصلاة","babs":[{"t":"أوقات الصلاة","ed":true,"items":[["f","الأوقات الخمسة والوتر"],["m","أول وقت الصبح إذا طلع الفجر الثاني وهو البياض المعترض في الأفق وآخر وقتها ما لم تطلع الشمس"],["m","وأول وقت الظهر إذا زالت الشمس وآخر وقتها عند أبي حنيفة إذا صار ظل كل شيء مثليه سوى فيء الزوال وقال أبو يوسف ومحمد: إذا صار ظل كل شيء مثله"],["m","وأول وقت العصر إذا خرج وقت الظهر على القولين وآخر وقتها ما لم تغرب الشمس"],["m","وأول وقت المغرب إذا غربت الشمس وآخر وقتها ما لم يغب الشفق وهو البياض الذي في الأفق بعد الحمرة عند أبي حنيفة وقال أبو يوسف ومحمد: هو الحمرة"],["m","وأول وقت العشاء إذا غاب الشفق وآخر وقتها ما لم يطلع الفجر وأول وقت الوتر بعد العشاء وآخر وقتها ما لم يطلع الفجر"],["f","الأوقات المستحبة"],["m","ويستحب الإسفار بالفجر"],["m","والإبراد بالظهر في الصيف وتقديمها في الشتاء وتأخير العصر ما لم تتغير الشمس وتعجيل المغرب وتأخير العشاء إلى ما قبل ثلث الليل ويستحب في الوتر لمن يألف صلاة الليل أن يؤخر الوتر إلى آخر الليل فإن لم يثق بالانتباه أوتر قبل النوم"]]},{"t":"باب الأذان","ed":false,"items":[["m","الأذان سنة للصلوات الخمس والجمعة دون ما سواها"],["m","وصفة الأذان: أن يقول: الله أكبر الله أكبر - إلى آخره ولا ترجيع فيه ويزيد في أذان الفجر بعد الفلاح: الصلاة خير من النوم مرتين"],["m","والإقامة مثل الأذان إلا أنه يزيد فيها بعد الفلاح: قد قامت الصلاة مرتين"],["m","ويترسل في الأذان ويحدر في الإقامة ويستقبل بهما القبلة فإذا بلغ إلى الصلاة والفلاح حول وجهه يمينا وشمالا"],["m","ويؤذن للفائتة ويقيم فإن فاتته صلوات أذن للأولى وأقام وكان مخيرا في الباقية: إن شاء أذن وأقام وإن شاء اقتصر على الإقامة"],["m","وينبغي أن يؤذن ويقيم على طهر فإن أذن على غير وضوء جاز ويكره أن يقيم على غير وضوء أو يؤذن وهو جنب ولا يؤذن لصلاة قبل دخول وقتها"]]},{"t":"باب شروط الصلاة التي تتقدمها","ed":false,"items":[["m","يجب على المصلي أن يقدم الطهارة من الأحداث والأنجاس على ما قدمناه ويستر عورته والعورة من الرجل: ما تحت السرة إلى الركبة والركبة من العورة"],["m","وبدن المرأة الحرة كله عورة إلا وجهها وكفيها وقدميها وما كان عورة من الرجل فهو عورة من الأمة وبطنها وظهرها عورة وما سوى ذلك من بدنها فليس بعورة"],["m","ومن لم يجد ما يزيل به النجاسة صلى معها ولم يعد الصلاة"],["m","ومن لم يجد ثوبا صلى عريانا قاعدا يومئ بالركوع والسجود فإن صلى قائما أجزأه والأول أفضل"],["m","وينوي الصلاة التي يدخل فيها بنية لا يفصل بينها وبين التحريمة بعمل"],["m","ويستقبل القبلة إلا أن يكون خائفا فيصلي إلى أي جهة قدر فإن اشتبهت عليه القبلة وليس بحضرته من يسأله عنها اجتهد وصلى"],["m","فإن علم أنه أخطأ بعد ما صلى فلا إعادة عليه وإن علم ذلك وهو في الصلاة استدار إلى القبلة وبنى عليها"]]},{"t":"باب صفة الصلاة","ed":false,"items":[["f","فرائض الصلاة"],["l","فرائض الصلاة ستة:"],["m","التحريمة والقيام والقراءة والركوع والسجود والقعدة الأخيرة مقدار التشهد"],["m","وما زاد على ذلك فهو سنة"],["f","كيفية الصلاة: من التكبير إلى السلام"],["m","فإذا دخل الرجل في الصلاة كبر ورفع يديه مع التكبير حتى يحاذي بإبهاميه شحمتي أذنيه فإن قال بدلا من التكبير: الله أجل أو أعظم أو الرحمن أكبر أجزأه عند أبي حنيفة ومحمد وقال أبو يوسف: لا يجزئه إلا بلفظ التكبير"],["m","ويعتمد بيده اليمنى على اليسرى ويضعهما تحت سرته ثم يقول: سبحانك اللهم وبحمدك وتبارك اسمك وتعالى جدك ولا إله غيرك ويستعيذ بالله من الشيطان الرجيم ويقرأ بسم الله الرحمن الرحيم ويسر بهما"],["m","ثم يقرأ فاتحة الكتاب وسورة معها أو ثلاث آيات من أي سورة شاء وإذا قال الإمام ﴿ولا الضالين﴾ قال: آمين ويقولها ويخفونها ثم يكبر ويركع"],["m","ويعتمد بيديه على ركبتيه ويفرج أصابعه ويبسط ظهره ولا يرفع رأسه ولا ينكسه ويقول في ركوعه: سبحان ربي العظيم ثلاثا وذلك أدناه ثم يرفع رأسه …"],["m","وسجد واعتمد بيديه على الأرض ووضع وجهه بين كفيه وسجد على أنفه وجبهته فإن اقتصر على أحدهما جاز عند أبي حنيفة وقال أبو يوسف ومحمد: لا يجوز الاقتصار على الأنف إلا من عذر وإن سجد على كور عمامته أو فاضل ثوبه جاز"],["m","ويبدي ضبعيه ويجافي بطنه عن فخذيه ويوجه أصابع رجليه نحو القبلة ويقول في سجوده: سبحان ربي الأعلى ثلاثا وذلك أدناه ثم يرفع رأسه ويكبر فإذا اطمأن جالسا كبر وسجد فإذا اطمأن ساجدا كبر واستوى قائما على صدور قدميه ولا يقعد ولا يعتمد بيديه على الأرض"],["m","ويفعل في الركعة الثانية مثل ما فعل في الأولى إلا أنه لا يستفتح ولا يتعوذ ولا يرفع يديه إلا في التكبيرة الأولى"],["m","فإذا رفع رأسه من السجدة الثانية في الركعة الثانية افترش رجله اليسرى فجلس عليها ونصب اليمنى نصبا ووجه أصابعه نحو القبلة ووضع يديه على فخذيه وبسط أصابعه وتشهد"],["l","والتشهد أن يقول:"],["m","التحيات لله والصلوات والطيبات السلام عليك أيها النبي ورحمة الله وبركاته السلام علينا وعلى عباد الله الصالحين أشهد أن لا إله إلا الله وأشهد أن محمدا عبده ورسوله ولا يزيد على هذا في القعدة الأولى"],["m","ويقرأ في الركعتين الأخريين بفاتحة الكتاب خاصة فإذا جلس في آخر الصلاة جلس كما في الأولى وتشهد وصلى على النبي ﷺ ودعا بما شاء بما يشبه ألفاظ القرآن والأدعية المأثورة ولا يدعو بما يشبه كلام الناس ثم يسلم عن يمينه فيقول: السلام عليكم ورحمة الله وعن يساره مثل ذلك"],["f","الجهر والإسرار بالقراءة"],["m","ويجهر بالقراءة في الفجر والركعتين الأوليين من المغرب والعشاء إن كان إماما ويخفي القراءة فيما بعد الأوليين وإن كان منفردا فهو مخير: إن شاء جهر وأسمع نفسه وإن شاء خافت ويخفي الإمام القراءة في الظهر والعصر"],["f","الوتر"],["l","والوتر:"],["m","ثلاث ركعات لا يفصل بينها بسلام"],["m","ويقنت في الثالثة قبل الركوع في جميع السنة ويقرأ في كل ركعة من الوتر بفاتحة الكتاب وسورة معها فإذا أراد أن يقنت كبر ورفع يديه ثم قنت"],["m","ولا يقنت في صلاة غيرها"],["f","القراءة في الصلاة"],["m","وليس في شيء من الصلوات قراءة سورة بعينها لا يجزئ غيرها ويكره أن يتخذ سورة بعينها لصلاة لا يقرأ فيها غيرها"],["m","وأدنى ما يجزئ من القراءة في الصلاة ما يتناوله اسم القرآن عند أبي حنيفة وقال أبو يوسف ومحمد: لا يجزئ أقل من ثلاث آيات قصار أو آية طويلة"],["m","ولا يقرأ المؤتم خلف الإمام"],["f","الجماعة والإمامة"],["m","ومن أراد الدخول في صلاة غيره يحتاج إلى نيتين: نية الصلاة ونية المتابعة"],["l","والجماعة:"],["m","سنة مؤكدة"],["m","وأولى الناس بالإمامة أعلمهم بالسنة فإن تساووا فأقرؤهم فإن تساووا فأورعهم فإن تساووا فأسنهم"],["m","ويكره تقديم العبد والأعرابي والفاسق والأعمى وولد الزنا فإن تقدموا جاز"],["m","وينبغي للإمام أن لا يطول بهم الصلاة"],["m","ويكره للنساء أن يصلين وحدهن جماعة فإن فعلن وقفت الإمام وسطهن"],["m","ومن صلى مع واحد أقامه عن يمينه فإن كان اثنين تقدم عليهما"],["m","ولا يجوز للرجال أن يقتدوا بامرأة أو صبي"],["m","ويصف الرجال ثم الصبيان ثم النساء"],["m","فإن قامت امرأة إلى جنب رجل وهما مشتركان في صلاة واحدة فسدت صلاته"],["m","ويكره للنساء حضور الجماعة ولا بأس بأن تخرج العجوز في الفجر والمغرب والعشاء عند أبي حنيفة وقال أبو يوسف ومحمد: يجوز خروج العجوز في كل صلاة"],["m","ولا يصلي الطاهر خلف من به سلس البول ولا الطاهرات خلف المستحاضة ولا القارئ خلف الأمي ولا المكتسي خلف العريان"],["m","ويجوز أن يؤم المتيمم المتوضئين والماسح على الخفين الغاسلين ويصلي القائم خلف القاعد ولا يصلي الذي يركع ويسجد خلف المومئ ولا يصلي المفترض خلف المتنفل ولا من يصلي فرضا خلف من يصلي فرضا آخر ويصلي المتنفل خلف المفترض"],["m","ومن اقتدى بإمام ثم علم أنه على غير وضوء أعاد الصلاة"],["f","مكروهات الصلاة"],["m","ويكره للمصلي أن يعبث بثوبه أو بجسده ولا يقلب الحصى إلا أن لا يمكنه السجود فيسويه مرة واحدة ولا يفرقع أصابعه ولا يتخصر ولا يسدل ثوبه ولا يعقص شعره ولا يكف ثوبه ولا يلتفت ولا يقعي ولا يرد السلام بلسانه ولا بيده ولا يتربع إلا من عذر ولا يأكل ولا يشرب"],["f","الحدث في الصلاة ومفسدات الصلاة"],["m","فإن سبقه الحدث انصرف فإن كان إماما استخلف وتوضأ وبنى على صلاته والاستئناف أفضل"],["m","وإن نام فاحتلم أو جن أو أغمي عليه أو قهقه استأنف الوضوء والصلاة"],["m","وإن تكلم في صلاته عامدا أو ساهيا بطلت صلاته"],["m","وإن سبقه الحدث بعد التشهد توضأ وسلم وإن تعمد الحدث في هذه الحالة أو تكلم أو عمل عملا ينافي الصلاة تمت صلاته"],["m","وإن رأى المتيمم الماء في صلاته بطلت صلاته"],["m","وإن رآه بعدما قعد قدر التشهد أو كان ماسحا على الخفين فانقضت مدة مسحه أو خلع خفيه بعمل يسير أو كان أميا فتعلم سورة أو عريانا فوجد ثوبا أو موميا فقدر على الركوع والسجود أو تذكر أن عليه صلاة قبل هذه الصلاة أو وقت العصر في الجمعة أو كان ماسحا على الجبيرة فسقطت عن برء أو كان صاحب عذر فانقطع عذره بطلت صلاته في قول أبي حنيفة وقال أبو يوسف ومحمد: تمت صلاته"]]},{"t":"باب قضاء الفوائت","ed":false,"items":[["m","ومن فاتته الصلاة قضاها إذا ذكرها وقدمها لزوما على صلاة الوقت إلا أن يخاف فوات صلاة الوقت فيقدم صلاة الوقت ثم يقضيها فإن فاتته صلوات رتبها في القضاء كما وجبت في الأصل إلا أن تزيد الفوائت على ست صلوات فيسقط الترتيب فيها"]]},{"t":"باب الأوقات التي تكره فيها الصلاة","ed":false,"items":[["m","لا تجوز الصلاة عند طلوع الشمس ولا عند قيامها في الظهيرة ولا عند غروبها ولا يصلى على جنازة ولا يسجد للتلاوة إلا عصر يومه عند غروب الشمس"],["m","ويكره أن يتنفل بعد صلاة الفجر حتى تطلع الشمس وبعد صلاة العصر حتى تغرب الشمس ولا بأس بأن يصلي في هذين الوقتين الفوائت ويسجد للتلاوة ويصلي على الجنازة"],["m","ولا يصلي ركعتي الطواف"],["m","ويكره أن يتنفل بعد طلوع الفجر بأكثر من ركعتي الفجر ولا يتنفل قبل المغرب"]]},{"t":"باب النوافل","ed":false,"items":[["m","السنة في الصلاة أن يصلي ركعتين بعد طلوع الفجر وأربعا قبل الظهر وركعتين بعدها وأربعا قبل العصر وإن شاء ركعتين وركعتين بعد المغرب وأربعا قبل العشاء وأربعا بعدها وإن شاء ركعتين"],["m","ونوافل النهار إن شاء صلى ركعتين بتسليمة واحدة وإن شاء أربعا وتكره الزيادة على ذلك"],["m","فأما نافلة الليل فقال أبو حنيفة: إن صلى ثماني ركعات بتسليمة واحدة جاز وتكره الزيادة على ذلك وقال أبو يوسف ومحمد: لا يزيد بالليل على ركعتين بتسليمة واحدة"],["m","والقراءة في الفرض واجبة في الركعتين الأوليين وهو مخير في الأخريين إن شاء قرأ وإن شاء سبح وإن شاء سكت"],["m","والقراءة واجبة في جميع ركعات النفل وفي جميع الوتر ومن دخل في صلاة النفل ثم أفسدها قضاها"],["m","فإن صلى أربع ركعات وقعد في الأوليين ثم أفسد الأخريين قضى ركعتين"],["m","ويصلي النافلة قاعدا مع القدرة على القيام وإن افتتحها قائما ثم قعد جاز عند أبي حنيفة وقال أبو يوسف ومحمد: لا يجوز إلا من عذر"],["m","ومن كان خارج المصر يجوز أن يتنفل على دابته إلى أي جهة توجهت يومئ إيماء"]]},{"t":"باب سجود السهو","ed":false,"items":[["m","سجود السهو واجب في الزيادة والنقصان بعد السلام يسجد سجدتين ثم يتشهد ويسلم"],["m","والسهو يلزم إذا زاد في صلاته فعلا من جنسها ليس منها أو ترك فعلا مسنونا أو ترك قراءة فاتحة الكتاب أو القنوت أو التشهد أو تكبيرات العيدين أو جهر الإمام فيما يخافت أو خافت فيما يجهر"],["m","وسهو الإمام يوجب على المؤتم السجود فإن لم يسجد الإمام لم يسجد المؤتم وإن سها المؤتم لم يلزم الإمام ولا المؤتم السجود"],["m","ومن سها عن القعدة الأولى ثم تذكر وهو إلى حال القعود أقرب عاد فجلس وتشهد وإن كان إلى حال القيام أقرب لم يعد ويسجد للسهو"],["m","ومن سها عن القعدة الأخيرة فقام إلى الخامسة رجع إلى القعدة ما لم يسجد وألغى الخامسة ويسجد للسهو وإن قيد الخامسة بسجدة بطل فرضه وتحولت صلاته نفلا وكان عليه أن يضم إليها ركعة سادسة"],["m","وإن قعد في الرابعة قدر التشهد ثم قام ولم يسلم يظنها القعدة الأولى عاد إلى القعود ما لم يسجد في الخامسة ويسلم وإن قيد الخامسة بسجدة ضم إليها ركعة أخرى ويسجد للسهو وقد تمت صلاته والركعتان له نافلة"],["m","ومن شك في صلاته فلم يدر أثلاثا صلى أم أربعا وكان ذلك أول ما عرض له استأنف الصلاة فإن كان الشك يعرض له كثيرا بنى على غالب ظنه إن كان له ظن فإن لم يكن له ظن بنى على اليقين"]]},{"t":"باب صلاة المريض","ed":false,"items":[["m","إذا تعذر على المريض القيام صلى قاعدا يركع ويسجد فإن لم يستطع الركوع والسجود أومأ إيماء برأسه وجعل السجود أخفض من الركوع"],["m","ولا يرفع إلى وجهه شيئا يسجد عليه"],["m","فإن لم يستطع القعود استلقى على ظهره وجعل رجليه إلى القبلة وأومأ بالركوع والسجود وإن استلقى على جنبه ووجهه إلى القبلة وأومأ جاز فإن لم يستطع الإيماء برأسه أخر الصلاة ولا يومئ بعينه ولا بقلبه ولا بحاجبيه"],["m","فإن قدر على القيام ولم يقدر على الركوع والسجود لم يلزمه القيام وجاز أن يصلي قاعدا يومئ إيماء"],["m","فإن صلى الصحيح بعض صلاته قائما ثم حدث به مرض أتمها قاعدا يركع ويسجد أو يومئ إن لم يستطع الركوع والسجود أو مستلقيا إن لم يستطع القعود فإن صلى بإيماء ثم قدر على الركوع والسجود استأنف الصلاة"],["m","ومن أغمي عليه خمس صلوات فما دونها قضاها إذا صح فإن فاتته بالإغماء أكثر من ذلك لم يقض"]]},{"t":"باب سجود التلاوة","ed":false,"items":[["m","سجود التلاوة في القرآن أربعة عشر: في آخر الأعراف وفي الرعد والنحل وبني إسرائيل ومريم والأولى من الحج والفرقان والنمل و ﴿الم * تنزيل﴾ وص ﴿حم﴾ السجدة و ﴿إذا السماء انشقت﴾ و ﴿اقرأ باسم ربك﴾"],["m","والسجود واجب في هذه المواضع كلها على التالي والسامع سواء قصد سماع القرآن أو لم يقصد وإذا تلا الإمام آية السجدة سجدها وسجد المأموم معه وإن تلا المأموم لم يسجد الإمام ولا المأموم"],["m","وإن سمعوا وهم في الصلاة آية سجدة من رجل ليس معهم في الصلاة لم يسجدوها في الصلاة وسجدوها بعد الصلاة فإن سجدوها في الصلاة لم تجزهم ولم تفسد صلاتهم"],["m","ومن تلا آية سجدة فلم يسجدها حتى دخل في الصلاة فتلاها وسجد لها أجزأته السجدة عن التلاوتين وإن تلاها في غير الصلاة فسجد لها ثم دخل في الصلاة فتلاها سجد لها ولم تجزه السجدة الأولى ومن كرر تلاوة سجدة واحدة في مجلس واحد أجزأته سجدة واحدة"],["m","ومن أراد السجود كبر ولم يرفع يديه وسجد ثم كبر ورفع رأسه ولا تشهد عليه ولا سلام"]]},{"t":"باب صلاة المسافر","ed":false,"items":[["l","السفر الذي تتغير به الأحكام:"],["m","أن يقصد الإنسان موضعا بينه وبين ذلك الموضع مسيرة ثلاثة أيام ولياليها بسير الإبل ومشي الأقدام ولا يعتبر ذلك بالسير في الماء"],["m","وفرض المسافر عندنا: في كل صلاة رباعية ركعتان لا تجوز له الزيادة عليهما فإن صلى أربعا وقد قعد في الثانية مقدار التشهد أجزأته ركعتان عن فرضه وكانت الأخريان له نافلة وإن لم يقعد مقدار التشهد في الركعتين الأوليين بطلت صلاته"],["m","ومن خرج مسافرا صلى ركعتين إذا فارق بيوت المصر ولا يزال على حكم السفر حتى ينوي الإقامة في بلد خمسة عشر يوما فصاعدا فيلزمه الإتمام وإن نوى الإقامة أقل من ذلك لم يتم"],["m","ومن دخل بلدا ولم ينو أن يقيم فيه خمسة عشر يوما وإنما يقول غدا أخرج أو بعد غد أخرج حتى بقي على ذلك سنين صلى ركعتين"],["m","وإذا دخل العسكر أرض الحرب فنووا الإقامة بها خمسة عشر يوما لم يتموا الصلاة"],["m","وإذا دخل المسافر في صلاة المقيم مع بقاء الوقت أتم الصلاة وإن دخل معه في فائتة لم تجز صلاته خلفه"],["m","وإذا صلى المسافر بالمقيمين ركعتين سلم ثم أتم المقيمون صلاتهم ويستحب له إذا سلم أن يقول: أتموا صلاتكم فإنا قوم سفر"],["m","وإذا دخل المسافر مصره أتم الصلاة وإن لم ينو الإقامة فيه"],["m","ومن كان له وطن فانتقل عنه واستوطن غيره ثم سافر فدخل وطنه الأول لم يتم الصلاة وإذا نوى المسافر أن يقيم بمكة ومنى خمسة عشر يوما لم يتم الصلاة"],["m","ومن فاتته صلاة في السفر قضاها في الحضر ركعتين"],["m","ومن فاتته صلاة في الحضر قضاها في السفر أربعا"],["m","والعاصي والمطيع في السفر في الرخصة سواء"]]},{"t":"باب صلاة الجمعة","ed":false,"items":[["f","شروط الجمعة"],["m","لا تصح الجمعة إلا بمصر جامع أو في مصلى المصر ولا تجوز في القرى ولا تجوز إقامتها إلا بالسلطان أو من أمره السلطان"],["m","ومن شرائطها: الوقت فتصح في الوقت ولا تصح بعده"],["m","ومن شرائطها الخطبة قبل الصلاة يخطب الإمام خطبتين يفصل بينهما بقعدة ويخطب قائما على طهارة فإن اقتصر على ذكر الله تعالى جاز عند أبي حنيفة وقال أبو يوسف ومحمد: لا بد من ذكر طويل يسمى خطبة"],["m","وإن خطب قاعدا أو على غير طهارة جاز ويكره"],["m","ومن شرائطها: الجماعة وأقلهم عند أبي حنيفة ثلاثة سوى الإمام وقال أبو يوسف ومحمد: اثنان سوى الإمام"],["m","ويجهر الإمام بالقراءة في الركعتين وليس فيهما قراءة سورة بعينها"],["f","من تجب عليهم الجمعة ومن لا تجب"],["m","ولا تجب الجمعة على مسافر ولا امرأة ولا مريض ولا عبد ولا أعمى فإن حضروا وصلوا مع الناس أجزأهم عن فرض الوقت"],["m","ويجوز للمسافر والعبد والمريض ونحوهم أن يؤم في الجمعة"],["m","ومن صلى الظهر في منزله يوم الجمعة قبل صلاة الإمام ولا عذر له كره له ذلك وجازت صلاته فإن بدا له أن يحضر الجمعة فتوجه إليها بطلت صلاة الظهر عند أبي حنيفة بالسعي وقال أبو يوسف ومحمد: لا تبطل حتى يدخل مع الإمام"],["m","ويكره أن يصلي المعذورون الظهر بجماعة يوم الجمعة وكذلك أهل السجن"],["m","ومن أدرك الإمام يوم الجمعة صلى معه ما أدرك وبنى عليها الجمعة وإن أدركه في التشهد أو في سجود السهو بنى عليها الجمعة عند أبي حنيفة وأبي يوسف وقال محمد: إن أدرك معه أكثر الركعة الثانية بنى عليها الجمعة وإن أدرك أقلها بنى عليها الظهر"],["f","آداب يوم الجمعة"],["m","وإذا خرج الإمام على المنبر يوم الجمعة ترك الناس الصلاة والكلام حتى يفرغ من خطبته وإذا أذن المؤذنون يوم الجمعة الأذان الأول ترك الناس البيع والشراء وتوجهوا إلى صلاة الجمعة"],["m","فإذا صعد الإمام المنبر جلس وأذن المؤذنون بين يدي المنبر فإذا فرغ من خطبته أقاموا الصلاة وصلوا"]]},{"t":"باب صلاة العيدين","ed":false,"items":[["f","يوم الفطر"],["m","ويستحب في يوم الفطر: أن يطعم الإنسان قبل الخروج إلى المصلى ويغتسل ويتطيب ويتوجه إلى المصلى ولا يكبر في طريق المصلى عند أبي حنيفة وعندهما يكبر"],["m","ولا يتنفل في المصلى قبل صلاة العيد فإذا حلت الصلاة من ارتفاع الشمس دخل وقتها إلى الزوال فإذا زالت الشمس خرج وقتها"],["m","ويصلي الإمام بالناس ركعتين: يكبر في الأولى تكبيرة الافتتاح وثلاثا بعدها ثم يقرأ فاتحة الكتاب وسورة معها ثم يكبر تكبيرة يركع بها ثم يبتدئ في الركعة الثانية بالقراءة كبر ثلاث تكبيرات وكبر تكبيرة رابعة يركع بها ويرفع يديه في تكبيرات العيدين ثم يخطب بعد الصلاة خطبتين يعلم الناس فيها صدقة الفطر وأحكامها"],["m","ومن فاتته صلاة العيد مع الإمام لم يقضها"],["m","فإن غم الهلال على الناس فشهدوا عند الإمام برؤية الهلال بعد الزوال صلى العيد من الغد فإن حدث عذر منع الناس من الصلاة في اليوم الثاني لم يصلها بعده"],["f","يوم الأضحى وتكبير التشريق"],["m","ويستحب في يوم الأضحى: أن يغتسل ويتطيب ويؤخر الأكل حتى يفرغ من الصلاة ويتوجه إلى المصلى وهو يكبر"],["m","ويصلي الأضحى ركعتين كصلاة الفطر ويخطب بعدها خطبتين يعلم الناس فيهما الأضحية وتكبيرات التشريق فإن حدث عذر منع الناس من الصلاة في يوم الأضحى صلاها من الغد وبعد الغد ولا يصليها بعد ذلك"],["m","وتكبير التشريق أوله عقيب صلاة الفجر من يوم عرفة وآخره عقيب صلاة العصر من يوم النحر عند أبي حنيفة وقال أبو يوسف ومحمد: إلى صلاة العصر من آخر أيام التشريق"],["m","والتكبير عقيب الصلوات المفروضات وهو أن يقول: الله أكبر الله أكبر لا إله إلا الله والله أكبر الله أكبر ولله الحمد"]]},{"t":"باب صلاة الكسوف","ed":false,"items":[["m","إذا انكسفت الشمس صلى الإمام بالناس ركعتين كهيئة النافلة في كل ركعة ركوع واحد ويطول القراءة فيهما ويخفي عند أبي حنيفة وقال أبو يوسف ومحمد: يجهر ثم يدعو بعدها حتى تنجلي الشمس"],["m","ويصلي بالناس الإمام الذي يصلي بهم الجمعة فإن لم يجمع صلاها الناس فرادى"],["m","وليس في خسوف القمر جماعة وإنما يصلي كل واحد بنفسه وليس في الكسوف خطبة"]]},{"t":"باب الاستسقاء","ed":false,"items":[["m","قال أبو حنيفة رحمه الله: ليس في الاستسقاء صلاة مسنونة في جماعة فإن صلى الناس وحدانا جاز وإنما الاستسقاء الدعاء والاستغفار"],["m","وقال أبو يوسف ومحمد: يصلي الإمام بالناس ركعتين يجهر فيهما بالقراءة ثم يخطب ويستقبل القبلة بالدعاء ويقلب الإمام رداءه ولا يقلب القوم أرديتهم ولا يحضر أهل الذمة الاستسقاء"]]},{"t":"باب قيام شهر رمضان","ed":false,"items":[["m","يستحب أن يجتمع الناس في شهر رمضان بعد العشاء فيصلي بهم إمامهم خمس ترويحات في كل ترويحة تسليمتان ويجلس بين كل ترويحتين مقدار ترويحة ثم يوتر بهم ولا يصلي الوتر بجماعة في غير شهر رمضان"]]},{"t":"باب صلاة الخوف","ed":false,"items":[["m","إذا اشتد الخوف جعل الإمام الناس طائفتين: طائفة في وجه العدو وطائفة خلفه فيصلي بهذه الطائفة ركعة وسجدتين فإذا رفع رأسه من السجدة الثانية مضت هذه الطائفة إلى وجه العدو وجاءت تلك الطائفة فيصلي بهم الإمام ركعة وسجدتين وتشهد وسلم ولم يسلموا وذهبوا إلى وجه العدو وجاءت الطائفة الأولى فصلوا وحدانا ركعة وسجدتين بغير قراءة وتشهدوا وسلموا ومضوا إلى وجه العدو وجاءت الطائفة الأخرى فصلوا ركعة وسجدتين بقراءة وتشهدوا وسلموا"],["m","فإن كان الإمام مقيما صلى بالطائفة الأولى ركعتين وبالثانية ركعتين ويصلي بالطائفة الأولى ركعتين من المغرب وبالثانية ركعة"],["m","ولا يقاتلون في حال الصلاة فإن فعلوا ذلك بطلت صلاتهم وإن اشتد الخوف صلوا ركبانا وحدانا يومئون بالركوع والسجود إلى أي جهة شاءوا إذا لم يقدروا على التوجه إلى القبلة"]]},{"t":"باب صلاة الجنائز","ed":false,"items":[["f","الاحتضار والغسل"],["m","إذا احتضر الرجل وجه إلى القبلة على شقه الأيمن ولقن الشهادتين فإذا مات شدوا لحييه وغمضوا عينيه وإذا أرادوا غسله وضعوه على سرير وجعلوا على عورته خرقة ونزعوا ثيابه ووضئوه ولا يمضمض ولا يستنشق ثم يفيضون الماء عليه ويجمر سريره وترا ويغلى الماء بالسدر أو بالحرض فإن لم يكن فالماء القراح ويغسل رأسه ولحيته بالخطمي"],["m","ثم يضجع على شقه الأيسر فيغسل بالماء والسدر حتى يرى أن الماء قد وصل إلى ما يلي التخت منه ثم يضجع على شقه الأيمن فيغسل بالماء والسدر حتى يرى أن الماء قد وصل إلى ما يلي التخت منه"],["m","ثم يجلسه ويسنده إليه ويمسح بطنه مسحا رفيقا فإن خرج منه شيء غسله ولا يعيد غسله"],["m","ثم ينشفه بثوب ويجعله في أكفانه ويجعل الحنوط على رأسه ولحيته والكافور على مساجده"],["f","التكفين"],["l","والسنة أن يكفن الرجل في ثلاثة أثواب:"],["m","إزار وقميص ولفافة فإن اقتصروا على ثوبين جاز"],["m","وإذا أرادوا لف اللفافة عليه ابتدءوا بالجانب الأيسر فألقوه عليه ثم بالأيمن فإن خافوا أن ينتشر الكفن عنه عقدوه"],["m","وتكفن المرأة في خمسة أثواب: إزار وقميص وخمار وخرقة يربط بها ثدياها ولفافة فإن اقتصروا على ثلاثة أثواب جاز ويكون الخمار فوق القميص تحت اللفافة ويجعل شعرها على صدرها ولا يسرح شعر الميت ولا لحيته ولا يقص ظفره ولا يعقص شعره وتجمر الأكفان قبل أن يدرج فيها وترا"],["f","الصلاة على الميت"],["m","فإذا فرغوا منه صلوا عليه وأولى الناس بالصلاة عليه السلطان إن حضر فإن لم يحضر فيستحب تقديم إمام الحي ثم الولي"],["m","فإن صلى عليه غير الولي والسلطان أعاد الولي وإن صلى الولي لم يجز لأحد أن يصلي بعده فإن دفن ولم يصل عليه صلي على قبره"],["m","والصلاة: أن يكبر تكبيرة يحمد الله تعالى عقيبها ثم يكبر تكبيرة ويصلي على النبي ﷺ ثم يكبر تكبيرة يدعو فيها لنفسه وللميت وللمسلمين ثم يكبر تكبيرة رابعة ويسلم ولا يصلى على ميت في مسجد جماعة"],["f","الحمل والدفن"],["m","فإذا حملوه على سريره أخذوا بقوائمه الأربع ويمشون به مسرعين دون الخبب فإذا بلغوا إلى قبره كره للناس أن يجلسوا قبل أن يوضع عن أعناق الرجال ويحفر القبر ويلحد ويدخل الميت مما يلي القبلة فإذا وضع في لحده قال الذي يضعه: باسم الله وعلى ملة رسول الله ويوجهه إلى القبلة ويحل العقدة ويسوي اللبن عليه ويكره الآجر والخشب ولا بأس بالقصب ثم ينهال التراب عليه ويسنم القبر ولا يسطح"],["m","ومن استهل بعد الولادة سمي وغسل وصلي عليه وإن لم يستهل أدرج في خرقة ولم يصل عليه"]]},{"t":"باب الشهيد","ed":false,"items":[["m","الشهيد: من قتله المشركون أو وجد في المعركة وبه أثر الجراحة أو قتله المسلمون ظلما ولم تجب بقتله دية فيكفن ويصلى عليه ولا يغسل"],["m","وإذا استشهد الجنب غسل عند أبي حنيفة وكذلك الصبي وقال أبو يوسف ومحمد: لا يغسلان"],["m","ولا يغسل عن الشهيد دمه ولا ينزع عنه ثيابه وينزع عنه الفرو والخف والحشو والسلاح"],["m","ومن ارتث غسل والارتثاث: أن يأكل أو يشرب أو يداوى أو يبقى حيا حتى يمضي عليه وقت صلاة وهو يعقل أو ينقل من المعركة حيا"],["m","ومن قتل في حد أو قصاص غسل وصلي عليه ومن قتل من البغاة أو قطاع الطريق لم يصل عليه"]]},{"t":"باب الصلاة في الكعبة وحولها","ed":false,"items":[["m","الصلاة في الكعبة جائزة فرضها ونفلها فإن صلى الإمام بجماعة فجعل بعضهم ظهره إلى ظهر الإمام جاز ومن جعل منهم ظهره إلى وجه الإمام لم تجز صلاته"],["m","وإذا صلى الإمام في المسجد الحرام تحلق الناس حول الكعبة وصلوا بصلاة الإمام فمن كان منهم أقرب إلى الكعبة من الإمام جازت صلاته إذا لم يكن في جانب الإمام"],["m","ومن صلى على ظهر الكعبة جازت صلاته"]]}]},{"n":3,"title":"كتاب الزكاة","babs":[{"t":"شروط وجوب الزكاة","ed":true,"items":[["m","الزكاة: واجبة على الحر المسلم البالغ العاقل إذا ملك نصابا ملكا تاما وحال عليه الحول وليس على صبي ولا مجنون ولا مكاتب زكاة"],["m","ومن كان عليه دين يحيط بماله فلا زكاة عليه"],["m","وإن كان ماله أكثر من الدين زكى الفاضل إذا بلغ نصابا وليس في دور السكنى وثياب البدن وأثاث المنازل ودواب الركوب وعبيد الخدمة وسلاح الاستعمال زكاة"],["m","ولا يجوز أداء الزكاة إلا بنية مقارنة للأداء أو مقارنة لعزل مقدار الواجب"],["m","ومن تصدق بجميع ماله ولم ينو الزكاة سقط فرضها عنه"]]},{"t":"باب زكاة الإبل","ed":false,"items":[["m","ليس في أقل من خمس ذود من الإبل صدقة فإذا بلغت خمسا سائمة وحال عليها الحول ففيها شاة إلى تسع فإذا كانت عشرا ففيها شاتان إلى أربع عشرة فإذا كانت خمس عشرة ففيها ثلاث شياه إلى تسع عشرة فإذا كانت عشرين ففيها أربع شياه إلى أربع وعشرين فإذا كانت خمسا وعشرين ففيها بنت مخاض إلى خمس وثلاثين فإذا كانت ستا وثلاثين ففيها بنت لبون إلى خمس وأربعين فإذا كانت ستا وأربعين ففيها حقة إلى ستين فإذا كانت إحدى وستين ففيها جذعة إلى خمس وسبعين فإذا كانت ستا وسبعين ففيها بنتا لبون إلى تسعين فإذا كانت إحدى وتسعين ففيها حقتان إلى مائة وعشرين"],["m","ثم تستأنف الفريضة فيكون في الخمس شاة مع الحقتين وفي العشر شاتان وفي خمس عشرة ثلاث شياه وفي عشرين أربع شياه وفي خمس وعشرين بنت مخاض إلى مائة وخمسين فيكون فيها ثلاث حقاق ثم تستأنف الفريضة فيكون في الخمس شاة وفي العشر شاتان وفي خمس عشرة ثلاث شياه وفي عشرين أربع شياه وفي خمس وعشرين بنت مخاض وفي ست وثلاثين بنت لبون فإذا بلغت مائة وستا وتسعين ففيها أربع حقاق إلى مائتين ثم تستأنف الفريضة أبدا كما استؤنفت في الخمسين التي بعد المائة والخمسين"],["m","والبخت والعراب سواء"]]},{"t":"باب صدقة البقر","ed":false,"items":[["m","ليس في أقل من ثلاثين من البقر صدقة فإذا كانت ثلاثين سائمة وحال عليها الحول ففيها تبيع أو تبيعة وفي أربعين مسنة أو مسن فإذا زادت على الأربعين وجب في الزيادة بقدر ذلك إلى ستين عند أبي حنيفة ففي الواحدة ربع عشر مسنة وفي الاثنين نصف عشر مسنة وفي الثلاثة ثلاثة أرباع عشر مسنة وفي الأربع عشر"],["m","وقال أبو يوسف ومحمد: لا شيء في الزيادة حتى تبلغ ستين فيكون فيها تبيعان أو تبيعتان وفي سبعين مسنة وتبيع وفي ثمانين مسنتان وفي تسعين ثلاثة أتبعة وفي مائة تبيعان ومسنة"],["m","والجواميس والبقر سواء"]]},{"t":"باب صدقة الغنم","ed":false,"items":[["m","ليس في أقل من أربعين شاة صدقة فإذا كانت أربعين سائمة وحال عليها الحول ففيها شاة إلى مائة وعشرين فإذا زادت واحدة ففيها شاتان إلى مائتين فإذا زادت واحدة ففيها ثلاث شياه فإذا بلغت أربعمائة ففيها أربع شياه ثم في كل مائة شاة"],["m","والضأن والمعز سواء"]]},{"t":"باب زكاة الخيل","ed":false,"items":[["m","إذا كانت الخيل سائمة ذكورا وإناثا فصاحبها بالخيار: إن شاء أعطى عن كل فرس دينارا وإن شاء قومها وأعطى عن كل مائتي درهم خمسة دراهم وليس في ذكورها منفردة زكاة"],["m","وقال أبو يوسف ومحمد: لا زكاة في الخيل"],["m","ولا في شيء من البغال والحمير إلا أن تكون للتجارة"],["m","وليس في الفصلان والحملان والعجاجيل صدقة عند أبي حنيفة ومحمد إلا أن يكون معها كبار وقال أبو يوسف: فيها واحدة منها"],["m","ومن وجب عليه سن فلم توجد عنده أخذ المصدق أعلى منها ورد الفضل أو أخذ دونها وأخذ الفضل"],["m","ويجوز دفع القيم في الزكاة وليس في العوامل والعلوفة صدقة"],["m","ولا يأخذ المصدق خيار المال ولا رذالته ويأخذ الوسط منه ومن كان له نصاب فاستفاد في أثناء الحول من جنسه ضمه إلى ماله وزكاه به"],["l","والسائمة هي:"],["m","التي تكتفي بالرعي في أكثر حولها فإن علفها نصف الحول أو أكثر فلا زكاة فيها"],["m","والزكاة عند أبي حنيفة وأبي يوسف في النصاب دون العفو وقال محمد: فيهما وإذا هلك المال بعد وجوب الزكاة سقطت فإن قدم الزكاة على الحول وهو مالك للنصاب جاز"]]},{"t":"باب زكاة الفضة","ed":false,"items":[["m","ليس فيما دون مائتي درهم صدقة فإذا كانت مائتي درهم وحال عليها الحول ففيها خمسة دراهم ولا شيء في الزيادة حتى تبلغ أربعين درهما فيكون فيها درهم ثم في كل أربعين درهما درهم وقال أبو يوسف ومحمد: ما زاد على المائتين فزكاته بحسابه"],["m","وإذا كان الغالب على الورق الفضة فهي في حكم الفضة وإن كان الغالب عليها الغش فهي في حكم العروض ويعتبر أن تبلغ قيمتها نصابا"]]},{"t":"باب زكاة الذهب","ed":false,"items":[["m","ليس فيما دون عشرين مثقالا من الذهب صدقة فإذا كانت عشرين مثقالا وحال عليها الحول ففيها نصف مثقال ثم في كل أربعة مثاقيل قيراطان وليس فيما دون أربعة مثاقيل صدقة عند أبي حنيفة"],["m","وفي تبر الذهب والفضة وحليهما والآنية منهما الزكاة"]]},{"t":"باب زكاة العروض","ed":false,"items":[["m","الزكاة واجبة في عروض التجارة كائنة ما كانت إذا بلغت قيمتها نصابا من الذهب أو الورق يقومها بما هو أنفع للفقراء والمساكين منهما"],["m","وإذا كان النصاب كاملا في طرفي الحول فنقصانه فيما بين ذلك لا يسقط الزكاة"],["m","وتضم قيمة العروض إلى الذهب والفضة وكذلك يضم الذهب إلى الفضة بالقيمة حتى يتم النصاب عند أبي حنيفة وقال أبو يوسف ومحمد: لا يضم الذهب إلى الفضة بالقيمة ويضم بالأجزاء"]]},{"t":"باب زكاة الزروع والثمار","ed":false,"items":[["m","قال أبو حنيفة رحمه الله تعالى: في قليل ما أخرجته الأرض وكثيره العشر سواء سقي سيحا أو سقته السماء إلا الحطب والقصب والحشيش"],["m","وقال أبو يوسف ومحمد: لا يجب العشر إلا فيما له ثمرة باقية إذا بلغ خمسة أوسق"],["m","والوسق: ستون صاعا بصاع النبي ﷺ وليس في الخضروات عندهما عشر"],["m","وما سقي بغرب أو دالية أو سانية ففيه نصف العشر في القولين"],["m","وقال أبو يوسف فيما لا يوسق كالزعفران والقطن يجب فيه العشر إذا بلغت قيمته خمسة أوسق من أدنى ما يدخل تحت الوسق"],["m","وقال محمد: يجب العشر إذا بلغ الخارج خمسة أمثال من أعلى ما يقدر به نوعه فاعتبر في القطن خمسة أحمال وفي الزعفران خمسة أمناء"],["m","وفي العسل العشر إذا أخذ من أرض العشر قل أو أكثر وقال أبو يوسف: لا شيء فيه حتى يبلغ عشرة أزقاق وقال محمد: خمسة أفراق"],["m","وليس في الخارج من أرض الخراج عشر"]]},{"t":"باب من يجوز دفع الصدقة إليه ومن لا يجوز","ed":false,"items":[["f","مصارف الزكاة"],["q","قال الله تعالى: ﴿إنما الصدقات للفقراء والمساكين﴾ الآية"],["m","فهذه ثمانية أصناف قد سقطت منها المؤلفة قلوبهم لأن الله تعالى أعز الإسلام وأغنى عنهم"],["m","والفقير: من له أدنى شيء والمسكين: من لا شيء له والعامل: يدفع إليه الإمام بقدر عمله إن عمل وفي الرقاب: يعان المكاتبون في فك رقابهم والغارم: من لزمه دين وفي سبيل الله: منقطع الغزاة وابن السبيل: من كان له مال في وطنه وهو في مكان لا شيء له فيه فهذه جهات الزكاة"],["m","وللمالك أن يدفع إلى كل واحد منهم وله أن يقتصر على صنف واحد"],["f","من لا يجوز الدفع إليه"],["m","ولا يجوز أن يدفع الزكاة إلى ذمي"],["m","ولا يبنى بها مسجد ولا يكفن بها ميت ولا يشترى بها رقبة تعتق ولا تدفع إلى غني ولا يدفع المزكي زكاته إلى أبيه وجده وإن علا ولا إلى ولده وولد ولده وإن سفل ولا إلى امرأته ولا تدفع المرأة إلى زوجها عند أبي حنيفة وقال أبو يوسف ومحمد: تدفع إليه"],["m","ولا يدفع إلى مكاتبه ولا مملوكه ولا مملوك غني ولا ولد غني إذا كان صغيرا ولا تدفع إلى بني هاشم وهم: آل علي وآل عباس وآل جعفر وآل عقيل وآل حارث بن عبد المطلب ومواليهم"],["m","وقال أبو حنيفة ومحمد: إذا دفع الزكاة إلى رجل يظنه فقيرا ثم بان أنه غني أو هاشمي أو كافر أو دفع في ظلمة إلى فقير ثم بان أنه أبوه أو ابنه فلا إعادة عليه"],["m","وقال أبو يوسف: عليه الإعادة"],["m","ولو دفع إلى شخص ثم علم أنه عبده أو مكاتبه لم يجز في قولهم جميعا"],["m","ولا يجوز دفع الزكاة إلى من يملك نصابا من أي مال كان ويجوز دفعها إلى من يملك أقل من ذلك وإن كان صحيحا مكتسبا"],["m","ويكره نقل الزكاة من بلد إلى بلد آخر وإنما تفرق صدقة كل قوم فيهم إلا أن ينقلها الإنسان إلى قرابته أو إلى قوم هم أحوج من أهل بلده"]]},{"t":"باب صدقة الفطر","ed":false,"items":[["m","صدقة الفطر واجبة على الحر المسلم إذا كان مالكا لمقدار النصاب فاضلا عن مسكنه وثيابه وأثاثه وفرسه وسلاحه وعبيده للخدمة يخرج ذلك عن نفسه وعن أولاده الصغار وعن مماليكه ولا يؤدي عن زوجته ولا عن أولاده الكبار وإن كانوا في عياله"],["m","ولا يخرج عن مكاتبه ولا عن مماليكه للتجارة والعبد بين شريكين لا فطرة على واحد منهما ويؤدي المولى المسلم الفطرة عن عبده الكافر"],["l","والفطرة:"],["m","نصف صاع من بر أو صاع من تمر أو زبيب أو شعير"],["m","والصاع عند أبي حنيفة ومحمد ثمانية أرطال بالعراقي وقال أبو يوسف: خمسة أرطال وثلث رطل"],["m","ووجوب الفطرة يتعلق بطلوع الفجر من يوم الفطر فمن مات قبل ذلك لم تجب فطرته ومن أسلم أو ولد بعد طلوع الفجر لم تجب فطرته"],["m","ويستحب للناس أن يخرجوا الفطرة يوم الفطر قبل الخروج إلى المصلى فإن قدموها قبل يوم الفطر جاز وإن أخروها عن يوم الفطر لم تسقط وكان عليهم إخراجها"]]}]},{"n":4,"title":"كتاب الصوم","babs":[{"t":"أحكام الصوم","ed":true,"items":[["f","أنواع الصوم ونيته"],["l","الصوم ضربان: واجب ونفل"],["m","فالواجب ضربان: منه ما يتعلق بزمان بعينه كصوم رمضان والنذر المعين فيجوز صومه بنية من الليل فإن لم ينو حتى أصبح …"],["m","والضرب الثاني: ما يثبت في الذمة كقضاء رمضان والنذر المطلق والكفارات فلا يجوز إلا بنية من الليل"],["m","والنفل كله يجوز بنية قبل الزوال"],["f","رؤية الهلال"],["m","وينبغي للناس أن يلتمسوا الهلال في اليوم التاسع والعشرين من شعبان فإن رأوه صاموا وإن غم عليهم أكملوا عدة شعبان ثلاثين يوما ثم صاموا"],["m","ومن رأى هلال رمضان وحده صام وإن لم يقبل الإمام شهادته"],["m","وإذا كان بالسماء علة قبل الإمام شهادة الواحد العدل في رؤية الهلال رجلا أو امرأة حرا كان أو عبدا فإن لم يكن بالسماء علة لم تقبل شهادته حتى يراه جمع كثير يقع العلم بخبرهم"],["f","حقيقة الصوم وما يفسده وما لا يفسده"],["m","ووقت الصوم من طلوع الفجر الثاني إلى غروب الشمس"],["m","والصوم هو: الإمساك عن الأكل والشرب والجماع نهارا مع النية"],["m","فإن أكل الصائم أو شرب أو جامع ناسيا لم يفطر وإن نام فاحتلم أو نظر إلى امرأة فأنزل أو ادهن أو احتجم أو اكتحل أو قبل لم يفطره فإن أنزل بقبلة أو لمس فعليه القضاء"],["m","ولا بأس بالقبلة إذا أمن على نفسه ويكره إن لم يأمن"],["m","وإن ذرعه القيء لم يفطر وإن استقاء عامدا ملء فيه فعليه القضاء ومن ابتلع الحصاة أو الحديد أفطر"],["f","القضاء والكفارة"],["m","ومن جامع عامدا في أحد السبيلين أو أكل أو شرب ما يتغذى به أو يتداوى به فعليه القضاء والكفارة مثل كفارة الظهار"],["m","ومن جامع فيما دون الفرج فأنزل فعليه القضاء ولا كفارة عليه"],["m","وليس في إفساد الصوم في غير رمضان كفارة"],["m","ومن احتقن أو استعط أو قطر في أذنيه أو داوى جائفة أو آمة بدواء فوصل إلى جوفه أو دماغه أفطر وإن قطر في إحليله لم يفطر عند أبي حنيفة وقال أبو يوسف: يفطر"],["m","ومن ذاق شيئا بفمه لم يفطر ويكره له ذلك ويكره للمرأة أن تمضغ لصبيها الطعام إذا كان لها منه بد"],["m","ومضغ العلك لا يفطر الصائم ويكره"],["f","أعذار الإفطار والقضاء والفدية"],["m","ومن كان مريضا في رمضان فخاف إن صام زاد مرضه أفطر وقضى وإن كان مسافرا لا يستضر بالصوم فصومه أفضل وإن أفطر وقضى جاز"],["m","وإن مات المريض أو المسافر وهما على حالهما لم يلزمهما القضاء وإن صح المريض أو أقام المسافر ثم ماتا لزمهما القضاء بقدر الصحة والإقامة"],["m","وقضاء رمضان إن شاء فرقه وإن شاء تابعه فإن أخره حتى دخل رمضان آخر صام رمضان الثاني وقضى الأول بعده ولا فدية عليه"],["m","والحامل والمرضع إذا خافتا على ولديهما أفطرتا وقضتا ولا فدية عليهما"],["m","والشيخ الفاني الذي لا يقدر على الصيام يفطر ويطعم لكل يوم مسكينا كما يطعم في الكفارات"],["m","ومن مات وعليه قضاء رمضان فأوصى به أطعم عنه وليه لكل يوم مسكينا نصف صاع من بر أو صاعا من تمر أو صاعا من شعير"],["f","مسائل متفرقة"],["m","ومن دخل في صوم التطوع أو صلاة التطوع ثم أفسده قضاه"],["m","وإذا بلغ الصبي أو أسلم الكافر في رمضان أمسكا بقية يومهما وصاما ما بعده ولم يقضيا ما مضى"],["m","ومن أغمي عليه في رمضان لم يقض اليوم الذي حدث فيه الإغماء وقضى ما بعده وإذا أفاق المجنون في بعض رمضان قضى ما مضى منه"],["m","وإذا حاضت المرأة أفطرت وقضت وإذا قدم المسافر أو طهرت الحائض في بعض النهار أمسكا عن الطعام والشراب بقية يومهما"],["m","ومن تسحر وهو يظن أن الفجر لم يطلع أو أفطر وهو يرى أن الشمس قد غربت ثم تبين أن الفجر كان قد طلع أو أن الشمس لم تغرب قضى ذلك اليوم ولا كفارة عليه"],["m","ومن رأى هلال الفطر وحده لم يفطر"],["m","وإذا كان بالسماء علة لم تقبل في هلال الفطر إلا شهادة رجلين أو رجل وامرأتين وإن لم يكن بالسماء علة لم تقبل إلا شهادة جمع كثير يقع العلم بخبرهم"]]},{"t":"باب الاعتكاف","ed":false,"items":[["m","الاعتكاف مستحب وهو اللبث في المسجد مع الصوم ونية الاعتكاف"],["m","ويحرم على المعتكف: الوطء واللمس والقبلة ولا يخرج من المسجد إلا لحاجة الإنسان أو الجمعة ولا بأس بأن يبيع ويبتاع في المسجد من غير أن يحضر السلعة"],["m","ولا يتكلم إلا بخير ويكره له الصمت فإن جامع المعتكف ليلا أو نهارا بطل اعتكافه"],["m","ومن أوجب على نفسه اعتكاف أيام لزمه اعتكافها بلياليها وكانت متتابعة وإن لم يشترط التتابع"]]}]},{"n":5,"title":"كتاب الحج","babs":[{"t":"شروط الحج والمواقيت","ed":true,"items":[["m","الحج: واجب على الأحرار البالغين العقلاء الأصحاء إذا قدروا على الزاد والراحلة فاضلا عن مسكنه وما لا بد منه وعن نفقة عياله إلى حين عوده وكان الطريق آمنا"],["m","ويعتبر في المرأة أن يكون لها محرم يحج بها أو زوج ولا يجوز لها أن تحج بغيرهما إذا كان بينها وبين مكة مسيرة ثلاثة أيام ولياليها"],["m","وإذا بلغ الصبي بعد ما أحرم أو أعتق العبد فمضيا على ذلك لم يجزئهما عن حجة الإسلام"]]},{"t":"باب تحديد المواقيت","ed":false,"items":[["m","والمواقيت التي لا يجوز أن يتجاوزها الإنسان إلا محرما: لأهل المدينة ذو الحليفة ولأهل العراق ذات عرق ولأهل الشام الجحفة ولأهل نجد قرن المنازل ولأهل اليمن يلملم فإن قدم الإحرام على هذه المواقيت جاز"],["m","ومن كان منزله بعد المواقيت فميقاته الحل ومن كان بمكة فميقاته في الحج الحرم وفي العمرة الحل"],["f","الإحرام والتلبية"],["m","وإذا أراد الإحرام اغتسل أو توضأ - والغسل أفضل - ولبس ثوبين جديدين أو غسيلين إزارا ورداء ومس طيبا إن كان له طيب وصلى ركعتين وقال: اللهم إني أريد الحج فيسره لي وتقبله مني"],["m","ثم يلبي عقيب صلاته"],["m","فإن كان مفردا بالحج نوى بتلبيته الحج والتلبية أن يقول: لبيك اللهم لبيك لبيك لا شريك لك لبيك إن الحمد والنعمة لك والملك لا شريك لك ولا ينبغي أن يخل بشيء من هذه الكلمات فإن زاد فيها جاز"],["f","محظورات الإحرام"],["m","فإذا لبى فقد أحرم فليتق ما نهى الله عنه من الرفث والفسوق والجدال ولا يقتل صيدا ولا يشير إليه ولا يدل عليه ولا يلبس قميصا ولا سراويل ولا عمامة ولا قلنسوة ولا قباء ولا خفين إلا أن لا يجد النعلين فيقطعهما أسفل الكعبين ولا يغطي رأسه ولا وجهه ولا يمس طيبا ولا يحلق رأسه ولا شعر بدنه ولا يقص من لحيته ولا من ظفره ولا يلبس ثوبا مصبوغا بورس ولا زعفران ولا عصفر إلا أن يكون غسيلا لا ينفض"],["m","ولا بأس أن يغتسل ويدخل الحمام ويستظل بالبيت والمحمل ويشد في وسطه الهميان"],["m","ولا يغسل رأسه ولا لحيته بالخطمي ويكثر من التلبية عقب الصلوات وكلما علا شرفا أو هبط واديا أو لقي ركبانا وبالأسحار"],["f","دخول مكة والطواف والسعي"],["m","فإذا دخل مكة ابتدأ بالمسجد الحرام فإذا عاين البيت كبر وهلل ثم ابتدأ بالحجر الأسود فاستقبله وكبر ورفع يديه واستلمه وقبله إن استطاع من غير أن يؤذي مسلما ثم أخذ عن يمينه مما يلي الباب وقد اضطبع رداءه قبل ذلك فيطوف بالبيت سبعة أشواط"],["m","ويجعل طوافه من وراء الحطيم ويرمل في الأشواط الثلاثة الأول ويمشي فيما بقي على هينته ويستلم الحجر كلما مر به إن استطاع ويختم الطواف بالاستلام"],["m","ثم يأتي المقام فيصلي عنده ركعتين أو حيث تيسر من المسجد"],["m","وهذا الطواف طواف القدوم وهو سنة وليس بواجب وليس على أهل مكة طواف القدوم"],["m","ثم يخرج إلى الصفا فيصعد عليه ويستقبل البيت ويكبر ويهلل ويصلي على النبي ﷺ ويدعو الله تعالى بحاجته"],["m","ثم ينحط نحو المروة ويمشي على هينته فإذا بلغ إلى بطن الوادي سعى بين الميلين الأخضرين سعيا حتى يأتي المروة فيصعد عليها ويفعل كما فعل على الصفا وهذا شوط فيطوف سبعة أشواط يبدأ بالصفا ويختم بالمروة"],["f","من يوم التروية إلى عرفة"],["m","ثم يقيم بمكة حراما يطوف بالبيت كلما بدا له فإذا كان قبل يوم التروية بيوم خطب الإمام خطبة يعلم الناس فيها الخروج إلى منى والصلاة بعرفات والوقوف والإفاضة فإذا صلى الفجر يوم التروية بمكة خرج إلى منى فأقام بها حتى يصلي الفجر يوم عرفة"],["m","ثم يتوجه إلى عرفات فيقيم بها"],["m","فإذا زالت الشمس من يوم عرفة صلى الإمام بالناس الظهر والعصر ثم يبتدئ فيخطب خطبتين قبل الصلاة يعلم الناس فيها الصلاة والوقوف بعرفة والمزدلفة ورمي الجمار والنحر والحلق وطواف الزيارة ويصلي بهم الظهر والعصر في وقت الظهر بأذان وإقامتين ومن صلى في رحله وحده صلى كل واحدة منهما في وقتها عند أبي حنيفة رحمه الله تعالى وقال أبو يوسف ومحمد رحمهما الله: يجمع بينهما المنفرد"],["f","الوقوف بعرفة والمزدلفة"],["m","ثم يتوجه إلى الموقف فيقف بقرب الجبل وعرفات كلها موقف إلا بطن عرنة"],["m","وينبغي للإمام أن يقف بعرفة على راحلته ويدعو ويعلم الناس المناسك ويستحب أن يغتسل قبل الوقوف ويجتهد في الدعاء"],["m","فإذا غربت الشمس أفاض الإمام والناس معه على هينتهم حتى يأتوا المزدلفة فينزلوا بها والمستحب أن ينزل بقرب الجبل الذي عليه الميقدة يقال له قزح ويصلي الإمام بالناس المغرب والعشاء بأذان وإقامة ومن صلى المغرب في الطريق لم يجز عند أبي حنيفة ومحمد"],["m","فإذا طلع الفجر صلى الإمام بالناس الفجر بغلس ثم وقف ووقف الناس معه فدعا والمزدلفة كلها موقف إلا بطن محسر"],["f","منى: الرمي والنحر والحلق"],["m","ثم أفاض الإمام والناس معه قبل طلوع الشمس حتى يأتوا منى فيبتدئ بجمرة العقبة فيرميها من بطن الوادي بسبع حصيات مثل الخذف ويكبر مع كل حصاة ولا يقف عندها ويقطع التلبية مع أول حصاة"],["m","ثم يذبح إن أحب ثم يحلق أو يقصر والحلق أفضل وقد حل له كل شيء إلا النساء"],["f","طواف الزيارة"],["m","ثم يأتي مكة من يومه ذلك أو من الغد أو من بعد الغد فيطوف بالبيت طواف الزيارة سبعة أشواط فإن كان سعى بين الصفا والمروة عقيب طواف القدوم لم يرمل في هذا الطواف ولا سعي عليه وإن لم يكن قدم السعي رمل في هذا الطواف وسعى بعده على ما قدمناه وقد حل له النساء"],["m","وهذا الطواف هو المفروض في الحج ويكره تأخيره عن هذه الأيام فإن أخره عنها لزمه دم عند أبي حنيفة"],["f","أيام التشريق ورمي الجمار"],["m","ثم يعود إلى منى فيقيم بها فإذا زالت الشمس من اليوم الثاني من النحر رمى الجمار الثلاث يبتدئ بالتي تلي المسجد فيرميها بسبع حصيات يكبر مع كل حصاة ويقف ويدعو عندها ثم يرمي التي تليها مثل ذلك ويقف عندها ثم يرمي جمرة العقبة كذلك ولا يقف عندها فإذا كان من الغد رمى الجمار الثلاث بعد زوال الشمس كذلك فإذا أراد أن يتعجل النفر نفر إلى مكة وإن أراد أن يقيم رمى الجمار الثلاث في اليوم الرابع بعد زوال الشمس فإن قدم الرمي في هذا اليوم قبل الزوال بعد طلوع الفجر جاز عند أبي حنيفة رحمه الله"],["m","ويكره أن يقدم الإنسان ثقله إلى مكة ويقيم بها حتى يرمي فإذا نفر إلى مكة نزل بالمحصب ثم طاف بالبيت سبعة أشواط لا يرمل فيها وهذا طواف الصدر وهو واجب إلا على أهل مكة ثم يعود إلى أهله"],["f","مسائل متفرقة في أعمال الحج"],["m","فإن لم يدخل المحرم مكة وتوجه إلى عرفات ووقف بها على ما قدمناه فقد سقط عنه طواف القدوم ولا شيء عليه لتركه"],["m","ومن أدرك الوقوف بعرفة ما بين زوال الشمس من يوم عرفة إلى طلوع الفجر من يوم النحر فقد أدرك الحج"],["m","ومن اجتاز بعرفة وهو نائم أو مغمى عليه أو لم يعلم أنها عرفة أجزأه ذلك عن الوقوف"],["m","والمرأة في جميع ذلك كالرجل غير أنها لا تكشف رأسها وتكشف وجهها ولا ترفع صوتها بالتلبية ولا ترمل في الطواف ولا تسعى بين الميلين ولا تحلق رأسها ولكن تقصر"]]},{"t":"باب القران","ed":false,"items":[["m","القران أفضل عندنا من التمتع والإفراد"],["l","وصفة القران:"],["m","أن يهل بالعمرة والحج معا من الميقات ويقول عقيب صلاته: اللهم إني أريد الحج والعمرة فيسرهما لي وتقبلهما مني فإذا دخل مكة ابتدأ فطاف بالبيت سبعة أشواط يرمل في الثلاث الأول منها ويسعى بعدها بين الصفا والمروة وهذه أفعال العمرة"],["m","ثم يطوف بعد السعي طواف القدوم ويسعى بين الصفا والمروة كما بينا في المفرد فإذا رمى الجمرة يوم النحر ذبح شاة أو بقرة أو بدنة أو سبع بدنة فهذا دم القران"],["m","فإن لم يكن له ما يذبح صام ثلاثة أيام في الحج وآخرها يوم عرفة فإن فاته الصوم حتى جاء يوم النحر لم يجزه إلا الدم ثم يصوم سبعة أيام إذا رجع إلى أهله وإن صامها بمكة بعد فراغه من الحج جاز"],["m","وإن لم يدخل القارن مكة وتوجه إلى عرفات فقد صار رافضا لعمرته بالوقوف وبطل عنه دم القران وعليه دم لرفض عمرته وعليه قضاؤها"]]},{"t":"باب التمتع","ed":false,"items":[["m","التمتع أفضل من الإفراد عندنا"],["l","والتمتع على وجهين:"],["m","متمتع يسوق الهدي ومتمتع لا يسوق الهدي"],["l","وصفة التمتع:"],["m","أن يبتدئ من الميقات فيحرم بعمرة ويدخل مكة فيطوف لها ويسعى ويحلق أو يقصر وقد حل من عمرته"],["m","ويقطع التلبية إذا ابتدأ بالطواف ويقيم بمكة حلالا فإذا كان يوم التروية أحرم بالحج من المسجد وفعل ما يفعله الحاج المفرد وعليه دم التمتع فإن لم يجد صام ثلاثة أيام في الحج وسبعة إذا رجع"],["m","وإذا أراد المتمتع أن يسوق الهدي أحرم وساق هديه فإن كانت بدنة قلدها بمزادة أو نعل وأشعر البدنة عند أبي يوسف ومحمد وهو: أن يشق سنامها من الجانب الأيمن ولا يشعرها عند أبي حنيفة"],["m","فإذا دخل مكة طاف وسعى ولم يتحلل حتى يحرم بالحج يوم التروية وإن قدم الإحرام قبله جاز وعليه دم فإذا حلق يوم النحر فقد حل من الإحرامين"],["m","وليس لأهل مكة تمتع ولا قران وإنما لهم الإفراد خاصة"],["m","وإذا عاد المتمتع إلى أهله بعد فراغه من العمرة ولم يكن ساق الهدي بطل تمتعه"],["m","ومن أحرم بالعمرة قبل أشهر الحج فطاف لها أقل من أربعة أشواط ثم دخلت أشهر الحج فتممها وأحرم بالحج كان متمتعا"],["m","وإن طاف لعمرته قبل أشهر الحج أربعة أشواط فصاعدا ثم حج من عامه ذلك لم يكن متمتعا"],["l","وأشهر الحج:"],["m","شوال وذو القعدة وعشر من ذي الحجة فإن قدم الإحرام بالحج عليها جاز إحرامه وانعقد حجا"],["m","وإذا حاضت المرأة عند الإحرام اغتسلت وأحرمت وصنعت كما يصنعه الحاج غير أنها لا تطوف بالبيت حتى تطهر وإن حاضت بعد الوقوف وطواف الزيارة انصرفت من مكة ولا شيء عليها لترك طواف الصدر"]]},{"t":"باب جنايات المحرم","ed":false,"items":[["f","جنايات الطيب واللبس والحلق والتقليم"],["m","إذا تطيب المحرم فعليه الكفارة فإذا طيب عضوا كاملا فما زاد فعليه دم وإن طيب أقل من عضو فعليه صدقة"],["m","وإن لبس ثوبا مخيطا أو غطى رأسه يوما كاملا فعليه دم وإن كان أقل من ذلك فعليه صدقة وإن حلق ربع رأسه فصاعدا فعليه دم وإن حلق أقل من الربع فعليه صدقة"],["m","وإن حلق مواضع المحاجم فعليه دم عند أبي حنيفة وقال أبو يوسف ومحمد: عليه صدقة وإن قص أظافير يديه ورجليه فعليه دم"],["m","وإن قص يدا أو رجلا فعليه دم وإن قص أقل من خمسة أظافير متفرقة من يديه ورجليه فعليه صدقة عند أبي حنيفة وأبي يوسف وقال محمد: عليه دم"],["m","وإن تطيب أو حلق أو لبس من عذر فهو مخير: إن شاء ذبح شاة وإن شاء تصدق على ستة مساكين بثلاثة أصواع من طعام وإن شاء صام ثلاثة أيام"],["f","جنايات الجماع"],["m","وإن قبل أو لمس بشهوة فعليه دم"],["m","ومن جامع في أحد السبيلين قبل الوقوف بعرفة فسد حجه وعليه شاة ويمضي في الحج كما يمضي من لم يفسد حجه وعليه القضاء وليس عليه أن يفارق امرأته إذا حج بها في القضاء"],["m","ومن جامع بعد الوقوف بعرفة لم يفسد حجه وعليه بدنة فإن جامع بعد الحلق فعليه شاة"],["m","ومن جامع في العمرة قبل أن يطوف أربعة أشواط أفسدها ومضى فيها وقضاها وعليه شاة وإن وطئ بعدما طاف أربعة أشواط فعليه شاة ولا تفسد عمرته ولا يلزمه قضاؤها"],["m","ومن جامع ناسيا كمن جامع عامدا"],["f","جنايات الطواف والسعي والوقوف والرمي"],["m","ومن طاف طواف القدوم محدثا فعليه صدقة وإن طاف جنبا فعليه شاة ومن طاف طواف الزيارة محدثا فعليه شاة وإن كان جنبا فعليه بدنة والأفضل أن يعيد الطواف ما دام بمكة ولا ذبح عليه"],["m","ومن طاف طواف الصدر محدثا فعليه صدقة وإن طاف جنبا فعليه شاة"],["m","ومن ترك من طواف الزيارة ثلاثة أشواط فما دونها فعليه شاة وإن ترك أربعة أشواط بقي محرما أبدا حتى يطوفها ومن ترك ثلاثة أشواط من طواف الصدر فعليه صدقة وإن ترك طواف الصدر أو أربعة أشواط منه فعليه شاة"],["m","ومن ترك السعي بين الصفا والمروة فعليه شاة وحجه تام"],["m","ومن أفاض من عرفة قبل الإمام فعليه دم"],["m","ومن ترك الوقوف بالمزدلفة فعليه دم"],["m","ومن ترك رمي الجمار في الأيام كلها فعليه دم وإن ترك رمي يوم واحد فعليه دم وإن ترك رمي إحدى الجمار الثلاث فعليه صدقة وإن ترك رمي جمرة العقبة في يوم النحر فعليه دم"],["m","ومن أخر الحلق حتى مضت أيام النحر فعليه دم عند أبي حنيفة وكذلك لو أخر طواف الزيارة عند أبي حنيفة رحمه الله"],["f","جزاء الصيد"],["m","وإذا قتل المحرم صيدا أو دل عليه من قتله فعليه الجزاء يستوي في ذلك العامد والناسي والمبتدئ والعائد"],["m","والجزاء عند أبي حنيفة وأبي يوسف أن يقوم الصيد في المكان الذي قتله فيه أو في أقرب المواضع منه إن كان في برية يقومه ذوا عدل ثم هو مخير في القيمة إن شاء ابتاع بها هديا وإن شاء اشترى بها طعاما فتصدق به على كل مسكين نصف صاع من بر أو صاعا من تمر أو شعير وإن شاء صام عن كل نصف صاع من بر يوما وعن كل صاع من شعير يوما فإن فضل من الطعام أقل من نصف صاع فهو مخير: إن شاء تصدق به وإن شاء صام عنه يوما كاملا"],["m","وقال محمد: يجب في الصيد النظير فيما له نظير ففي الظبي شاة وفي الضبع شاة وفي الأرنب عناق وفي النعامة بدنة وفي اليربوع جفرة"],["m","ومن جرح صيدا أو نتف شعره أو قطع عضوا منه ضمن ما نقصه وإن نتف ريش طائر أو قطع قوائم صيد فخرج من حيز الامتناع فعليه قيمته كاملة"],["m","ومن كسر بيض صيد فعليه قيمته فإن خرج من البيض فرخ ميت فعليه قيمته حيا"],["m","وليس في قتل الغراب والحدأة والذئب والحية والعقرب والفأرة جزاء"],["m","وليس في قتل البعوض والبراغيث والقراد شيء"],["m","ومن قتل قملة تصدق بما شاء ومن قتل جرادة تصدق بما شاء وتمرة خير من جرادة"],["m","ومن قتل ما لا يؤكل لحمه من الصيد كالسباع ونحوها فعليه الجزاء ولا يتجاوز بقيمتها شاة"],["m","وإن صال السبع على محرم فقتله فلا شيء عليه"],["m","وإن اضطر المحرم إلى أكل لحم الصيد فقتله فعليه الجزاء"],["m","ولا بأس أن يذبح المحرم الشاة والبقرة والبعير والدجاج والبط الكسكري وإن قتل حماما مسرولا أو ظبيا مستأنسا فعليه الجزاء"],["m","وإن ذبح المحرم صيدا فذبيحته ميتة لا يحل أكلها ولا بأس أن يأكل المحرم لحم صيد اصطاده حلال أو ذبحه إذا لم يدله المحرم عليه ولا أمره بصيده"],["m","وفي صيد الحرم إذا ذبحه الحلال فعليه الجزاء وإن قطع حشيش الحرم أو شجره الذي ليس بمملوك ولا هو مما ينبته الناس فعليه قيمته"],["f","أحكام متفرقة"],["m","وكل شيء فعله القارن مما ذكرنا أن فيه على المفرد دما فعليه دمان: دم لحجته ودم لعمرته إلا أن يتجاوز الميقات من غير إحرام ثم يحرم بالعمرة والحج فيلزمه دم واحد"],["m","وإذا اشترك المحرمان في قتل صيد فعلى كل واحد منهما الجزاء كاملا وإذا اشترك الحلالان في قتل صيد الحرم فعليهما جزاء واحد"],["m","وإذا باع المحرم صيدا أو ابتاعه فالبيع باطل"]]},{"t":"باب الإحصار","ed":false,"items":[["m","إذا أحصر المحرم بعدو أو أصابه مرض منعه من المضي جاز له التحلل وقيل له: ابعث شاة تذبح في الحرم وواعد من يحملها يوما بعينه يذبحها فيه ثم تحلل وإن كان قارنا بعث بدمين"],["m","ولا يجوز ذبح دم الإحصار إلا في الحرم ويجوز ذبحه قبل يوم النحر عند أبي حنيفة وقال أبو يوسف ومحمد رحمهما الله: لا يجوز الذبح للمحصر بالحج إلا في يوم النحر"],["m","ويجوز للمحصر بالعمرة أن يذبح متى شاء"],["m","والمحصر بالحج إذا تحلل فعليه حجة وعمرة وعلى المحصر بالعمرة القضاء وعلى القارن حجة وعمرتان"],["m","وإذا بعث المحصر هديا وواعدهم أن يذبحوه في يوم بعينه ثم زال الإحصار فإن قدر على إدراك الهدي والحج لم يجز له التحلل ولزمه المضي وإن قدر على إدراك الهدي دون الحج تحلل وإن قدر على إدراك الحج دون الهدي جاز له التحلل استحسانا"],["m","ومن أحصر بمكة وهو ممنوع من الوقوف والطواف كان محصرا وإن قدر على أحدهما فليس بمحصر"]]},{"t":"باب الفوات","ed":false,"items":[["m","ومن أحرم بالحج ففاته الوقوف بعرفة حتى طلع الفجر من يوم النحر فقد فاته الحج وعليه أن يطوف ويسعى ويتحلل ويقضي الحج من قابل ولا دم عليه"],["m","والعمرة لا تفوت وهي جائزة في جميع السنة إلا خمسة أيام يكره فعلها فيها: يوم عرفة ويوم النحر وأيام التشريق"],["m","والعمرة سنة وهي: الإحرام والطواف والسعي والحلق أو التقصير"]]},{"t":"باب الهدي","ed":false,"items":[["m","الهدي: أدناه شاة"],["m","وهو من ثلاثة أنواع: الإبل والبقر والغنم يجزئ في ذلك الثني فصاعدا إلا من الضأن فإن الجذع منه يجزئ"],["m","ولا يجوز في الهدي مقطوع الأذن أو أكثرها ولا مقطوع الذنب ولا اليد ولا الرجل ولا الذاهبة العين ولا العجفاء ولا العرجاء التي لا تمشي إلى المنسك"],["m","والشاة جائزة في كل شيء إلا في موضعين: من طاف طواف الزيارة جنبا ومن جامع بعد الوقوف بعرفة فإنه لا يجوز إلا بدنة"],["m","والبدنة والبقرة تجزئ كل واحدة منهما عن سبعة إذا كان كل واحد من الشركاء يريد القربة فإن أراد أحدهم بنصيبه اللحم لم يجزئ عن الباقين"],["m","ويجوز الأكل من هدي التطوع والمتعة والقران ولا يجوز الأكل من بقية الهدايا"],["m","ولا يجوز ذبح هدي التطوع والمتعة والقران إلا في يوم النحر ويجوز ذبح بقية الهدايا أي وقت شاء ولا يجوز ذبح الهدايا إلا في الحرم ويجوز أن يتصدق بها على مساكين الحرم وغيرهم ولا يجب التعريف بالهدايا"],["m","والأفضل في البدن النحر وفي البقر والغنم الذبح والأولى أن يتولى الإنسان ذبحها بنفسه إذا كان يحسن ذلك ويتصدق بجلالها وخطامها ولا يعطي أجرة الجزار منها"],["m","ومن ساق بدنة فاضطر إلى ركوبها ركبها وإن استغنى عن ذلك لم يركبها وإن كان لها لبن لم يحلبها وينضح ضرعها بالماء البارد حتى ينقطع اللبن"],["m","ومن ساق هديا فعطب فإن كان تطوعا فليس عليه غيره وإن كان عن واجب فعليه أن يقيم غيره مقامه وإن أصابه عيب كبير أقام غيره مقامه وصنع بالمعيب ما شاء"],["m","وإذا عطبت البدنة في الطريق فإن كان تطوعا نحرها وصبغ نعلها بدمها وضرب بها صفحتها ولا يأكل منها هو ولا غيره من الأغنياء وإن كانت واجبة أقام غيرها مقامها وصنع بها ما شاء"],["m","ويقلد هدي التطوع والمتعة والقران ولا يقلد دم الإحصار ولا دم الجنايات"]]}]}];
+const PLAN = {
+"1":{"parts":[
+ {"t":"الأصل: الوضوء والغسل والماء","d":"ما تتحقق به الطهارة الصغرى والكبرى، وبماذا يُتطهر","b":[0]},
+ {"t":"الرخص والأبدال","d":"إذا تعذر الماء أو شقّ غسل الرجلين","b":[1,2]},
+ {"t":"طهارة المرأة","d":"الحيض والاستحاضة والنفاس","b":[3]},
+ {"t":"إزالة النجاسة","d":"ما يُطهَّر به الثوب والبدن والمكان","b":[4]}],
+ "maps":["فرائض الوضوء وسننه، ونواقضه، وموجبات الغسل، والمياه التي يصح بها التطهير، والآبار والأسآر.","بدل الطهارة بالماء عند العجز: متى يصح وكيف يُؤدّى وما ينقضه.","رخصة المسح على الخفين: مدته وشروطه وما ينقضه.","أقل الحيض وأكثره والطهر المتخلل، ثم الاستحاضة والنفاس.","النجاسات وكيفية تطهيرها، والاستنجاء، وقدر المعفو عنه."]},
+"2":{"parts":[
+ {"t":"مدخل الصلاة","d":"الوقت والأذان وما يسبق الدخول فيها","b":[0,1,2]},
+ {"t":"أداء الصلاة","d":"الفرائض والكيفية والجماعة والمفسدات","b":[3]},
+ {"t":"الفوائت والكراهة والنوافل","d":"قضاء ما فات وما يُتطوع به","b":[4,5,6]},
+ {"t":"جبر الخلل والأعذار","d":"السهو والمرض والتلاوة والسفر","b":[7,8,9,10]},
+ {"t":"الصلوات الجامعة","d":"الجمعة والعيدان والكسوف والاستسقاء والتراويح","b":[11,12,13,14,15]},
+ {"t":"الخوف والجنائز والكعبة","d":"أحوال خاصة ختم بها الكتاب","b":[16,17,18,19]}],
+ "maps":["أول الأوقات الخمسة وآخرها، ووقت الوتر، وما يُستحب تأخيره أو تعجيله.","ألفاظ الأذان والإقامة، ومن يؤذن ومتى، وما يُكره فيهما.","الطهارة وستر العورة واستقبال القبلة والنية ودخول الوقت.","فرائض الصلاة وسننها من التكبير إلى السلام، والقراءة، والجماعة والإمامة، والمكروهات والمفسدات.","ترتيب قضاء ما فات من الصلوات.","الأوقات التي لا تصح فيها بعض الصلوات أو تُكره.","السنن الرواتب وصلاة التطوع وأحكامها.","متى يجب سجود السهو وكيف يؤدى.","صلاة من عجز عن القيام أو الركوع أو السجود.","مواضع سجود التلاوة وكيفيته.","شروط السفر والقصر ونية الإقامة.","شروط الجمعة وخطبتها وما يتعلق بها.","صلاة العيد وتكبيرات التشريق.","صلاة الكسوف.","صلاة الاستسقاء.","التراويح في رمضان.","صلاة الخوف وكيفيتها.","غسل الميت وتكفينه والصلاة عليه وحمله ودفنه.","حكم الشهيد في الغسل والصلاة.","الصلاة داخل الكعبة وحولها."]},
+"3":{"parts":[
+ {"t":"أصول الزكاة","d":"من تجب عليه، وفي أي مال، وبأي شرط","b":[0]},
+ {"t":"زكاة الأنعام","d":"الإبل والبقر والغنم وأحكام السائمة","b":[1,2,3,4]},
+ {"t":"زكاة الأثمان والتجارة","d":"الفضة والذهب وعروض التجارة","b":[5,6,7]},
+ {"t":"زكاة الزروع والثمار","d":"العشر ونصف العشر","b":[8]},
+ {"t":"المصارف والفطرة","d":"لمن تُدفع الزكاة، وصدقة الفطر","b":[9,10]}],
+ "maps":["الشروط والحول والنية والدين المانع، وما يتصل بأداء الزكاة.","نصب الإبل وما يجب في كل نصاب.","نصب البقر وما يجب فيها.","نصب الغنم وما يجب فيها.","زكاة الخيل، والسائمة والعوامل، وأحكام عامة في أخذ المصدّق.","نصاب الفضة ومقدار الواجب.","نصاب الذهب ومقدار الواجب.","تقويم عروض التجارة وإخراج زكاتها.","العشر ونصف العشر فيما تخرجه الأرض.","الأصناف الثمانية ومن لا يجوز الدفع إليه.","على من تجب صدقة الفطر، ومقدارها ووقتها."]},
+"4":{"parts":[
+ {"t":"أحكام الصوم","d":"النية والهلال والمفسدات والقضاء والأعذار","b":[0]},
+ {"t":"الاعتكاف","d":"لزوم المسجد بنية القربة","b":[1]}],
+ "maps":["أنواع الصوم ونيته، ورؤية الهلال، وما يفسد الصوم وما لا يفسده، والقضاء والكفارة، وأعذار الإفطار والفدية.","شروط الاعتكاف وما يبطله وما يباح فيه."]},
+"5":{"parts":[
+ {"t":"شروط الحج","d":"من يجب عليه الحج","b":[0]},
+ {"t":"أعمال الحج بالترتيب","d":"من الميقات إلى طواف الصدر","b":[1]},
+ {"t":"أنواع النسك","d":"القران والتمتع","b":[2,3]},
+ {"t":"المخالفات والعوارض","d":"الجنايات والإحصار والفوات","b":[4,5,6]},
+ {"t":"الهدي","d":"أنواعه وأحكام ذبحه","b":[7]}],
+ "maps":["شروط وجوب الحج على الرجل والمرأة، وحكم من بلغ أو أُعتق أثناءه.","المواقيت، ثم الإحرام والطواف والسعي والوقوف والرمي والحلق، على ترتيب الأيام.","الجمع بين الحج والعمرة بإحرام واحد وصفته.","التمتع بالعمرة قبل الحج وصفته وأشهر الحج.","ما يجب من دم أو صدقة بارتكاب محظور من محظورات الإحرام.","من منعه عدو أو مرض من إتمام النسك.","من فاته الوقوف بعرفة وما يلزمه.","أنواع الهدي ومحل ذبحه وما يؤكل منه."]}
+}
+;
+const KEY = 'quduri-matn-v1';
+const app = document.getElementById('app');
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const ad = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+const norm = s => s.replace(/[ً-ْٰـ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه');
+const FS = [0.85, 1, 1.15, 1.3, 1.5];
+const P = [0.25, 0.45, 0.7];
+const IM = { h: ['أبو حنيفة', 'ح'], y: ['أبو يوسف', 'ي'], m: ['محمد', 'م'], z: ['زفر', 'ز'] };
+const STOP = new Set(['في', 'من', 'على', 'الى', 'إلى', 'عن', 'ما', 'لا', 'أو', 'ثم', 'إن', 'إذا', 'لم', 'أن', 'كل', 'هو', 'التي', 'الذي', 'قد', 'لو', 'بعد', 'قبل', 'ذلك', 'مع', 'هذا', 'حتى', 'إلا', 'قال', 'عند', 'وهو', 'كان', 'ولا']);
+const RC = { must: 'واجب / فرض', sun: 'سنة / مستحب / أفضل', ok: 'جائز / مباح', mak: 'مكروه', bad: 'ممنوع / مفسد / ناقض' };
+const rn = w => norm(w).replace(/[^ء-ي]/g, '');
+const RW = {}; const NUMS = new Set();
+Object.entries({ must: 'فرض واجب واجبة يجب تجب وجب لزمه لزم يلزمه تلزمه يلزم تلزم افترض فرضا واجبا', sun: 'سنة مسنون يستحب مستحب أفضل أولى ينبغي يندب مندوب سنن', mak: 'يكره تكره مكروه كره مكروها يكرهه', ok: 'جاز يجوز تجوز جائز يباح مباح جازت', bad: 'يفسد تفسد أفسد فسد فسدت ينقض تنقض نقض يبطل تبطل بطل بطلت' }).forEach(([c, l]) => l.split(' ').forEach(w => { RW[rn(w)] = c; }));
+'واحد واحدة اثنان اثنين اثنتين اثنتي ثلاث ثلاثة ثلاثا أربع أربعة أربعا خمس خمسة خمسا ست ستة ستا سبع سبعة سبعا ثمان ثمانية تسع تسعة عشر عشرة عشرا عشرين ثلاثين أربعين خمسين ستين سبعين ثمانين تسعين مائة مئة مائتين مئتين ألف نصف ثلث ثلثا ثلثي ربع ركعتين مرتين مرة'.split(' ').forEach(w => NUMS.add(rn(w)));
+const NEGBAD = new Set(['يجوز', 'تجوز', 'يصح', 'تصح', 'يحل', 'تحل', 'يجزئ', 'تجزئ', 'يجزئه', 'تجزئه', 'يجزيه', 'تجزيه', 'يقبل', 'تقبل', 'يجز', 'تجز', 'يجزئهما'].map(rn));
+const NEGOK = new Set(['يكره', 'تكره', 'يفسد', 'تفسد', 'ينقض', 'تنقض', 'يبطل', 'تبطل', 'يجب', 'تجب', 'يلزم', 'تلزم', 'يلزمه', 'تلزمه', 'يجبر'].map(rn));
+const META = [
+  null,
+  { en: 'Kitab al-Tahara · Purification', d: 'الوضوء والغسل والمياه والآبار، ثم التيمم والمسح على الخفين والحيض والأنجاس.' },
+  { en: 'Kitab al-Salat · Prayer', d: 'المواقيت والأذان والشروط وصفة الصلاة، ثم السهو والتلاوة والسفر والجمعة والعيدين والجنائز.' },
+  { en: 'Kitab al-Zakat · Obligatory charity', d: 'شروط الوجوب وزكاة الأنعام والنقدين والعروض والزروع، ومصارف الزكاة وصدقة الفطر.' },
+  { en: 'Kitab al-Sawm · Fasting', d: 'رؤية الهلال وما يفسد الصوم، ثم القضاء والكفارة والأعذار، وباب الاعتكاف.' },
+  { en: 'Kitab al-Hajj · Pilgrimage', d: 'المواقيت والإحرام والمناسك، ثم القران والتمتع، وجنايات المحرم والإحصار والهدي.' }
+];
+
+/* ---------- state ---------- */
+let S = { srs: {}, bm: {}, fs: 1, mode: 'read', lvl: 1, theme: 'auto', khilaf: false, last: null, rc: true, day: { d: 0, n: 0 }, st: { last: 0, n: 0 } };
+try { const r = localStorage.getItem(KEY); if (r) Object.assign(S, JSON.parse(r)); } catch (e) {}
+const today = () => { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 6e4) / 864e5); };
+if (S.learned) { Object.keys(S.learned).forEach(id => { if (!S.srs[id]) S.srs[id] = { b: 1, d: today() }; }); delete S.learned; }
+const INT = [0, 1, 3, 7, 16, 35], GOAL = 10;
+const isL = id => !!S.srs[id] && S.srs[id].b >= 1;
+const isDue = id => !!S.srs[id] && S.srs[id].d <= today();
+function grade(id, g) {
+  const t = today(), c = S.srs[id] || { b: 0, d: t };
+  if (g === 0) { c.b = 0; c.d = t; }
+  else if (g === 1) { c.b = Math.max(1, c.b); c.d = t + 1; }
+  else { c.b = Math.min(5, c.b + 1); c.d = t + INT[c.b]; }
+  S.srs[id] = c;
+  if (g > 0) {
+    if (S.day.d !== t) S.day = { d: t, n: 0 };
+    S.day.n++;
+    if (S.st.last !== t) { S.st = { last: t, n: S.st.last === t - 1 ? S.st.n + 1 : 1 }; }
+  }
+  save();
+}
+const doneToday = () => S.day.d === today() ? S.day.n : 0;
+const streak = () => { const t = today(); return (S.st.last === t || S.st.last === t - 1) ? S.st.n : 0; };
+let saveT = 0;
+const save = () => { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }, 150); };
+let cur = 0, revealed = false, io = null, fc = null, qz = null;
+
+/* ---------- text analysis ---------- */
+function analyze(text) {
+  const raw = text.split(/\s+/).filter(Boolean);
+  let inAy = false, inHa = false;
+  const out = [];
+  for (const w0 of raw) {
+    const o = { w: w0, ay: false, ha: false, im: null, gap: false };
+    if (w0 === '…') { o.gap = true; out.push(o); continue; }
+    if (w0.includes('﴿')) inAy = true;
+    if (w0.startsWith('[')) inHa = true;
+    o.ay = inAy; o.ha = inHa;
+    if (w0.includes('﴾')) inAy = false;
+    if (/\]\W*$/.test(w0)) inHa = false;
+    o.w = w0.replace(/^\[/, '').replace(/\]([^\]]*)$/, '$1');
+    out.push(o);
+  }
+  for (let i = 0; i < out.length; i++) {
+    const b = out[i].w.replace(/[:،.]/g, '').replace(/^و/, '');
+    if ((b === 'أبو' || b === 'أبي') && out[i + 1]) {
+      const n = out[i + 1].w.replace(/[:،.]/g, '');
+      if (n === 'حنيفة') { out[i].im = out[i + 1].im = 'h'; i++; continue; }
+      if (n === 'يوسف') { out[i].im = out[i + 1].im = 'y'; i++; continue; }
+    }
+    if (b === 'محمد') out[i].im = 'm';
+    else if (b === 'زفر') out[i].im = 'z';
+  }
+  return out;
+}
+function tagRules(t, k) {
+  const core = x => rn(x.w).replace(/^[وف]/, '');
+  for (let i = 0; i < t.length; i++) {
+    const x = t[i]; if (x.gap || x.ay || x.ha || x.im) continue;
+    const c = core(x), c2 = c.replace(/^ال/, '');
+    const prev = i ? t[i - 1] : null, pc = prev ? core(prev) : '';
+    if ((pc === 'لا' || pc === 'لم') && !prev.ay) {
+      if (NEGBAD.has(c)) { x.r = prev.r = 'bad'; prev.rp = 1; continue; }
+      if (NEGOK.has(c)) { x.r = prev.r = 'ok'; prev.rp = 1; continue; }
+    }
+    if (pc === 'لا' && c === rn('بأس')) { x.r = prev.r = 'ok'; prev.rp = 1; continue; }
+    const r = RW[c] || RW[c2];
+    if (r && !(k === 3 && /^سنه$/.test(c2))) { x.r = r; continue; }
+    const raw = rn(x.w);
+    for (let j = 0; j <= 4 && j < raw.length - 1; j++) {
+      if (NUMS.has(raw.slice(j))) {
+        const pre = raw.slice(0, j);
+        if (j === 0 || /^(?:و|ف|ب|ل|ك|ال|وال|بال|لل|وب|ول|فال|فب)$/.test(pre)) { x.n = 1; break; }
+      }
+    }
+  }
+}
+function prep(m) {
+  const t = analyze(m.text); m.t = t; tagRules(t, m.k);
+  const cuts = [0];
+  for (let i = 1; i < t.length; i++) {
+    const b = t[i].w.replace(/[:،.]/g, '').replace(/^و/, '');
+    if (b === 'قال' && t[i + 1] && t[i + 1].im) cuts.push(i);
+  }
+  cuts.push(t.length);
+  m.segs = [];
+  for (let i = 0; i < cuts.length - 1; i++) m.segs.push([cuts[i], cuts[i + 1]]);
+  m.term = null; m.ts = 0;
+  const first = t[0] ? t[0].w.replace(/^و/, '') : '';
+  if (first !== 'قال') {
+    for (let k = 0; k < 3 && k < m.segs[0][1] - 1; k++) {
+      if (t[k].im) break;
+      if (t[k].w.endsWith(':')) { m.term = t.slice(0, k + 1).map(x => x.w).join(' ').replace(/:$/, ''); m.ts = k + 1; break; }
+    }
+  }
+  m.imams = Array.from(new Set(t.filter(x => x.im).map(x => x.im)));
+  m.khilaf = m.imams.length > 0;
+  m.nt = norm(m.text);
+}
+let nK = 0;
+D.forEach((K, ki) => {
+  K.n = ki + 1; K.ms = []; let mi = 0;
+  const pl = PLAN[K.n];
+  K.babs.forEach((B, bi) => {
+    B.id = 'k' + K.n + '-b' + bi; B.ms = []; B.k = K.n; B.i = bi; B.map = pl.maps[bi] || ''; B.fs = []; B.rc = { must: 0, sun: 0, ok: 0, mak: 0, bad: 0, n: 0 };
+    B.items.forEach(it => {
+      if (it[0] === 'm') {
+        mi++;
+        const m = { id: 'k' + K.n + '-m' + mi, k: K.n, no: mi, bi, text: it[1] };
+        prep(m); it[2] = m; K.ms.push(m); B.ms.push(m);
+        m.t.forEach(x => { if (x.r && !x.rp) B.rc[x.r]++; if (x.n) B.rc.n++; });
+      } else if (it[0] === 'f') { it[2] = B.id + '-f' + B.fs.length; B.fs.push({ id: it[2], t: it[1] }); }
+    });
+  });
+  K.parts = pl.parts.map((p, pi) => ({ id: 'k' + K.n + '-p' + pi, i: pi, t: p.t, d: p.d, bs: p.b.map(i => K.babs[i]) }));
+  K.parts.forEach(p => p.bs.forEach(B => { B.part = p; }));
+  K.kh = K.ms.filter(m => m.khilaf).length;
+  nK += K.ms.length;
+});
+const allM = []; D.forEach(K => K.ms.forEach(m => allM.push(m)));
+const byId = {}; allM.forEach(m => { byId[m.id] = m; });
+
+function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function mask(m) {
+  const r = rng(hash(m.id) + S.lvl * 7919), p = P[S.lvl];
+  return m.t.map((x, i) => {
+    const v = r();
+    if (i <= m.ts || x.gap || x.im) return false;
+    const b = x.w.replace(/[^ء-ي]/g, '').replace(/^[وف]/, '');
+    if (b.length < 3 || STOP.has(b)) return false;
+    return v < ((x.r || x.n) ? Math.min(.95, p * 2.1 + .1) : p);
+  });
+}
+
+/* ---------- icons ---------- */
+const ic = (d, f) => '<svg viewBox="0 0 24 24" fill="' + (f || 'none') + '" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+const I = {
+  search: ic('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'),
+  theme: ic('<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/>'),
+  check: ic('<path d="m5 12.5 4.5 4.5L19 7.5"/>'),
+  bm: ic('<path d="M6 4h12v17l-6-4-6 4z"/>'),
+  eye: ic('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
+  gear: ic('<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>'),
+  list: ic('<path d="M4 6h16M4 12h16M4 18h10"/>'),
+  cards: ic('<rect x="3" y="7" width="14" height="12" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v9"/>'),
+  quiz: ic('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8M12 17h.01"/>'),
+  close: ic('<path d="M6 6l12 12M18 6 6 18"/>'),
+  star: '<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="7" width="18" height="18"/><rect x="7" y="7" width="18" height="18" transform="rotate(45 16 16)"/></svg>'
+};
+
+/* ---------- rendering pieces ---------- */
+function piece(m, x, i) {
+  if (x.gap) return '<span class="gap" title="موضع ناقص في نسخة الشاملة، يُراجع على المطبوع">…</span>';
+  const w = esc(x.w);
+  if (m.mk && m.mk[i]) return '<button class="bl" data-a="blank" data-w="' + w + '" style="--n:' + x.w.length + '" aria-label="كلمة مخفية، اضغط لإظهارها"></button>';
+  if (x.im) return '<span class="im ' + x.im + '">' + w + '</span>';
+  if (x.r) return '<span class="r ' + x.r + '" title="' + RC[x.r] + '">' + w + '</span>';
+  if (x.n) return '<span class="nm">' + w + '</span>';
+  return w;
+}
+function segHtml(m, from, to) {
+  let html = '', cur2 = '';
+  for (let i = from; i < to; i++) {
+    const x = m.t[i];
+    const c = x.ay ? 'ay' : x.ha ? 'ha' : '';
+    if (c !== cur2) { if (cur2) html += '</span>'; if (c) html += '<span class="' + c + '">'; cur2 = c; }
+    html += piece(m, x, i) + ' ';
+  }
+  if (cur2) html += '</span>';
+  return html;
+}
+const shuf = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const learnedIn = K => K.ms.reduce((a, m) => a + (isL(m.id) ? 1 : 0), 0);
+const findBab = id => { const m = /^k(\d)-b(\d+)$/.exec(id); return m ? D[m[1] - 1].babs[+m[2]] : null; };
+
+function mHtml(m, mode) {
+  m.mk = (mode === 'mem' && !revealed) ? mask(m) : null;
+  const done = isL(m.id), bm = !!S.bm[m.id];
+  let h = '<article class="m' + (done ? ' done' : '') + '" id="' + m.id + '" data-id="' + m.id + '"><div class="m-h"><span class="num">' + ad(m.no) + '</span>';
+  if (m.term) h += '<span class="term">' + esc(m.term) + '</span>';
+  if (m.imams.length) h += '<span class="ims">' + m.imams.map(k => '<span class="imc ' + k + '" title="' + IM[k][0] + '">' + IM[k][1] + '</span>').join('') + '</span>';
+  h += '<span class="sp"></span>';
+  h += '<button class="act bm" data-a="bm" aria-pressed="' + bm + '" aria-label="حفظ للمراجعة لاحقًا">' + I.bm + '</button>';
+  h += '<button class="act" data-a="ok" aria-pressed="' + done + '" aria-label="أتقنت هذه المسألة">' + I.check + '</button></div>';
+  h += '<div class="mt">' + segHtml(m, m.ts, m.segs[0][1]) + '</div>';
+  for (let s = 1; s < m.segs.length; s++) h += '<div class="dis"><div class="mt">' + segHtml(m, m.segs[s][0], m.segs[s][1]) + '</div></div>';
+  return h + '</article>';
+}
+const RK = ['must', 'sun', 'ok', 'mak', 'bad'];
+function rcChips(B) {
+  return RK.filter(c => B.rc[c]).map(c => '<span class="rcc ' + c + '"><i></i>' + RC[c].split(' / ')[0] + ' <b>' + ad(B.rc[c]) + '</b></span>').join('') + (B.rc.n ? '<span class="rcc num"><i></i>أعداد <b>' + ad(B.rc.n) + '</b></span>' : '');
+}
+function fasStrip(B) {
+  if (B.fs.length < 3) return '';
+  return '<ol class="route" aria-label="مسار الباب">' + B.fs.map((f, i) => '<li><a href="#' + f.id + '"><b>' + ad(i + 1) + '</b><span>' + esc(f.t) + '</span></a></li>').join('') + '</ol>';
+}
+function ovHtml(B) {
+  const l = B.ms.filter(m => isL(m.id)).length;
+  return '<div class="ov"><p class="map"><span>في هذا الباب</span>' + esc(B.map) + '</p>' + fasStrip(B) +
+    '<div class="ovm"><div class="rcs">' + rcChips(B) + '</div><div class="ova"><span class="cnt">' + ad(l) + ' / ' + ad(B.ms.length) + ' أُتقنت</span>' +
+    '<button class="mini" data-a="babcards" data-b="' + B.id + '">بطاقات الباب</button><button class="mini fill" data-a="quiz" data-b="' + B.id + '">اختبر نفسك</button></div></div></div>';
+}
+function babHtml(K, B, mode, filt) {
+  if (filt && !B.ms.some(m => m.khilaf)) return '';
+  let h = '<section class="bab" id="' + B.id + '"><div class="bab-h"><span class="bno">' + ad(B.i + 1) + '</span><h2>' + esc(B.t) + '</h2>' + (B.ed ? '<span class="tag">عنوان تنظيمي</span>' : '') + '<span class="meta">' + ad(B.ms.length) + ' مسألة</span><span class="sp"></span><button class="mini" data-a="babok" data-b="' + B.id + '">أتقنت الباب</button></div>';
+  if (!filt) h += ovHtml(B);
+  for (const it of B.items) {
+    if (it[0] === 'm') { if (!filt || it[2].khilaf) h += mHtml(it[2], mode); }
+    else if (filt) continue;
+    else if (it[0] === 'f') h += '<h3 class="fasl" id="' + it[2] + '">' + esc(it[1]) + '</h3>';
+    else if (it[0] === 'l') h += '<div class="lbl">' + esc(it[1]) + '</div>';
+    else if (it[0] === 'q') h += '<div class="ayah-q">' + esc(it[1]) + '</div>';
+  }
+  const pv = K.babs[B.i - 1], nx = K.babs[B.i + 1];
+  if (!filt) {
+    h += '<nav class="bab-nav" aria-label="التنقل بين الأبواب">';
+    h += pv ? '<a class="pv" href="#' + pv.id + '"><small>السابق</small><b>' + esc(pv.t) + '</b></a>' : '<span style="flex:1"></span>';
+    h += nx ? '<a class="nx" href="#' + nx.id + '"><small>التالي</small><b>' + esc(nx.t) + '</b></a>' : '<span style="flex:1"></span>';
+    h += '</nav>';
+  }
+  return h + '</section>';
+}
+function partHtml(K, P) {
+  const n = P.bs.reduce((a, B) => a + B.ms.length, 0), l = P.bs.reduce((a, B) => a + B.ms.filter(m => isL(m.id)).length, 0);
+  return '<div class="part" id="' + P.id + '"><span class="pn">الجزء ' + ad(P.i + 1) + ' من ' + ad(K.parts.length) + '</span><h2>' + esc(P.t) + '</h2><p>' + esc(P.d) + '</p><div class="pb" title="أُتقنت ' + ad(l) + ' من ' + ad(n) + '"><b style="width:' + (n ? Math.round(l / n * 100) : 0) + '%"></b></div></div>';
+}
+function legendHtml() {
+  return '<div class="lgm"><b>الرموز:</b>' + Object.keys(IM).map(k => '<span style="display:inline-flex;align-items:center;gap:6px"><span class="imc ' + k + '">' + IM[k][1] + '</span>' + IM[k][0] + '</span>').join('') +
+    '<span class="vsep"></span>' + RK.map(c => '<span class="mt lgr"><span class="r ' + c + '">' + RC[c].split(' / ')[0] + '</span></span>').join('') + '<span class="mt lgr"><span class="nm">عدد</span></span></div>';
+}
+function babsHtml(K) {
+  const mode = S.mode, filt = S.khilaf;
+  let h = legendHtml();
+  if (mode === 'mem') h += '<div class="mode-hint"><b>وضع الحفظ</b><span>تُخفى الأحكام والأعداد أولًا لأنها موضع الاسترجاع. اضغط الفراغ لتظهر الكلمة.</span><button data-a="reveal">' + (revealed ? 'أعد الإخفاء' : 'أظهر الكل') + '</button></div>';
+  if (filt) h += '<div class="mode-hint"><b>مسائل الخلاف فقط</b><span>' + ad(K.kh) + ' مسألة فيها قول لأحد الأئمة</span><button data-a="khoff">عرض الكل</button></div>';
+  let body = '';
+  K.parts.forEach(P => {
+    const bh = P.bs.map(B => babHtml(K, B, mode, filt)).join('');
+    if (bh) body += partHtml(K, P) + bh;
+  });
+  return h + (body || '<div class="empty">لا توجد مسائل خلاف في هذا الكتاب.</div>');
+}
+function sqs(ms) {
+  const t = today();
+  return ms.map(m => { const c = S.srs[m.id]; return '<a class="sq2 ' + (!c ? 'n' : c.b >= 2 ? 'k' : 'l') + (c && c.d <= t ? ' d' : '') + '" href="#' + m.id + '" aria-label="مسألة ' + ad(m.no) + '"></a>'; }).join('');
+}
+const mapLegend = '<div class="mpl"><span><i class="sq2 n"></i>جديدة</span><span><i class="sq2 l"></i>قيد التعلم</span><span><i class="sq2 k"></i>متقنة</span><span><i class="sq2 n d"></i>حان موعد مراجعتها</span></div>';
+function kmapHtml(K) {
+  return '<section class="kmap"><h2 class="sec-t">خريطة الكتاب</h2><div class="pcards">' + K.parts.map(P => {
+    const ms = P.bs.reduce((a, B) => a.concat(B.ms), []);
+    return '<div class="pcard"><a class="ph" href="#' + P.id + '"><span class="pn2">' + ad(P.i + 1) + '</span><div><h3>' + esc(P.t) + '</h3><p>' + esc(P.d) + '</p></div></a><ul>' +
+      P.bs.map(B => '<li><a href="#' + B.id + '"><span>' + esc(B.t) + '</span><small>' + ad(B.ms.length) + '</small></a></li>').join('') + '</ul><div class="mp">' + sqs(ms) + '</div></div>';
+  }).join('') + '</div>' + mapLegend + '</section>';
+}
+
+function topHtml() {
+  return '<header class="top"><div class="gutter"><div class="wrap"><a class="brand" href="#home">' + I.star + '<span>مختصر القدوري</span></a><span class="sp"></span>' +
+    '<button class="ibtn" data-a="search" aria-label="بحث في المتن">' + I.search + '</button>' +
+    '<button class="ibtn" data-a="theme" aria-label="تبديل المظهر">' + I.theme + '</button></div></div></header>';
+}
+function railHtml(n) {
+  return '<nav class="rail" aria-label="كتب المتن">' + D.map(K => '<a class="pill k' + K.n + '" href="#k' + K.n + '"' + (K.n === n ? ' aria-current="true"' : '') + '><i></i>' + esc(K.title) + '</a>').join('') + '</nav>';
+}
+function tocHtml(K) {
+  return '<div class="toc"><h5>فهرس ' + esc(K.title) + '</h5>' + K.parts.map(P => '<a class="tp" href="#' + P.id + '"><span class="pn3">' + ad(P.i + 1) + '</span><span>' + esc(P.t) + '</span></a>' +
+    P.bs.map(B => '<a href="#' + B.id + '" data-b="' + B.id + '" class="' + (B.ed ? 'ed' : '') + '"><span>' + esc(B.t) + '</span><small>' + ad(B.ms.length) + '</small></a>' +
+      (B.fs.length > 1 ? B.fs.map(f => '<a class="sb" href="#' + f.id + '"><span>' + esc(f.t) + '</span></a>').join('') : '')).join('')).join('') + '</div>';
+}
+function dockHtml() {
+  return '<div class="dock" role="toolbar" aria-label="أدوات الدراسة">' +
+    '<button class="tbtn idx" data-a="toc" aria-label="فهرس الأبواب">' + I.list + '<span>الفهرس</span></button>' +
+    '<div class="seg"><button data-a="mode" data-v="read" aria-pressed="' + (S.mode === 'read') + '">قراءة</button><button data-a="mode" data-v="mem" aria-pressed="' + (S.mode === 'mem') + '">حفظ</button></div>' +
+    '<button class="tbtn" data-a="cards" aria-label="مراجعة بالبطاقات">' + I.cards + '<span>مراجعة</span></button>' +
+    '<button class="tbtn" data-a="kquiz" aria-label="اختبار">' + I.quiz + '<span>اختبار</span></button>' +
+    '<button class="tbtn" data-a="set" aria-label="الإعدادات">' + I.gear + '</button></div>';
+}
+
+/* ---------- views ---------- */
+function applyTheme() { const r = document.documentElement; if (S.theme === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', S.theme); r.setAttribute('data-rc', S.rc ? 'on' : 'off'); }
+function applyFs() { document.documentElement.style.setProperty('--fs', (1.3 * FS[S.fs]).toFixed(3) + 'rem'); }
+function closeOverlays() { $$('.scrim,.pop,.fc').forEach(e => e.remove()); fc = null; qz = null; }
+function nextBab() { for (const K of D) for (const B of K.babs) if (B.ms.some(m => !isL(m.id))) return B; return null; }
+function ringSvg(p, c) { const C = 2 * Math.PI * 18; return '<svg class="ring" viewBox="0 0 44 44" role="img" aria-label="' + ad(Math.round(p * 100)) + '٪"><circle class="tr" cx="22" cy="22" r="18"/><circle class="pg" cx="22" cy="22" r="18" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + (C * (1 - Math.min(1, p))).toFixed(1) + '"/><text x="22" y="23">' + (c || ad(Math.round(p * 100)) + '٪') + '</text></svg>'; }
+
+function planHtml() {
+  const due = allM.filter(m => isDue(m.id)).length, nb = nextBab(), dn = doneToday(), sk = streak();
+  const K = nb ? D[nb.k - 1] : null;
+  return '<h2 class="sec-t">خطة اليوم</h2><div class="plan"><div class="pl-top"><div class="goal">' + ringSvg(dn / GOAL, ad(dn)) + '<div><b>' + ad(dn) + ' من ' + ad(GOAL) + '</b><small>بطاقات اليوم</small></div></div><div class="strk"><b>' + ad(sk) + '</b><small>' + (sk === 1 ? 'يوم متتابع' : 'أيام متتابعة') + '</small></div></div>' +
+    '<ol class="pl-steps">' +
+    '<li><span class="n">١</span><div><b>راجع ما حان موعده</b><small>' + (due ? ad(due) + ' مسألة مستحقة للمراجعة' : 'لا شيء مستحق الآن') + '</small></div><button class="go" data-a="rev">' + (due ? 'ابدأ المراجعة' : 'تدريب حر') + '</button></li>' +
+    (nb ? '<li><span class="n">٢</span><div><b>تعلّم الجديد</b><small>' + esc(K.title) + ' · ' + esc(nb.t) + '</small></div><a class="go" href="#' + nb.id + '">افتح الباب</a></li>' +
+      '<li><span class="n">٣</span><div><b>اختبر نفسك</b><small>أسئلة سريعة من هذا الباب</small></div><button class="go" data-a="quiz" data-b="' + nb.id + '">ابدأ الاختبار</button></li>' : '<li><span class="n">٢</span><div><b>أتقنت كل المتن</b><small>داوِم على المراجعة المتباعدة</small></div><button class="go" data-a="allquiz">اختبار شامل</button></li>') +
+    '</ol></div>';
+}
+function home() {
+  cur = 0; closeOverlays(); app.className = 'k0';
+  const totM = nK, totB = D.reduce((a, K) => a + K.babs.length, 0), totKh = D.reduce((a, K) => a + K.kh, 0), totL = allM.filter(m => isL(m.id)).length;
+  let h = topHtml();
+  h += '<section class="hero"><div class="gutter"><div class="wrap"><div class="eyebrow">المجلد الأول · من الطهارة إلى الحج</div><h1>مختصر القدوري</h1><p class="sub">متن أبي الحسين القدوري (ت ٤٢٨ هـ) في الفقه الحنفي، مقسّمًا إلى أجزاء وأبواب ومسائل، ومعه أدوات الحفظ والمراجعة والاختبار.</p>' +
+    '<div class="chips"><span class="chip">' + ad(D.length) + ' كتب</span><span class="chip">' + ad(totB) + ' بابًا</span><span class="chip">' + ad(totM) + ' مسألة</span><span class="chip">' + ad(totKh) + ' مسألة فيها خلاف</span><span class="chip">أُتقنت ' + ad(totL) + '</span></div></div></div></section>';
+  h += '<div class="gutter"><div class="wrap">';
+  h += planHtml();
+  if (S.last && S.last.b) {
+    const K = D[S.last.k - 1], B = K && K.babs.find(b => b.id === S.last.b);
+    if (B) h += '<a class="resume" href="#' + B.id + '"><div style="flex:1"><span>تابع من حيث توقفت</span><br><strong>' + esc(K.title) + ' · ' + esc(B.t) + '</strong></div><span>←</span></a>';
+  }
+  h += '<h2 class="sec-t">الكتب الخمسة</h2><div class="tiles">';
+  D.forEach(K => {
+    const l = learnedIn(K), pc = K.ms.length ? l / K.ms.length : 0;
+    h += '<a class="tile k' + K.n + '" href="#k' + K.n + '"><span class="no">الكتاب ' + ad(K.n) + ' · <span class="en">' + esc(META[K.n].en) + '</span></span><h3>' + esc(K.title) + '</h3><p>' + esc(META[K.n].d) + '</p>' +
+      '<div class="ft"><span>' + ad(K.parts.length) + ' أجزاء · ' + ad(K.babs.length) + ' أبواب · ' + ad(K.ms.length) + ' مسألة</span>' + ringSvg(pc) + '</div></a>';
+  });
+  h += '</div><h2 class="sec-t">المتن كله في لمحة</h2><div class="hmap">' + D.map(K => '<div class="hm k' + K.n + '"><a class="hn" href="#k' + K.n + '">' + esc(K.title) + '</a><div class="mp">' + sqs(K.ms) + '</div></div>').join('') + '</div>' + mapLegend +
+    '<h2 class="sec-t">طريقة التعلم</h2><div class="steps">' +
+    '<div class="step"><span class="n">١</span><h4>افهم قبل أن تحفظ</h4><p>ابدأ ببطاقة «في هذا الباب» لترى الصورة كاملة، ثم اقرأ المسائل واحدة واحدة.</p></div>' +
+    '<div class="step"><span class="n">٢</span><h4>ميّز بالألوان</h4><p>الحكم له لون ثابت في كل الكتب، والأعداد بلون خاص، وكل إمام بلونه، فتتكوّن لديك خريطة ذهنية للمسألة.</p></div>' +
+    '<div class="step"><span class="n">٣</span><h4>استرجع ولا تكتفِ بالقراءة</h4><p>وضع الحفظ يخفي الأحكام والأعداد أولًا، لأن محاولة التذكر هي ما يثبّت المعلومة.</p></div>' +
+    '<div class="step"><span class="n">٤</span><h4>اختبر نفسك فورًا</h4><p>أسئلة تُولَّد من نص الباب: من القائل، وكم العدد، وما الحكم. والخطأ يعود للمراجعة تلقائيًا.</p></div>' +
+    '<div class="step"><span class="n">٥</span><h4>راجع على فترات متباعدة</h4><p>بعد يوم، ثم ثلاثة، ثم سبعة، ثم ستة عشر، ثم خمسة وثلاثين. وتُخلط الكتب في المراجعة لتتقوى الذاكرة.</p></div></div>' +
+    '<h2 class="sec-t">ألوان المتن</h2><div class="legend">' + Object.keys(IM).map(k => '<span class="lg"><span class="imc ' + k + '">' + IM[k][1] + '</span>' + IM[k][0] + '</span>').join('') + RK.map(c => '<span class="lg mt"><span class="r ' + c + '">' + RC[c].split(' / ')[0] + '</span><small>' + RC[c].split(' / ').slice(1).join(' · ') + '</small></span>').join('') + '<span class="lg mt"><span class="nm">عدد</span><small>الأعداد والنصب</small></span></div>' +
+    '<p class="note">نص المتن مأخوذ من نسخة «مختصر القدوري» في المكتبة الشاملة، وقد رُتّب هنا في أجزاء وأبواب ومسائل. صُحّحت الأخطاء الإملائية الظاهرة. التقسيم إلى أجزاء وبطاقات «في هذا الباب» والعناوين التي تحمل علامة «عنوان تنظيمي» وُضعت للتعلم وليست من أصل المتن. تلوين الأحكام آلي يعتمد على الألفاظ، فراجع المسألة نفسها قبل الاستدلال. العلامة (…) تدل على سقط ظاهر في تلك النسخة ويُراجع على المطبوع. تقدمك محفوظ في هذا المتصفح فقط.</p></div></div>';
+  app.innerHTML = h; window.scrollTo(0, 0); document.title = 'مختصر القدوري';
+}
+
+function kitab(n, anchor) {
+  const K = D[n - 1]; cur = n; closeOverlays(); app.className = 'k' + n; revealed = false;
+  const l = learnedIn(K), pc = K.ms.length ? Math.round(l / K.ms.length * 100) : 0;
+  let h = topHtml();
+  h += '<section class="hero kit"><div class="gutter"><div class="wrap">' + railHtml(n) + '<div class="eyebrow">الكتاب ' + ad(n) + ' من ' + ad(D.length) + ' · <span class="en">' + esc(META[n].en) + '</span></div><h1>' + esc(K.title) + '</h1><p class="sub">' + esc(META[n].d) + '</p>' +
+    '<div class="chips"><span class="chip">' + ad(K.parts.length) + ' أجزاء</span><span class="chip">' + ad(K.babs.length) + ' أبواب</span><span class="chip">' + ad(K.ms.length) + ' مسألة</span><span class="chip">' + ad(K.kh) + ' فيها خلاف</span><span class="chip" id="prtxt">أتقنت ' + ad(l) + ' من ' + ad(K.ms.length) + '</span></div><div class="bar"><b id="prbar" style="width:' + pc + '%"></b></div></div></div></section>';
+  h += '<div class="gutter"><div class="wrap" id="kmapw">' + kmapHtml(K) + '</div></div>';
+  h += '<div class="gutter"><div class="wrap cols"><aside class="side" id="side">' + tocHtml(K) + '</aside><main id="babs" style="min-width:0">' + babsHtml(K) + '</main></div></div>' + dockHtml();
+  app.innerHTML = h; document.title = K.title + ' · مختصر القدوري';
+  observe(); goAnchor(anchor, true);
+}
+function goAnchor(a, instant) {
+  if (!a) { window.scrollTo(0, 0); return; }
+  const el = document.getElementById('k' + cur + '-' + a.replace(/^k\d-/, '')) || document.getElementById(a);
+  if (!el) return;
+  el.scrollIntoView({ behavior: instant ? 'instant' : 'smooth', block: 'start' });
+  if (el.classList.contains('m')) { el.classList.add('hit'); setTimeout(() => el.classList.remove('hit'), 2200); }
+}
+function observe() {
+  if (io) io.disconnect();
+  if (!('IntersectionObserver' in window)) return;
+  io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) setOn(en.target.id); }), { rootMargin: '-15% 0px -75% 0px' });
+  $$('.bab').forEach(b => io.observe(b));
+}
+function setOn(id) {
+  $$('.toc a[data-b]').forEach(a => { const on = a.dataset.b === id; a.classList.toggle('on', on); if (on) { const sd = $('#side'); if (sd && sd.offsetParent && sd.scrollHeight > sd.clientHeight) { const r = a.getBoundingClientRect(), sr = sd.getBoundingClientRect(); if (r.top < sr.top || r.bottom > sr.bottom) a.scrollIntoView({ block: 'nearest' }); } } });
+  S.last = { k: cur, b: id }; save();
+}
+function refresh() {
+  const y = window.scrollY, K = D[cur - 1];
+  $('#babs').innerHTML = babsHtml(K);
+  const kw = $('#kmapw'); if (kw) kw.innerHTML = kmapHtml(K);
+  $$('.dock .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === S.mode)));
+  observe(); window.scrollTo(0, y);
+}
+function updProgress() {
+  const K = D[cur - 1]; if (!K) return;
+  const l = learnedIn(K), pc = K.ms.length ? Math.round(l / K.ms.length * 100) : 0;
+  const t = $('#prtxt'), b = $('#prbar'); if (t) t.textContent = 'أتقنت ' + ad(l) + ' من ' + ad(K.ms.length); if (b) b.style.width = pc + '%';
+  const kw = $('#kmapw'); if (kw) kw.innerHTML = kmapHtml(K);
+  K.babs.forEach(B => { const c = document.querySelector('#' + B.id + ' .cnt'); if (c) c.textContent = ad(B.ms.filter(m => isL(m.id)).length) + ' / ' + ad(B.ms.length) + ' أُتقنت'; });
+  K.parts.forEach(P => { const el = document.getElementById(P.id); if (el) el.outerHTML = partHtml(K, P); });
+}
+
+/* ---------- overlays ---------- */
+function sheet(inner) {
+  closeOverlays();
+  const sc = document.createElement('div'); sc.className = 'scrim'; sc.innerHTML = '<div class="sheet" role="dialog" aria-modal="true"><div class="grab"></div>' + inner + '</div>';
+  sc.addEventListener('click', e => { if (e.target === sc) closeOverlays(); });
+  app.appendChild(sc); return sc;
+}
+function openToc() { sheet('<div data-close>' + tocHtml(D[cur - 1]) + '</div>'); }
+function openSettings() {
+  const ex = $('.pop'); if (ex) { ex.remove(); return; }
+  const p = document.createElement('div'); p.className = 'pop'; p.setAttribute('role', 'dialog'); p.setAttribute('aria-label', 'الإعدادات');
+  p.innerHTML = '<div class="row"><span>حجم الخط</span><div class="seg"><button data-a="fs" data-v="-1" aria-label="تصغير الخط">أ−</button><button data-a="fs" data-v="1" aria-label="تكبير الخط">أ+</button></div></div>' +
+    '<div class="row"><span>مستوى الإخفاء في الحفظ</span><div class="seg">' + [0, 1, 2].map(i => '<button data-a="lvl" data-v="' + i + '" aria-pressed="' + (S.lvl === i) + '">' + ad(i + 1) + '</button>').join('') + '</div></div>' +
+    '<div class="row"><span>تلوين الأحكام والأعداد</span><button class="sw" data-a="rc" aria-pressed="' + S.rc + '" aria-label="تلوين الأحكام والأعداد"></button></div>' +
+    '<div class="row"><span>مسائل الخلاف فقط</span><button class="sw" data-a="kh" aria-pressed="' + S.khilaf + '" aria-label="مسائل الخلاف فقط"></button></div>' +
+    '<div class="row"><span>المظهر</span><div class="seg">' + [['auto', 'تلقائي'], ['light', 'فاتح'], ['dark', 'داكن']].map(x => '<button data-a="th" data-v="' + x[0] + '" aria-pressed="' + (S.theme === x[0]) + '">' + x[1] + '</button>').join('') + '</div></div>' +
+    '<div class="row"><span>مسح التقدم والعلامات</span><button class="mini" style="border:1.5px solid var(--line);padding:4px 12px;border-radius:99px" data-a="reset">مسح</button></div>';
+  app.appendChild(p);
+}
+function hl(orig, ns, toks) {
+  if (norm(orig).length !== orig.length) return esc(orig);
+  const r = [];
+  toks.forEach(t => { let i = ns.indexOf(t); while (i >= 0) { r.push([i, i + t.length]); i = ns.indexOf(t, i + t.length); } });
+  r.sort((a, b) => a[0] - b[0]);
+  let out = '', p = 0;
+  r.forEach(([s, e]) => { if (s < p) return; out += esc(orig.slice(p, s)) + '<mark>' + esc(orig.slice(s, e)) + '</mark>'; p = e; });
+  return out + esc(orig.slice(p));
+}
+function openSearch() {
+  const sc = sheet('<h3>البحث في المتن</h3><div class="sq"><input id="q" type="search" placeholder="اكتب كلمة أو أكثر…" autocomplete="off" aria-label="بحث"><button class="tbtn" style="height:auto;padding:0 14px;border-radius:14px;background:var(--k-soft);color:var(--k);font-weight:600" data-a="bmlist">المحفوظة (' + ad(Object.keys(S.bm).length) + ')</button></div><div class="res" id="res" data-close><div class="empty">ابحث بكلمة من المسألة، أو باسم إمام، أو بمصطلح مثل «النفاس».</div></div>');
+  const q = $('#q', sc), res = $('#res', sc); q.focus();
+  let t = 0;
+  q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => {
+    const toks = norm(q.value.trim()).split(/\s+/).filter(Boolean);
+    if (!toks.length) { res.innerHTML = '<div class="empty">ابحث بكلمة من المسألة، أو باسم إمام، أو بمصطلح مثل «النفاس».</div>'; return; }
+    const out = [];
+    allM.forEach(m => { let ok = true, sc2 = 0; for (const x of toks) { const i = m.nt.indexOf(x); if (i < 0) { ok = false; break; } sc2 += 1 / (1 + i / 200); } if (ok) out.push([sc2, m]); });
+    out.sort((a, b) => b[0] - a[0]);
+    res.innerHTML = out.length ? out.slice(0, 50).map(([, m]) => resItem(m, toks)).join('') + (out.length > 50 ? '<div class="empty">وغيرها… ضيّق البحث لتظهر نتائج أدق.</div>' : '') : '<div class="empty">لا نتائج. جرّب كلمة أقصر.</div>';
+  }, 120); });
+}
+function resItem(m, toks) {
+  const K = D[m.k - 1], B = K.babs[m.bi];
+  let i = toks ? m.nt.indexOf(toks[0]) : 0; if (i < 0) i = 0;
+  const s = Math.max(0, i - 60), e = Math.min(m.text.length, s + 190);
+  const piece2 = m.text.slice(s, e), ns = m.nt.slice(s, e);
+  return '<a class="k' + m.k + '" href="#' + m.id + '"><small>' + esc(K.title) + ' · ' + esc(B.t) + ' · مسألة ' + ad(m.no) + '</small><p>' + (s ? '… ' : '') + (toks ? hl(piece2, ns, toks) : esc(piece2)) + (e < m.text.length ? ' …' : '') + '</p></a>';
+}
+function bmList(sc) {
+  const res = $('#res', sc), all = allM.filter(m => S.bm[m.id]);
+  res.innerHTML = all.length ? all.map(m => resItem(m, null)).join('') : '<div class="empty">لم تحفظ مسائل بعد. اضغط على أيقونة العلامة في أي مسألة.</div>';
+}
+
+/* ---------- review cards (spaced repetition) ---------- */
+function buildDeck(scope, id) {
+  if (scope === 'b') return { deck: findBab(id).ms.slice(), nw: new Set(findBab(id).ms.filter(m => !S.srs[m.id]).map(m => m.id)), title: findBab(id).t };
+  const pool = scope === 'k' ? D[id - 1].ms : allM;
+  const due = shuf(pool.filter(m => isDue(m.id))).slice(0, 25);
+  const fresh = pool.filter(m => !S.srs[m.id]).slice(0, scope === 'k' ? 10 : 6);
+  let deck = due.concat(fresh), free = false;
+  if (!deck.length) { deck = shuf(pool.slice()).slice(0, 10); free = true; }
+  else shuf(deck);
+  return { deck, nw: new Set(fresh.map(m => m.id)), free, title: scope === 'k' ? D[id - 1].title : 'مراجعة مختلطة' };
+}
+function openCards(scope, id) {
+  const d = buildDeck(scope, id);
+  closeOverlays(); fc = { deck: d.deck, nw: d.nw, free: d.free, title: d.title, flip: false, total: d.deck.length, done: 0 };
+  const el = document.createElement('div'); el.className = 'fc'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', 'بطاقات المراجعة');
+  app.appendChild(el); drawCard();
+}
+function drawCard() {
+  const el = $('.fc'); if (!el || !fc) return;
+  const dn = doneToday();
+  const top = '<div class="fc-top"><button class="ibtn" data-a="fcclose" aria-label="إغلاق">' + I.close + '</button><div class="bar"><b style="width:' + Math.round(fc.done / Math.max(1, fc.total) * 100) + '%"></b></div><span>' + ad(fc.done) + '/' + ad(fc.total) + '</span></div>';
+  if (!fc.deck.length) {
+    el.className = 'fc k' + (cur || 0);
+    el.innerHTML = top + '<div class="fc-card"><div class="fc-done"><h3>أحسنت</h3><p>' + esc(fc.title) + ': أنهيت ' + ad(fc.total) + ' بطاقة.<br>بطاقات اليوم ' + ad(dn) + ' من ' + ad(GOAL) + (streak() ? ' · ' + ad(streak()) + ' يوم متتابع' : '') + '</p><div class="fc-btns"><button class="ok" data-a="fcquiz">اختبر نفسك الآن</button><button class="no" data-a="fcclose">رجوع</button></div></div></div>';
+    return;
+  }
+  const m = fc.deck[0], B = D[m.k - 1].babs[m.bi];
+  el.className = 'fc k' + m.k;
+  const isNew = fc.nw.has(m.id), c = S.srs[m.id];
+  const head = '<div class="q"><span>' + esc(D[m.k - 1].title) + ' · ' + esc(B.t) + ' · مسألة ' + ad(m.no) + '</span><em class="bdg ' + (isNew ? 'nw' : 'rv2') + '">' + (isNew ? 'جديدة' : c && c.d < today() ? 'متأخرة' : 'مراجعة') + '</em></div>';
+  const n = Math.min(m.t.length, m.ts + 5);
+  let body;
+  m.mk = null;
+  if (!fc.flip) body = '<div class="mt">' + segHtml(m, m.ts, n) + '<span class="fade">…</span></div><div class="tap">أكمل المسألة بصوتك أو في ذهنك، ثم اقلب البطاقة</div>';
+  else body = '<div class="mt">' + segHtml(m, m.ts, m.segs[0][1]) + '</div>' + m.segs.slice(1).map(s => '<div class="dis"><div class="mt">' + segHtml(m, s[0], s[1]) + '</div></div>').join('');
+  el.innerHTML = top + '<div class="fc-card"><div class="card" data-a="flip" tabindex="0" role="button" aria-label="اقلب البطاقة">' + head + body + '</div></div><div class="fc-act">' +
+    (fc.flip ? '<button class="no" data-a="g0">نسيتها</button><button class="mid" data-a="g1">بصعوبة</button><button class="ok" data-a="g2">أتقنتها</button>' : '<button class="ok" data-a="flip">أظهر المسألة</button>') + '</div>';
+}
+
+/* ---------- self-test quizzes (auto-generated from the text) ---------- */
+const PRE = /^(?:و|ف|ب|ل|ك|ال|وال|بال|لل|وب|ول|فال|فب)$/;
+const FRAC = new Set(['نصف', 'ثلث', 'ثلثا', 'ثلثي', 'ربع'].map(rn)), TIMES = new Set(['ركعتين', 'مرتين', 'مرة'].map(rn));
+const grp = r => FRAC.has(r) ? 'f' : TIMES.has(r) ? 't' : 'c';
+let numPool = null;
+function numParts(raw) {
+  for (let j = 0; j <= 4 && j < raw.length - 1; j++) {
+    const core = raw.slice(j), r = rn(core);
+    if (NUMS.has(r) && (j === 0 || PRE.test(rn(raw.slice(0, j))))) {
+      const lead = raw.slice(0, j), mm = /^(.*?[ء-ْ])([^ء-ْ]*)$/.exec(core);
+      return { pre: lead, w: mm ? mm[1] : core, tail: mm ? mm[2] : '', r };
+    }
+  }
+  return null;
+}
+function getPool() {
+  if (numPool) return numPool;
+  numPool = new Map();
+  allM.forEach(m => m.t.forEach(x => { if (x.n) { const p = numParts(x.w); if (p && !numPool.has(p.r)) numPool.set(p.r, p.w.replace(/[ً-ٟ]/g, '')); } }));
+  return numPool;
+}
+function snippet(m, a, b, blank) {
+  const from = Math.max(m.ts, a - 9), to = Math.min(m.t.length, b + 9);
+  let out = (from > m.ts ? '… ' : '');
+  for (let i = from; i < to; i++) {
+    if (i >= a && i <= b) { if (i === a) out += blank + ' '; continue; }
+    const x = m.t[i]; out += (x.im ? '<span class="im ' + x.im + '">' + esc(x.w) + '</span>' : esc(x.w)) + ' ';
+  }
+  return out + (to < m.t.length ? '…' : '');
+}
+function qWho(m) {
+  if (m.segs.length < 2) return null;
+  const si = 1 + Math.floor(Math.random() * (m.segs.length - 1)), [a, b] = m.segs[si];
+  const ims = Array.from(new Set(m.t.slice(a, b).filter(x => x.im).map(x => x.im)));
+  if (ims.length !== 1) return null;
+  let txt = '', prevBlank = false;
+  for (let i = a; i < b; i++) { const x = m.t[i]; if (x.im) { if (!prevBlank) txt += '<span class="blank">﹍﹍﹍</span> '; prevBlank = true; } else { txt += esc(x.w) + ' '; prevBlank = false; } }
+  const head = m.t.slice(m.segs[0][0], Math.min(m.segs[0][1], m.segs[0][0] + 22)).map(x => x.w).join(' ');
+  return { type: 'who', m, label: 'من صاحب هذا القول؟', ctx: head + ' …', text: txt, opts: ['h', 'y', 'm', 'z'].map(k => ({ v: k, h: '<span class="imc ' + k + '">' + IM[k][1] + '</span>' + IM[k][0] })), ans: ims[0] };
+}
+function qNum(m) {
+  const ix = []; m.t.forEach((x, i) => { if (x.n && !x.ay && !x.ha && i >= m.ts) ix.push(i); });
+  if (!ix.length) return null;
+  const i = ix[Math.floor(Math.random() * ix.length)], p = numParts(m.t[i].w); if (!p) return null;
+  const pool = getPool(), g = grp(p.r), ends = p.w.endsWith('ة');
+  let cands = Array.from(pool.entries()).filter(([r, w]) => r !== p.r && grp(r) === g);
+  const same = cands.filter(([r, w]) => w.endsWith('ة') === ends);
+  if (same.length >= 3) cands = same;
+  const picks = shuf(cands).slice(0, 3).map(([, w]) => w);
+  if (picks.length < 2) return null;
+  const ans = p.w.replace(/[ً-ٟ]/g, '');
+  return { type: 'num', m, label: 'أكمل بالعدد الصحيح', text: snippet(m, i, i, (p.pre ? esc(p.pre) : '') + '<span class="blank">﹍﹍﹍</span>' + esc(p.tail)), opts: shuf([ans].concat(picks)).map(w => ({ v: w, h: esc(w) })), ans };
+}
+function qRule(m) {
+  const ix = []; m.t.forEach((x, i) => { if (x.r && !x.rp && i >= m.ts) ix.push(i); });
+  if (!ix.length) return null;
+  const i = ix[Math.floor(Math.random() * ix.length)], x = m.t[i], a = x.r && m.t[i - 1] && m.t[i - 1].rp ? i - 1 : i;
+  return { type: 'rule', m, label: 'ما حكم الكلمة المحجوبة؟', text: snippet(m, a, i, '<span class="blank">﹍﹍﹍</span>'), opts: RK.map(c => ({ v: c, h: '<span class="r ' + c + '">' + RC[c] + '</span>' })), ans: x.r };
+}
+function genQuiz(ms, N) {
+  const by = { who: [], num: [], rule: [] };
+  shuf(ms.slice()).forEach(m => { [qWho, qNum, qRule].forEach(f => { const q = f(m); if (q) by[q.type].push(q); }); });
+  const out = [], seen = {};
+  for (let pass = 0; pass < 2 && out.length < N; pass++) {
+    let more = true;
+    while (out.length < N && more) {
+      more = false;
+      for (const t of ['who', 'rule', 'num']) {
+        const q = by[t].find(q => !(pass === 0 && seen[q.m.id]) && !out.includes(q));
+        if (q && out.length < N) { out.push(q); seen[q.m.id] = 1; more = true; }
+      }
+    }
+  }
+  return shuf(out);
+}
+function openQuiz(scope, id) {
+  let ms, title, k = 0;
+  if (scope === 'b') { const B = findBab(id); ms = B.ms; title = B.t; k = B.k; }
+  else if (scope === 'k') { ms = D[id - 1].ms; title = D[id - 1].title; k = id; }
+  else { ms = allM; title = 'اختبار شامل'; }
+  let qs = genQuiz(ms, scope === 'b' ? 8 : 12), note = '';
+  if (qs.length < 4 && scope === 'b') { const B = findBab(id), pm = B.part.bs.reduce((a, x) => a.concat(x.ms), []); qs = genQuiz(pm, 8); note = 'وُسّع الاختبار ليشمل الجزء كله لقلة مسائل الباب.'; title = B.part.t; }
+  if (!qs.length) { sheet('<h3>لا أسئلة بعد</h3><p>لا تحتوي هذه المسائل على أقوال أئمة أو أحكام أو أعداد يمكن توليد أسئلة منها.</p>'); return; }
+  closeOverlays(); qz = { qs, i: 0, score: 0, wrong: [], title, note, scope, id, picked: null };
+  const el = document.createElement('div'); el.className = 'fc qz k' + (k || qs[0].m.k); el.setAttribute('role', 'dialog'); el.setAttribute('aria-label', 'اختبار');
+  app.appendChild(el); drawQ();
+}
+function drawQ() {
+  const el = $('.qz'); if (!el || !qz) return;
+  const top = '<div class="fc-top"><button class="ibtn" data-a="fcclose" aria-label="إغلاق">' + I.close + '</button><div class="bar"><b style="width:' + Math.round(qz.i / qz.qs.length * 100) + '%"></b></div><span>' + ad(Math.min(qz.i + 1, qz.qs.length)) + '/' + ad(qz.qs.length) + '</span></div>';
+  if (qz.i >= qz.qs.length) {
+    const pc = qz.score / qz.qs.length, msg = pc === 1 ? 'ممتاز، أتقنت هذه الأسئلة' : pc >= .7 ? 'جيد، راجع ما أخطأت فيه' : 'الخطأ بداية الحفظ، وقد أُضيفت هذه المسائل إلى مراجعتك';
+    el.className = 'fc qz k' + qz.qs[0].m.k;
+    el.innerHTML = top + '<div class="fc-card"><div class="fc-done"><h3>' + ad(qz.score) + ' من ' + ad(qz.qs.length) + '</h3><p>' + msg + '</p>' +
+      (qz.wrong.length ? '<div class="qres" data-close>' + qz.wrong.map(m => '<a href="#' + m.id + '">' + esc(D[m.k - 1].babs[m.bi].t) + ' · مسألة ' + ad(m.no) + '</a>').join('') + '</div>' : '') +
+      '<div class="fc-btns">' + (qz.wrong.length ? '<button class="ok" data-a="qwrong">راجع الأخطاء بالبطاقات</button>' : '') + '<button class="' + (qz.wrong.length ? 'no' : 'ok') + '" data-a="qretry">اختبار جديد</button><button class="no" data-a="fcclose">رجوع</button></div></div></div>';
+    return;
+  }
+  const q = qz.qs[qz.i], m = q.m;
+  el.className = 'fc qz k' + m.k;
+  const picked = qz.picked;
+  let h = top + '<div class="fc-card"><div class="card"><div class="q"><span>' + esc(D[m.k - 1].babs[m.bi].t) + ' · مسألة ' + ad(m.no) + '</span><em class="bdg nw">' + q.label + '</em></div>';
+  if (q.ctx) h += '<div class="qctx">' + esc(q.ctx) + '</div>';
+  h += '<div class="mt qtx">' + q.text + '</div><div class="opts' + (q.type === 'rule' ? ' col' : '') + '">';
+  q.opts.forEach(o => {
+    let c = 'opt';
+    if (picked !== null) { if (o.v === q.ans) c += ' right'; else if (o.v === picked) c += ' wrong'; else c += ' dim'; }
+    h += '<button class="' + c + '" data-a="opt" data-v="' + esc(String(o.v)) + '"' + (picked !== null ? ' disabled' : '') + '>' + o.h + '</button>';
+  });
+  h += '</div>';
+  if (picked !== null) { m.mk = null; h += '<div class="expl"><b>' + (picked === q.ans ? 'أصبت' : 'الصواب مبيّن بالأخضر') + '</b><div class="mt">' + segHtml(m, m.ts, m.segs[0][1]) + m.segs.slice(1).map(s => '<div class="dis"><div class="mt">' + segHtml(m, s[0], s[1]) + '</div></div>').join('') + '</div></div>'; }
+  h += '</div></div><div class="fc-act">' + (picked !== null ? '<button class="ok" data-a="qnext">' + (qz.i + 1 >= qz.qs.length ? 'النتيجة' : 'التالي') + '</button>' : '') + '</div>';
+  el.innerHTML = h;
+}
+
+/* ---------- events ---------- */
+function afterClose() { closeOverlays(); if (cur) { updProgress(); refresh(); } else home(); }
+app.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]');
+  if (!b) { if (e.target.closest('[data-close] a')) closeOverlays(); return; }
+  const a = b.dataset.a, v = b.dataset.v;
+  if (!['set', 'fs', 'lvl', 'kh', 'th', 'reset', 'rc'].includes(a) && !b.closest('.pop')) { const p = $('.pop'); if (p) p.remove(); }
+  switch (a) {
+    case 'blank': { const s = document.createElement('span'); s.className = 'rv'; s.textContent = b.dataset.w; b.replaceWith(s); break; }
+    case 'ok': { const art = b.closest('.m'), id = art.dataset.id; if (isL(id)) delete S.srs[id]; else S.srs[id] = { b: 1, d: today() + 1 }; save(); art.classList.toggle('done', isL(id)); b.setAttribute('aria-pressed', String(isL(id))); updProgress(); break; }
+    case 'bm': { const id = b.closest('.m').dataset.id; if (S.bm[id]) delete S.bm[id]; else S.bm[id] = 1; save(); b.setAttribute('aria-pressed', String(!!S.bm[id])); break; }
+    case 'babok': { const B = findBab(b.dataset.b), all = B.ms.every(m => isL(m.id)); B.ms.forEach(m => { if (all) delete S.srs[m.id]; else if (!isL(m.id)) S.srs[m.id] = { b: 1, d: today() + 1 }; const art = document.getElementById(m.id); if (art) { art.classList.toggle('done', !all); const ok = $('[data-a="ok"]', art); if (ok) ok.setAttribute('aria-pressed', String(!all)); } }); save(); updProgress(); break; }
+    case 'mode': S.mode = v; revealed = false; save(); refresh(); break;
+    case 'reveal': revealed = !revealed; refresh(); break;
+    case 'khoff': S.khilaf = false; save(); refresh(); break;
+    case 'toc': openToc(); break;
+    case 'set': openSettings(); break;
+    case 'fs': S.fs = Math.max(0, Math.min(FS.length - 1, S.fs + (+v))); applyFs(); save(); break;
+    case 'lvl': S.lvl = +v; save(); $$('.pop [data-a="lvl"]').forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.v === S.lvl))); if (S.mode === 'mem') refresh(); break;
+    case 'rc': S.rc = !S.rc; applyTheme(); save(); b.setAttribute('aria-pressed', String(S.rc)); break;
+    case 'kh': S.khilaf = !S.khilaf; save(); b.setAttribute('aria-pressed', String(S.khilaf)); refresh(); break;
+    case 'th': S.theme = v; applyTheme(); save(); $$('.pop [data-a="th"]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.v === S.theme))); break;
+    case 'theme': S.theme = S.theme === 'auto' ? 'dark' : S.theme === 'dark' ? 'light' : 'auto'; applyTheme(); save(); break;
+    case 'reset': if (b.dataset.sure) { S.srs = {}; S.bm = {}; S.last = null; S.day = { d: 0, n: 0 }; S.st = { last: 0, n: 0 }; save(); const p = $('.pop'); if (p) p.remove(); cur ? kitab(cur) : home(); } else { b.dataset.sure = '1'; b.textContent = 'تأكيد المسح'; } break;
+    case 'search': openSearch(); break;
+    case 'bmlist': bmList(b.closest('.scrim')); break;
+    case 'cards': openCards('k', cur); break;
+    case 'rev': openCards('all'); break;
+    case 'babcards': openCards('b', b.dataset.b); break;
+    case 'fcclose': afterClose(); break;
+    case 'flip': if (fc) { fc.flip = !fc.flip; drawCard(); } break;
+    case 'g0': case 'g1': case 'g2': { const m = fc.deck.shift(), g = +a[1]; grade(m.id, g); if (g === 0) fc.deck.push(m); else fc.done++; fc.flip = false; drawCard(); break; }
+    case 'fcquiz': { const m = fc.deck.length ? null : null; const k = cur; closeOverlays(); k ? openQuiz('k', k) : openQuiz('all'); break; }
+    case 'quiz': openQuiz('b', b.dataset.b); break;
+    case 'kquiz': openQuiz('k', cur); break;
+    case 'allquiz': openQuiz('all'); break;
+    case 'opt': { if (!qz || qz.picked !== null) break; const q = qz.qs[qz.i]; qz.picked = v; if (v === q.ans) qz.score++; else { qz.wrong.push(q.m); const c = S.srs[q.m.id]; S.srs[q.m.id] = { b: 0, d: today() }; save(); } drawQ(); const ex = $('.qz .expl'); if (ex) ex.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); break; }
+    case 'qnext': qz.i++; qz.picked = null; drawQ(); break;
+    case 'qretry': { const s = qz.scope, id = qz.id; openQuiz(s, id); break; }
+    case 'qwrong': { const ms = Array.from(new Set(qz.wrong)); closeOverlays(); fc = { deck: ms, nw: new Set(), title: 'مراجعة الأخطاء', flip: false, total: ms.length, done: 0 }; const el = document.createElement('div'); el.className = 'fc'; app.appendChild(el); drawCard(); break; }
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { if ($('.fc')) afterClose(); else closeOverlays(); }
+  if (fc && (e.key === ' ' || e.key === 'Enter') && !e.target.closest('button')) { e.preventDefault(); fc.flip = !fc.flip; drawCard(); }
+});
+
+/* ---------- routing ---------- */
+function route() {
+  const h = location.hash.slice(1), m = h.match(/^k([1-5])(?:-((?:[bm]\d+(?:-f\d+)?)|p\d+))?$/);
+  if (!m) { home(); return; }
+  const n = +m[1];
+  if (cur === n && app.querySelector('#babs')) { closeOverlays(); goAnchor(m[2] ? 'k' + n + '-' + m[2] : null); }
+  else kitab(n, m[2] ? 'k' + n + '-' + m[2] : null);
+}
+window.addEventListener('hashchange', route);
+document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl';
+applyTheme(); applyFs(); route();
+})();
+
+</script>
+</body></html>
