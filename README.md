@@ -59,3 +59,11 @@ and `maps` holds one summary line per bab.
 
 ## License
 Code: MIT. The matn is a classical public-domain text; the Urdu sharh is not included and remains the publisher's.
+
+
+## Tabs per Kitab
+- **المتن العربي**: fully vowelled matn (toggle tashkeel in settings), parts, quizzes, spaced repetition.
+- **اردو ترجمہ**: Urdu translation of the whole matn (`ur/*.txt`, line-aligned with `data_plain/*.txt`).
+- **مفردات**: vocabulary / concept cards (`src/vocab.json`).
+
+Translation and tashkeel were produced with AI assistance; please review against a printed edition.

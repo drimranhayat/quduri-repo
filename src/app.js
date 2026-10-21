@@ -2,6 +2,7 @@
 'use strict';
 const D = /*DATA*/;
 const PLAN = /*PLAN*/;
+const VOC = /*VOCAB*/;
 const KEY = 'quduri-matn-v1';
 const app = document.getElementById('app');
 const $ = (s, r) => (r || document).querySelector(s);
@@ -31,7 +32,7 @@ const META = [
 ];
 
 /* ---------- state ---------- */
-let S = { tk: true, srs: {}, bm: {}, fs: 1, mode: 'read', lvl: 1, theme: 'auto', khilaf: false, last: null, rc: true, day: { d: 0, n: 0 }, st: { last: 0, n: 0 } };
+let S = { view: 'ar', vf: 'all', tk: true, srs: {}, bm: {}, fs: 1, mode: 'read', lvl: 1, theme: 'auto', khilaf: false, last: null, rc: true, day: { d: 0, n: 0 }, st: { last: 0, n: 0 } };
 try { const r = localStorage.getItem(KEY); if (r) Object.assign(S, JSON.parse(r)); } catch (e) {}
 const sd = s => S.tk ? s : strip(s);
 const T = s => esc(sd(s));
@@ -142,7 +143,7 @@ D.forEach((K, ki) => {
     B.items.forEach(it => {
       if (it[0] === 'm') {
         mi++;
-        const m = { id: 'k' + K.n + '-m' + mi, k: K.n, no: mi, bi, text: it[1] };
+        const m = { id: 'k' + K.n + '-m' + mi, k: K.n, no: mi, bi, text: it[1], ur: it[3] };
         prep(m); it[2] = m; K.ms.push(m); B.ms.push(m);
         m.t.forEach(x => { if (x.r && !x.rp) B.rc[x.r]++; if (x.n) B.rc.n++; });
       } else if (it[0] === 'f') { it[2] = B.id + '-f' + B.fs.length; B.fs.push({ id: it[2], t: it[1] }); }
@@ -359,10 +360,77 @@ function kitab(n, anchor) {
   let h = topHtml();
   h += '<section class="hero kit"><div class="gutter"><div class="wrap">' + railHtml(n) + '<div class="eyebrow">الكتاب ' + ad(n) + ' من ' + ad(D.length) + ' · <span class="en">' + esc(META[n].en) + '</span></div><h1>' + T(K.title) + '</h1><p class="sub">' + T(META[n].d) + '</p>' +
     '<div class="chips"><span class="chip">' + ad(K.parts.length) + ' أجزاء</span><span class="chip">' + ad(K.babs.length) + ' أبواب</span><span class="chip">' + ad(K.ms.length) + ' مسألة</span><span class="chip">' + ad(K.kh) + ' فيها خلاف</span><span class="chip" id="prtxt">أتقنت ' + ad(l) + ' من ' + ad(K.ms.length) + '</span></div><div class="bar"><b id="prbar" style="width:' + pc + '%"></b></div></div></div></section>';
-  h += '<div class="gutter"><div class="wrap" id="kmapw">' + kmapHtml(K) + '</div></div>';
-  h += '<div class="gutter"><div class="wrap cols"><aside class="side" id="side">' + tocHtml(K) + '</aside><main id="babs" style="min-width:0">' + babsHtml(K) + '</main></div></div>' + dockHtml();
-  app.innerHTML = h; document.title = strip(K.title) + ' · مختصر القدوري';
+  h += '<div class="gutter"><div class="wrap">' + tabsHtml(K) + '</div></div>';
+  h += '<div class="gutter"><div class="wrap" id="kmapw">' + (S.view === 'ar' ? kmapHtml(K) : '') + '</div></div>';
+  h += '<div class="gutter"><div class="wrap cols"><aside class="side" id="side">' + tocHtml(K) + '</aside><main id="babs" style="min-width:0">' + mainHtml(K) + '</main></div></div>' + dockHtml();
+  app.innerHTML = h; app.dataset.v = S.view; document.title = strip(K.title) + ' · مختصر القدوري';
   observe(); goAnchor(anchor, true);
+}
+
+/* ---------- Urdu + vocabulary tabs ---------- */
+function tabsHtml(K) {
+  const nv = VOC.filter(v => v.k === K.n).length;
+  const tb = (v, ic, t, sub) => '<button role="tab" class="vt" data-a="view" data-v="' + v + '" aria-selected="' + (S.view === v) + '"><b>' + ic + '</b><span>' + t + '</span><small>' + sub + '</small></button>';
+  return '<div class="vtabs" role="tablist" aria-label="طرق عرض الكتاب">' + tb('ar', 'ع', 'المتن العربي', ad(K.ms.length) + ' مسألة') + tb('ur', 'ا', 'اردو ترجمہ', 'مکمل ترجمہ') + tb('vo', 'م', 'مفردات', ad(nv) + ' بطاقة') + '</div>';
+}
+function mainHtml(K) { return S.view === 'ur' ? urHtml(K) : S.view === 'vo' ? voHtml(K) : babsHtml(K); }
+const URG = /(^|[\s(\[«،؛:])(جائز نہیں|ناجائز|حرام|باطل|فاسد|کافی نہیں|درست نہیں|واجب نہیں|لازم نہیں|فرض|واجب|سنتِ مؤکدہ|سنت|مستحب|مکروہ|جائز|تین|چار|پانچ|سات|آٹھ|دس|پندرہ|بیس|تیس|چالیس|ساٹھ|سو|ہزار)(?=[\s)\]»،؛:.]|$)/g;
+const URI = [['امام ابو حنیفہ رحمہ اللہ', 'h'], ['امام ابو حنیفہ', 'h'], ['امام ابو یوسف', 'y'], ['امام محمد', 'm'], ['امام زفر', 'z'], ['ابو حنیفہ', 'h'], ['ابو یوسف', 'y'], ['زفر', 'z']];
+function urFmt(t) {
+  let h = esc(t);
+  h = h.replace(/\[([^\]]*)\]/g, '<span class="ha">$1</span>');
+  h = h.replace(URG, (a, pre, w) => {
+    let c = 'ok';
+    if (/^(جائز نہیں|ناجائز|حرام|باطل|فاسد|کافی نہیں|درست نہیں)$/.test(w)) c = 'bad';
+    else if (/^(فرض|واجب)$/.test(w)) c = 'must';
+    else if (/^(سنت|مستحب|سنتِ مؤکدہ)$/.test(w)) c = 'sun';
+    else if (w === 'مکروہ') c = 'mak';
+    else if (/^(واجب نہیں|لازم نہیں|جائز)$/.test(w)) c = 'ok';
+    else return pre + '<span class="nm">' + w + '</span>';
+    return pre + '<span class="r ' + c + '">' + w + '</span>';
+  });
+  URI.forEach(([n, k]) => { h = h.split(n).join('<span class="im ' + k + '">' + n + '</span>'); });
+  return h;
+}
+function urHtml(K) {
+  let h = '<div class="urnote"><b>اردو ترجمہ</b><span>یہ ترجمہ آسان فہم اردو میں ہے؛ احکام کے الفاظ رنگ سے نمایاں ہیں۔ عربی متن دیکھنے کے لیے ہر مسئلے کے نیچے «عربی» پر دبائیں۔</span></div>';
+  h += legendHtmlUr();
+  K.parts.forEach(P => {
+    P.bs.forEach(B => {
+      h += '<section class="bab ur" id="' + B.id + '"><div class="bab-h"><span class="bno">' + ad(B.i + 1) + '</span><h2 class="urt">' + esc(B.tu) + '</h2><span class="meta">' + ad(B.ms.length) + ' مسئلے</span></div>';
+      for (const it of B.items) {
+        if (it[0] === 'm') {
+          const m = it[2];
+          h += '<article class="m ur" id="' + m.id + '"><div class="m-h"><span class="num">' + ad(m.no) + '</span>' +
+            (m.imams.length ? '<span class="ims">' + m.imams.map(k => '<span class="imc ' + k + '" title="' + IM[k][0] + '">' + IM[k][1] + '</span>').join('') + '</span>' : '') +
+            '<span class="sp"></span></div><div class="ut">' + urFmt(m.ur) + '</div>' +
+            '<details class="ar-d"><summary>عربی</summary><div class="mt">' + esc(sd(m.text).replace(/[\[\]]/g, '')) + '</div></details></article>';
+        } else if (it[0] === 'f') h += '<h3 class="fasl urt" id="' + it[2] + '">' + esc(it[3]) + '</h3>';
+        else if (it[0] === 'l') h += '<div class="lbl urt">' + esc(it[3]) + '</div>';
+        else if (it[0] === 'q') h += '<div class="ayah-q urt">' + esc(it[3]) + '</div>';
+      }
+      h += '</section>';
+    });
+  });
+  return h;
+}
+function legendHtmlUr() {
+  return '<div class="lgm"><b>رنگ:</b>' + Object.keys(IM).map(k => '<span style="display:inline-flex;align-items:center;gap:6px"><span class="imc ' + k + '">' + IM[k][1] + '</span>' + IM[k][0] + '</span>').join('') +
+    '<span class="vsep"></span><span class="ut lgr"><span class="r must">فرض / واجب</span></span><span class="ut lgr"><span class="r sun">سنت / مستحب</span></span><span class="ut lgr"><span class="r ok">جائز</span></span><span class="ut lgr"><span class="r mak">مکروہ</span></span><span class="ut lgr"><span class="r bad">ناجائز / باطل</span></span><span class="ut lgr"><span class="nm">عدد</span></span></div>';
+}
+const VC = { ص: ['t', 'اصطلاح'], ع: ['a', 'عمل'], ش: ['o', 'شے'], م: ['q', 'مقدار'] };
+function voHtml(K) {
+  const all = VOC.filter(v => v.k === K.n);
+  const f = S.vf;
+  const list = all.filter(v => f === 'all' || VC[v.c][0] === f);
+  let h = '<div class="urnote vo"><b>مفردات و مفاہیم</b><span>ہر اصطلاح ایک بطاقہ ہے: عربی لفظ، اردو مفہوم اور یاد رکھنے کی بات۔ «المتن» دبا کر اس لفظ کو متن میں تلاش کریں۔</span></div>';
+  h += '<div class="vfil" role="group" aria-label="تصفية">' + [['all', 'سب', all.length]].concat(['t', 'a', 'o', 'q'].map(c => { const e = Object.values(VC).find(x => x[0] === c); return [c, e[1], all.filter(v => VC[v.c][0] === c).length]; })).filter(x => x[2]).map(x =>
+    '<button class="vfb c' + x[0] + '" data-a="vf" data-v="' + x[0] + '" aria-pressed="' + (f === x[0]) + '">' + x[1] + ' <b>' + ad(x[2]) + '</b></button>').join('') + '</div>';
+  h += '<div class="vgrid">' + list.map(v => {
+    const c = VC[v.c];
+    return '<article class="vc c' + c[0] + '"><div class="vh"><span class="vcat">' + c[1] + '</span></div><h3 class="vt-ar">' + esc(sd(v.t)) + '</h3><p class="vu">' + esc(v.u) + '</p><div class="vn"><i>★</i><span>' + esc(v.n) + '</span></div><button class="vgo" data-a="vgo" data-q="' + esc(strip(v.t).split(' / ')[0]) + '">المتن ←</button></article>';
+  }).join('') + '</div>';
+  return h;
 }
 function goAnchor(a, instant) {
   if (!a) { window.scrollTo(0, 0); return; }
@@ -383,8 +451,8 @@ function setOn(id) {
 }
 function refresh() {
   const y = window.scrollY, K = D[cur - 1];
-  $('#babs').innerHTML = babsHtml(K);
-  const kw = $('#kmapw'); if (kw) kw.innerHTML = kmapHtml(K);
+  $('#babs').innerHTML = mainHtml(K);
+  const kw = $('#kmapw'); if (kw) kw.innerHTML = S.view === 'ar' ? kmapHtml(K) : '';
   $$('.dock .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === S.mode)));
   observe(); window.scrollTo(0, y);
 }
@@ -426,10 +494,11 @@ function hl(orig, toks) {
   r.forEach(([a, b]) => { if (a < p) return; const s0 = idx[a]; let e0 = b >= idx.length ? orig.length : idx[b]; if (s0 < p) return; out += esc(orig.slice(p, s0)) + '<mark>' + esc(orig.slice(s0, e0)) + '</mark>'; p = e0; });
   return out + esc(orig.slice(p));
 }
-function openSearch() {
+function openSearch(pre) {
   const sc = sheet('<h3>البحث في المتن</h3><div class="sq"><input id="q" type="search" placeholder="اكتب كلمة أو أكثر…" autocomplete="off" aria-label="بحث"><button class="tbtn" style="height:auto;padding:0 14px;border-radius:14px;background:var(--k-soft);color:var(--k);font-weight:600" data-a="bmlist">المحفوظة (' + ad(Object.keys(S.bm).length) + ')</button></div><div class="res" id="res" data-close><div class="empty">ابحث بكلمة من المسألة، أو باسم إمام، أو بمصطلح مثل «النفاس».</div></div>');
   const q = $('#q', sc), res = $('#res', sc); q.focus();
   let t = 0;
+  if (pre) setTimeout(() => { q.value = pre; q.dispatchEvent(new Event('input')); }, 0);
   q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => {
     const toks = norm(q.value.trim()).split(/\s+/).filter(Boolean);
     if (!toks.length) { res.innerHTML = '<div class="empty">ابحث بكلمة من المسألة، أو باسم إمام، أو بمصطلح مثل «النفاس».</div>'; return; }
@@ -619,6 +688,9 @@ app.addEventListener('click', e => {
     case 'ok': { const art = b.closest('.m'), id = art.dataset.id; if (isL(id)) delete S.srs[id]; else S.srs[id] = { b: 1, d: today() + 1 }; save(); art.classList.toggle('done', isL(id)); b.setAttribute('aria-pressed', String(isL(id))); updProgress(); break; }
     case 'bm': { const id = b.closest('.m').dataset.id; if (S.bm[id]) delete S.bm[id]; else S.bm[id] = 1; save(); b.setAttribute('aria-pressed', String(!!S.bm[id])); break; }
     case 'babok': { const B = findBab(b.dataset.b), all = B.ms.every(m => isL(m.id)); B.ms.forEach(m => { if (all) delete S.srs[m.id]; else if (!isL(m.id)) S.srs[m.id] = { b: 1, d: today() + 1 }; const art = document.getElementById(m.id); if (art) { art.classList.toggle('done', !all); const ok = $('[data-a="ok"]', art); if (ok) ok.setAttribute('aria-pressed', String(!all)); } }); save(); updProgress(); break; }
+    case 'view': S.view = v; save(); { const y0 = 0; cur && kitab(cur); window.scrollTo(0, $('.vtabs') ? $('.vtabs').getBoundingClientRect().top + window.scrollY - 70 : y0); } break;
+    case 'vf': S.vf = v; save(); refresh(); break;
+    case 'vgo': openSearch(b.dataset.q); break;
     case 'mode': S.mode = v; revealed = false; save(); refresh(); break;
     case 'reveal': revealed = !revealed; refresh(); break;
     case 'khoff': S.khilaf = false; save(); refresh(); break;
@@ -660,7 +732,8 @@ function route() {
   const h = location.hash.slice(1), m = h.match(/^k([1-5])(?:-((?:[bm]\d+(?:-f\d+)?)|p\d+))?$/);
   if (!m) { home(); return; }
   const n = +m[1];
-  if (cur === n && app.querySelector('#babs')) { closeOverlays(); goAnchor(m[2] ? 'k' + n + '-' + m[2] : null); }
+  if (m[2] && S.view === 'vo') { S.view = 'ar'; cur = 0; }
+  if (cur === n && app.querySelector('#babs') && app.dataset.v === S.view) { closeOverlays(); goAnchor(m[2] ? 'k' + n + '-' + m[2] : null); }
   else kitab(n, m[2] ? 'k' + n + '-' + m[2] : null);
 }
 window.addEventListener('hashchange', route);

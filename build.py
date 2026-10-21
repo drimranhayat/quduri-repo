@@ -6,24 +6,26 @@ order = ['k1a', 'k1b', 'k2a', 'k2b', 'k3', 'k4', 'k5a', 'k5b']
 
 kitabs = []
 for name in order:
-    for raw in (root / 'data' / f'{name}.txt').read_text(encoding='utf-8').splitlines():
-        line = raw.strip()
-        if not line:
-            continue
+    plain = [l for l in (root / 'data_plain' / f'{name}.txt').read_text(encoding='utf-8').splitlines() if l.strip()]
+    urdu = [l.strip() for l in (root / 'ur' / f'{name}.txt').read_text(encoding='utf-8').splitlines() if l.strip()]
+    assert len(plain) == len(urdu), (name, len(plain), len(urdu))
+    vows = [l.strip() for l in (root / 'data' / f'{name}.txt').read_text(encoding='utf-8').splitlines() if l.strip()]
+    assert len(vows) == len(plain), name
+    for line, ur in zip(vows, urdu):
         if line.startswith('@kitab'):
             n, title = [x.strip() for x in line[6:].split('|', 1)]
-            kitabs.append({'n': int(n), 'title': title, 'babs': []})
+            kitabs.append({'n': int(n), 'title': title, 'tu': ur.split('|', 1)[1].strip(), 'babs': []})
         elif line.startswith('@bab'):
             title = line[4:].split('|', 1)[1].strip()
-            kitabs[-1]['babs'].append({'t': title, 'ed': not re.sub('[\u064B-\u0652\u0670]','',title).startswith('باب'), 'items': []})
+            kitabs[-1]['babs'].append({'t': title, 'tu': ur.split('|', 1)[1].strip(), 'ed': not re.sub('[\u064B-\u0652\u0670]', '', title).startswith('باب'), 'items': []})
         elif line.startswith('~ '):
-            kitabs[-1]['babs'][-1]['items'].append(['f', line[2:].strip()])
+            kitabs[-1]['babs'][-1]['items'].append(['f', line[2:].strip(), None, ur[2:].strip()])
         elif line.startswith('# '):
-            kitabs[-1]['babs'][-1]['items'].append(['l', line[2:].strip()])
+            kitabs[-1]['babs'][-1]['items'].append(['l', line[2:].strip(), None, ur[2:].strip()])
         elif line.startswith('> '):
-            kitabs[-1]['babs'][-1]['items'].append(['q', line[2:].strip()])
+            kitabs[-1]['babs'][-1]['items'].append(['q', line[2:].strip(), None, ur[2:].strip()])
         else:
-            kitabs[-1]['babs'][-1]['items'].append(['m', line])
+            kitabs[-1]['babs'][-1]['items'].append(['m', line, None, ur])
 
 # colour worlds: (light k, k-h, soft, deep, bg) | (dark k, k-h, soft, deep, bg)
 W = {
@@ -61,9 +63,9 @@ css = (root / 'src' / 'style.css').read_text(encoding='utf-8')
 css = (css.replace('/*KLIGHT*/', light).replace('/*KDARKMEDIA*/', dmedia).replace('/*KDARKATTR*/', dattr).replace('/*DARK*/', dark).replace('/*PAT*/', patcss))
 js = (root / 'src' / 'app.js').read_text(encoding='utf-8')
 data = json.dumps(kitabs, ensure_ascii=False, separators=(',', ':'))
-js = js.replace('/*DATA*/', data).replace('/*PLAN*/', (root / 'src' / 'plan.json').read_text(encoding='utf-8'))
+js = js.replace('/*VOCAB*/', (root / 'src' / 'vocab.json').read_text(encoding='utf-8')).replace('/*DATA*/', data).replace('/*PLAN*/', (root / 'src' / 'plan.json').read_text(encoding='utf-8'))
 
-fonts = ('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700'
+fonts = ('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600'
          '&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap')
 frag = (f'<title>مختصر القدوري</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'
         f'<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
