@@ -8,6 +8,7 @@ const $ = (s, r) => (r || document).querySelector(s);
 const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const ad = n => String(n).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+const strip = s => s.replace(/[\u064B-\u0652\u0670\u0640]/g, '');
 const norm = s => s.replace(/[ً-ْٰـ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه');
 const FS = [0.85, 1, 1.15, 1.3, 1.5];
 const P = [0.25, 0.45, 0.7];
@@ -30,8 +31,11 @@ const META = [
 ];
 
 /* ---------- state ---------- */
-let S = { srs: {}, bm: {}, fs: 1, mode: 'read', lvl: 1, theme: 'auto', khilaf: false, last: null, rc: true, day: { d: 0, n: 0 }, st: { last: 0, n: 0 } };
+let S = { tk: true, srs: {}, bm: {}, fs: 1, mode: 'read', lvl: 1, theme: 'auto', khilaf: false, last: null, rc: true, day: { d: 0, n: 0 }, st: { last: 0, n: 0 } };
 try { const r = localStorage.getItem(KEY); if (r) Object.assign(S, JSON.parse(r)); } catch (e) {}
+const sd = s => S.tk ? s : strip(s);
+const T = s => esc(sd(s));
+const dw = x => S.tk ? x.w : x.bare;
 const today = () => { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 6e4) / 864e5); };
 if (S.learned) { Object.keys(S.learned).forEach(id => { if (!S.srs[id]) S.srs[id] = { b: 1, d: today() }; }); delete S.learned; }
 const INT = [0, 1, 3, 7, 16, 35], GOAL = 10;
@@ -62,7 +66,7 @@ function analyze(text) {
   let inAy = false, inHa = false;
   const out = [];
   for (const w0 of raw) {
-    const o = { w: w0, ay: false, ha: false, im: null, gap: false };
+    const o = { w: w0, bare: strip(w0), ay: false, ha: false, im: null, gap: false };
     if (w0 === '…') { o.gap = true; out.push(o); continue; }
     if (w0.includes('﴿')) inAy = true;
     if (w0.startsWith('[')) inHa = true;
@@ -70,12 +74,13 @@ function analyze(text) {
     if (w0.includes('﴾')) inAy = false;
     if (/\]\W*$/.test(w0)) inHa = false;
     o.w = w0.replace(/^\[/, '').replace(/\]([^\]]*)$/, '$1');
+    o.bare = strip(o.w);
     out.push(o);
   }
   for (let i = 0; i < out.length; i++) {
-    const b = out[i].w.replace(/[:،.]/g, '').replace(/^و/, '');
+    const b = out[i].bare.replace(/[:،.]/g, '').replace(/^و/, '');
     if ((b === 'أبو' || b === 'أبي') && out[i + 1]) {
-      const n = out[i + 1].w.replace(/[:،.]/g, '');
+      const n = out[i + 1].bare.replace(/[:،.]/g, '');
       if (n === 'حنيفة') { out[i].im = out[i + 1].im = 'h'; i++; continue; }
       if (n === 'يوسف') { out[i].im = out[i + 1].im = 'y'; i++; continue; }
     }
@@ -110,18 +115,18 @@ function prep(m) {
   const t = analyze(m.text); m.t = t; tagRules(t, m.k);
   const cuts = [0];
   for (let i = 1; i < t.length; i++) {
-    const b = t[i].w.replace(/[:،.]/g, '').replace(/^و/, '');
+    const b = t[i].bare.replace(/[:،.]/g, '').replace(/^و/, '');
     if (b === 'قال' && t[i + 1] && t[i + 1].im) cuts.push(i);
   }
   cuts.push(t.length);
   m.segs = [];
   for (let i = 0; i < cuts.length - 1; i++) m.segs.push([cuts[i], cuts[i + 1]]);
   m.term = null; m.ts = 0;
-  const first = t[0] ? t[0].w.replace(/^و/, '') : '';
+  const first = t[0] ? t[0].bare.replace(/^و/, '') : '';
   if (first !== 'قال') {
     for (let k = 0; k < 3 && k < m.segs[0][1] - 1; k++) {
       if (t[k].im) break;
-      if (t[k].w.endsWith(':')) { m.term = t.slice(0, k + 1).map(x => x.w).join(' ').replace(/:$/, ''); m.ts = k + 1; break; }
+      if (t[k].bare.endsWith(':')) { m.term = t.slice(0, k + 1).map(x => x.w).join(' ').replace(/:$/, ''); m.ts = k + 1; break; }
     }
   }
   m.imams = Array.from(new Set(t.filter(x => x.im).map(x => x.im)));
@@ -183,8 +188,8 @@ const I = {
 /* ---------- rendering pieces ---------- */
 function piece(m, x, i) {
   if (x.gap) return '<span class="gap" title="موضع ناقص في نسخة الشاملة، يُراجع على المطبوع">…</span>';
-  const w = esc(x.w);
-  if (m.mk && m.mk[i]) return '<button class="bl" data-a="blank" data-w="' + w + '" style="--n:' + x.w.length + '" aria-label="كلمة مخفية، اضغط لإظهارها"></button>';
+  const w = esc(dw(x));
+  if (m.mk && m.mk[i]) return '<button class="bl" data-a="blank" data-w="' + w + '" style="--n:' + rn(x.w).length + '" aria-label="كلمة مخفية، اضغط لإظهارها"></button>';
   if (x.im) return '<span class="im ' + x.im + '">' + w + '</span>';
   if (x.r) return '<span class="r ' + x.r + '" title="' + RC[x.r] + '">' + w + '</span>';
   if (x.n) return '<span class="nm">' + w + '</span>';
@@ -209,7 +214,7 @@ function mHtml(m, mode) {
   m.mk = (mode === 'mem' && !revealed) ? mask(m) : null;
   const done = isL(m.id), bm = !!S.bm[m.id];
   let h = '<article class="m' + (done ? ' done' : '') + '" id="' + m.id + '" data-id="' + m.id + '"><div class="m-h"><span class="num">' + ad(m.no) + '</span>';
-  if (m.term) h += '<span class="term">' + esc(m.term) + '</span>';
+  if (m.term) h += '<span class="term">' + T(m.term) + '</span>';
   if (m.imams.length) h += '<span class="ims">' + m.imams.map(k => '<span class="imc ' + k + '" title="' + IM[k][0] + '">' + IM[k][1] + '</span>').join('') + '</span>';
   h += '<span class="sp"></span>';
   h += '<button class="act bm" data-a="bm" aria-pressed="' + bm + '" aria-label="حفظ للمراجعة لاحقًا">' + I.bm + '</button>';
@@ -224,37 +229,37 @@ function rcChips(B) {
 }
 function fasStrip(B) {
   if (B.fs.length < 3) return '';
-  return '<ol class="route" aria-label="مسار الباب">' + B.fs.map((f, i) => '<li><a href="#' + f.id + '"><b>' + ad(i + 1) + '</b><span>' + esc(f.t) + '</span></a></li>').join('') + '</ol>';
+  return '<ol class="route" aria-label="مسار الباب">' + B.fs.map((f, i) => '<li><a href="#' + f.id + '"><b>' + ad(i + 1) + '</b><span>' + T(f.t) + '</span></a></li>').join('') + '</ol>';
 }
 function ovHtml(B) {
   const l = B.ms.filter(m => isL(m.id)).length;
-  return '<div class="ov"><p class="map"><span>في هذا الباب</span>' + esc(B.map) + '</p>' + fasStrip(B) +
+  return '<div class="ov"><p class="map"><span>في هذا الباب</span>' + T(B.map) + '</p>' + fasStrip(B) +
     '<div class="ovm"><div class="rcs">' + rcChips(B) + '</div><div class="ova"><span class="cnt">' + ad(l) + ' / ' + ad(B.ms.length) + ' أُتقنت</span>' +
     '<button class="mini" data-a="babcards" data-b="' + B.id + '">بطاقات الباب</button><button class="mini fill" data-a="quiz" data-b="' + B.id + '">اختبر نفسك</button></div></div></div>';
 }
 function babHtml(K, B, mode, filt) {
   if (filt && !B.ms.some(m => m.khilaf)) return '';
-  let h = '<section class="bab" id="' + B.id + '"><div class="bab-h"><span class="bno">' + ad(B.i + 1) + '</span><h2>' + esc(B.t) + '</h2>' + (B.ed ? '<span class="tag">عنوان تنظيمي</span>' : '') + '<span class="meta">' + ad(B.ms.length) + ' مسألة</span><span class="sp"></span><button class="mini" data-a="babok" data-b="' + B.id + '">أتقنت الباب</button></div>';
+  let h = '<section class="bab" id="' + B.id + '"><div class="bab-h"><span class="bno">' + ad(B.i + 1) + '</span><h2>' + T(B.t) + '</h2>' + (B.ed ? '<span class="tag">عنوان تنظيمي</span>' : '') + '<span class="meta">' + ad(B.ms.length) + ' مسألة</span><span class="sp"></span><button class="mini" data-a="babok" data-b="' + B.id + '">أتقنت الباب</button></div>';
   if (!filt) h += ovHtml(B);
   for (const it of B.items) {
     if (it[0] === 'm') { if (!filt || it[2].khilaf) h += mHtml(it[2], mode); }
     else if (filt) continue;
-    else if (it[0] === 'f') h += '<h3 class="fasl" id="' + it[2] + '">' + esc(it[1]) + '</h3>';
-    else if (it[0] === 'l') h += '<div class="lbl">' + esc(it[1]) + '</div>';
-    else if (it[0] === 'q') h += '<div class="ayah-q">' + esc(it[1]) + '</div>';
+    else if (it[0] === 'f') h += '<h3 class="fasl" id="' + it[2] + '">' + T(it[1]) + '</h3>';
+    else if (it[0] === 'l') h += '<div class="lbl">' + T(it[1]) + '</div>';
+    else if (it[0] === 'q') h += '<div class="ayah-q">' + T(it[1]) + '</div>';
   }
   const pv = K.babs[B.i - 1], nx = K.babs[B.i + 1];
   if (!filt) {
     h += '<nav class="bab-nav" aria-label="التنقل بين الأبواب">';
-    h += pv ? '<a class="pv" href="#' + pv.id + '"><small>السابق</small><b>' + esc(pv.t) + '</b></a>' : '<span style="flex:1"></span>';
-    h += nx ? '<a class="nx" href="#' + nx.id + '"><small>التالي</small><b>' + esc(nx.t) + '</b></a>' : '<span style="flex:1"></span>';
+    h += pv ? '<a class="pv" href="#' + pv.id + '"><small>السابق</small><b>' + T(pv.t) + '</b></a>' : '<span style="flex:1"></span>';
+    h += nx ? '<a class="nx" href="#' + nx.id + '"><small>التالي</small><b>' + T(nx.t) + '</b></a>' : '<span style="flex:1"></span>';
     h += '</nav>';
   }
   return h + '</section>';
 }
 function partHtml(K, P) {
   const n = P.bs.reduce((a, B) => a + B.ms.length, 0), l = P.bs.reduce((a, B) => a + B.ms.filter(m => isL(m.id)).length, 0);
-  return '<div class="part" id="' + P.id + '"><span class="pn">الجزء ' + ad(P.i + 1) + ' من ' + ad(K.parts.length) + '</span><h2>' + esc(P.t) + '</h2><p>' + esc(P.d) + '</p><div class="pb" title="أُتقنت ' + ad(l) + ' من ' + ad(n) + '"><b style="width:' + (n ? Math.round(l / n * 100) : 0) + '%"></b></div></div>';
+  return '<div class="part" id="' + P.id + '"><span class="pn">الجزء ' + ad(P.i + 1) + ' من ' + ad(K.parts.length) + '</span><h2>' + T(P.t) + '</h2><p>' + T(P.d) + '</p><div class="pb" title="أُتقنت ' + ad(l) + ' من ' + ad(n) + '"><b style="width:' + (n ? Math.round(l / n * 100) : 0) + '%"></b></div></div>';
 }
 function legendHtml() {
   return '<div class="lgm"><b>الرموز:</b>' + Object.keys(IM).map(k => '<span style="display:inline-flex;align-items:center;gap:6px"><span class="imc ' + k + '">' + IM[k][1] + '</span>' + IM[k][0] + '</span>').join('') +
@@ -272,17 +277,12 @@ function babsHtml(K) {
   });
   return h + (body || '<div class="empty">لا توجد مسائل خلاف في هذا الكتاب.</div>');
 }
-function sqs(ms) {
-  const t = today();
-  return ms.map(m => { const c = S.srs[m.id]; return '<a class="sq2 ' + (!c ? 'n' : c.b >= 2 ? 'k' : 'l') + (c && c.d <= t ? ' d' : '') + '" href="#' + m.id + '" aria-label="مسألة ' + ad(m.no) + '"></a>'; }).join('');
-}
-const mapLegend = '<div class="mpl"><span><i class="sq2 n"></i>جديدة</span><span><i class="sq2 l"></i>قيد التعلم</span><span><i class="sq2 k"></i>متقنة</span><span><i class="sq2 n d"></i>حان موعد مراجعتها</span></div>';
 function kmapHtml(K) {
   return '<section class="kmap"><h2 class="sec-t">خريطة الكتاب</h2><div class="pcards">' + K.parts.map(P => {
     const ms = P.bs.reduce((a, B) => a.concat(B.ms), []);
-    return '<div class="pcard"><a class="ph" href="#' + P.id + '"><span class="pn2">' + ad(P.i + 1) + '</span><div><h3>' + esc(P.t) + '</h3><p>' + esc(P.d) + '</p></div></a><ul>' +
-      P.bs.map(B => '<li><a href="#' + B.id + '"><span>' + esc(B.t) + '</span><small>' + ad(B.ms.length) + '</small></a></li>').join('') + '</ul><div class="mp">' + sqs(ms) + '</div></div>';
-  }).join('') + '</div>' + mapLegend + '</section>';
+    return '<div class="pcard"><a class="ph" href="#' + P.id + '"><span class="pn2">' + ad(P.i + 1) + '</span><div><h3>' + T(P.t) + '</h3><p>' + T(P.d) + '</p></div></a><ul>' +
+      P.bs.map(B => '<li><a href="#' + B.id + '"><span>' + T(B.t) + '</span><small>' + ad(B.ms.length) + '</small></a></li>').join('') + '</ul><div class="pgl"><div class="pgb"><b style="width:' + (ms.length ? Math.round(ms.filter(m => isL(m.id)).length / ms.length * 100) : 0) + '%"></b></div><small>' + ad(ms.filter(m => isL(m.id)).length) + ' / ' + ad(ms.length) + '</small></div></div>';
+  }).join('') + '</div></section>';
 }
 
 function topHtml() {
@@ -291,12 +291,12 @@ function topHtml() {
     '<button class="ibtn" data-a="theme" aria-label="تبديل المظهر">' + I.theme + '</button></div></div></header>';
 }
 function railHtml(n) {
-  return '<nav class="rail" aria-label="كتب المتن">' + D.map(K => '<a class="pill k' + K.n + '" href="#k' + K.n + '"' + (K.n === n ? ' aria-current="true"' : '') + '><i></i>' + esc(K.title) + '</a>').join('') + '</nav>';
+  return '<nav class="rail" aria-label="كتب المتن">' + D.map(K => '<a class="pill k' + K.n + '" href="#k' + K.n + '"' + (K.n === n ? ' aria-current="true"' : '') + '><i></i>' + T(K.title) + '</a>').join('') + '</nav>';
 }
 function tocHtml(K) {
-  return '<div class="toc"><h5>فهرس ' + esc(K.title) + '</h5>' + K.parts.map(P => '<a class="tp" href="#' + P.id + '"><span class="pn3">' + ad(P.i + 1) + '</span><span>' + esc(P.t) + '</span></a>' +
-    P.bs.map(B => '<a href="#' + B.id + '" data-b="' + B.id + '" class="' + (B.ed ? 'ed' : '') + '"><span>' + esc(B.t) + '</span><small>' + ad(B.ms.length) + '</small></a>' +
-      (B.fs.length > 1 ? B.fs.map(f => '<a class="sb" href="#' + f.id + '"><span>' + esc(f.t) + '</span></a>').join('') : '')).join('')).join('') + '</div>';
+  return '<div class="toc"><h5>فهرس ' + T(K.title) + '</h5>' + K.parts.map(P => '<a class="tp" href="#' + P.id + '"><span class="pn3">' + ad(P.i + 1) + '</span><span>' + T(P.t) + '</span></a>' +
+    P.bs.map(B => '<a href="#' + B.id + '" data-b="' + B.id + '" class="' + (B.ed ? 'ed' : '') + '"><span>' + T(B.t) + '</span><small>' + ad(B.ms.length) + '</small></a>' +
+      (B.fs.length > 1 ? B.fs.map(f => '<a class="sb" href="#' + f.id + '"><span>' + T(f.t) + '</span></a>').join('') : '')).join('')).join('') + '</div>';
 }
 function dockHtml() {
   return '<div class="dock" role="toolbar" aria-label="أدوات الدراسة">' +
@@ -320,7 +320,7 @@ function planHtml() {
   return '<h2 class="sec-t">خطة اليوم</h2><div class="plan"><div class="pl-top"><div class="goal">' + ringSvg(dn / GOAL, ad(dn)) + '<div><b>' + ad(dn) + ' من ' + ad(GOAL) + '</b><small>بطاقات اليوم</small></div></div><div class="strk"><b>' + ad(sk) + '</b><small>' + (sk === 1 ? 'يوم متتابع' : 'أيام متتابعة') + '</small></div></div>' +
     '<ol class="pl-steps">' +
     '<li><span class="n">١</span><div><b>راجع ما حان موعده</b><small>' + (due ? ad(due) + ' مسألة مستحقة للمراجعة' : 'لا شيء مستحق الآن') + '</small></div><button class="go" data-a="rev">' + (due ? 'ابدأ المراجعة' : 'تدريب حر') + '</button></li>' +
-    (nb ? '<li><span class="n">٢</span><div><b>تعلّم الجديد</b><small>' + esc(K.title) + ' · ' + esc(nb.t) + '</small></div><a class="go" href="#' + nb.id + '">افتح الباب</a></li>' +
+    (nb ? '<li><span class="n">٢</span><div><b>تعلّم الجديد</b><small>' + T(K.title) + ' · ' + T(nb.t) + '</small></div><a class="go" href="#' + nb.id + '">افتح الباب</a></li>' +
       '<li><span class="n">٣</span><div><b>اختبر نفسك</b><small>أسئلة سريعة من هذا الباب</small></div><button class="go" data-a="quiz" data-b="' + nb.id + '">ابدأ الاختبار</button></li>' : '<li><span class="n">٢</span><div><b>أتقنت كل المتن</b><small>داوِم على المراجعة المتباعدة</small></div><button class="go" data-a="allquiz">اختبار شامل</button></li>') +
     '</ol></div>';
 }
@@ -334,16 +334,15 @@ function home() {
   h += planHtml();
   if (S.last && S.last.b) {
     const K = D[S.last.k - 1], B = K && K.babs.find(b => b.id === S.last.b);
-    if (B) h += '<a class="resume" href="#' + B.id + '"><div style="flex:1"><span>تابع من حيث توقفت</span><br><strong>' + esc(K.title) + ' · ' + esc(B.t) + '</strong></div><span>←</span></a>';
+    if (B) h += '<a class="resume" href="#' + B.id + '"><div style="flex:1"><span>تابع من حيث توقفت</span><br><strong>' + T(K.title) + ' · ' + T(B.t) + '</strong></div><span>←</span></a>';
   }
   h += '<h2 class="sec-t">الكتب الخمسة</h2><div class="tiles">';
   D.forEach(K => {
     const l = learnedIn(K), pc = K.ms.length ? l / K.ms.length : 0;
-    h += '<a class="tile k' + K.n + '" href="#k' + K.n + '"><span class="no">الكتاب ' + ad(K.n) + ' · <span class="en">' + esc(META[K.n].en) + '</span></span><h3>' + esc(K.title) + '</h3><p>' + esc(META[K.n].d) + '</p>' +
+    h += '<a class="tile k' + K.n + '" href="#k' + K.n + '"><span class="no">الكتاب ' + ad(K.n) + ' · <span class="en">' + esc(META[K.n].en) + '</span></span><h3>' + T(K.title) + '</h3><p>' + T(META[K.n].d) + '</p>' +
       '<div class="ft"><span>' + ad(K.parts.length) + ' أجزاء · ' + ad(K.babs.length) + ' أبواب · ' + ad(K.ms.length) + ' مسألة</span>' + ringSvg(pc) + '</div></a>';
   });
-  h += '</div><h2 class="sec-t">المتن كله في لمحة</h2><div class="hmap">' + D.map(K => '<div class="hm k' + K.n + '"><a class="hn" href="#k' + K.n + '">' + esc(K.title) + '</a><div class="mp">' + sqs(K.ms) + '</div></div>').join('') + '</div>' + mapLegend +
-    '<h2 class="sec-t">طريقة التعلم</h2><div class="steps">' +
+  h += '</div><h2 class="sec-t">طريقة التعلم</h2><div class="steps">' +
     '<div class="step"><span class="n">١</span><h4>افهم قبل أن تحفظ</h4><p>ابدأ ببطاقة «في هذا الباب» لترى الصورة كاملة، ثم اقرأ المسائل واحدة واحدة.</p></div>' +
     '<div class="step"><span class="n">٢</span><h4>ميّز بالألوان</h4><p>الحكم له لون ثابت في كل الكتب، والأعداد بلون خاص، وكل إمام بلونه، فتتكوّن لديك خريطة ذهنية للمسألة.</p></div>' +
     '<div class="step"><span class="n">٣</span><h4>استرجع ولا تكتفِ بالقراءة</h4><p>وضع الحفظ يخفي الأحكام والأعداد أولًا، لأن محاولة التذكر هي ما يثبّت المعلومة.</p></div>' +
@@ -358,11 +357,11 @@ function kitab(n, anchor) {
   const K = D[n - 1]; cur = n; closeOverlays(); app.className = 'k' + n; revealed = false;
   const l = learnedIn(K), pc = K.ms.length ? Math.round(l / K.ms.length * 100) : 0;
   let h = topHtml();
-  h += '<section class="hero kit"><div class="gutter"><div class="wrap">' + railHtml(n) + '<div class="eyebrow">الكتاب ' + ad(n) + ' من ' + ad(D.length) + ' · <span class="en">' + esc(META[n].en) + '</span></div><h1>' + esc(K.title) + '</h1><p class="sub">' + esc(META[n].d) + '</p>' +
+  h += '<section class="hero kit"><div class="gutter"><div class="wrap">' + railHtml(n) + '<div class="eyebrow">الكتاب ' + ad(n) + ' من ' + ad(D.length) + ' · <span class="en">' + esc(META[n].en) + '</span></div><h1>' + T(K.title) + '</h1><p class="sub">' + T(META[n].d) + '</p>' +
     '<div class="chips"><span class="chip">' + ad(K.parts.length) + ' أجزاء</span><span class="chip">' + ad(K.babs.length) + ' أبواب</span><span class="chip">' + ad(K.ms.length) + ' مسألة</span><span class="chip">' + ad(K.kh) + ' فيها خلاف</span><span class="chip" id="prtxt">أتقنت ' + ad(l) + ' من ' + ad(K.ms.length) + '</span></div><div class="bar"><b id="prbar" style="width:' + pc + '%"></b></div></div></div></section>';
   h += '<div class="gutter"><div class="wrap" id="kmapw">' + kmapHtml(K) + '</div></div>';
   h += '<div class="gutter"><div class="wrap cols"><aside class="side" id="side">' + tocHtml(K) + '</aside><main id="babs" style="min-width:0">' + babsHtml(K) + '</main></div></div>' + dockHtml();
-  app.innerHTML = h; document.title = K.title + ' · مختصر القدوري';
+  app.innerHTML = h; document.title = strip(K.title) + ' · مختصر القدوري';
   observe(); goAnchor(anchor, true);
 }
 function goAnchor(a, instant) {
@@ -411,19 +410,20 @@ function openSettings() {
   const p = document.createElement('div'); p.className = 'pop'; p.setAttribute('role', 'dialog'); p.setAttribute('aria-label', 'الإعدادات');
   p.innerHTML = '<div class="row"><span>حجم الخط</span><div class="seg"><button data-a="fs" data-v="-1" aria-label="تصغير الخط">أ−</button><button data-a="fs" data-v="1" aria-label="تكبير الخط">أ+</button></div></div>' +
     '<div class="row"><span>مستوى الإخفاء في الحفظ</span><div class="seg">' + [0, 1, 2].map(i => '<button data-a="lvl" data-v="' + i + '" aria-pressed="' + (S.lvl === i) + '">' + ad(i + 1) + '</button>').join('') + '</div></div>' +
+    '<div class="row"><span>التشكيل (الإعراب)</span><button class="sw" data-a="tk" aria-pressed="' + S.tk + '" aria-label="إظهار التشكيل"></button></div>' +
     '<div class="row"><span>تلوين الأحكام والأعداد</span><button class="sw" data-a="rc" aria-pressed="' + S.rc + '" aria-label="تلوين الأحكام والأعداد"></button></div>' +
     '<div class="row"><span>مسائل الخلاف فقط</span><button class="sw" data-a="kh" aria-pressed="' + S.khilaf + '" aria-label="مسائل الخلاف فقط"></button></div>' +
     '<div class="row"><span>المظهر</span><div class="seg">' + [['auto', 'تلقائي'], ['light', 'فاتح'], ['dark', 'داكن']].map(x => '<button data-a="th" data-v="' + x[0] + '" aria-pressed="' + (S.theme === x[0]) + '">' + x[1] + '</button>').join('') + '</div></div>' +
     '<div class="row"><span>مسح التقدم والعلامات</span><button class="mini" style="border:1.5px solid var(--line);padding:4px 12px;border-radius:99px" data-a="reset">مسح</button></div>';
   app.appendChild(p);
 }
-function hl(orig, ns, toks) {
-  if (norm(orig).length !== orig.length) return esc(orig);
-  const r = [];
+function nmap(str) { let ns = '', idx = []; for (let i = 0; i < str.length; i++) { const c = str[i]; if (/[\u064B-\u0652\u0670\u0640]/.test(c)) continue; ns += norm(c); idx.push(i); } return { ns, idx }; }
+function hl(orig, toks) {
+  const { ns, idx } = nmap(orig), r = [];
   toks.forEach(t => { let i = ns.indexOf(t); while (i >= 0) { r.push([i, i + t.length]); i = ns.indexOf(t, i + t.length); } });
   r.sort((a, b) => a[0] - b[0]);
   let out = '', p = 0;
-  r.forEach(([s, e]) => { if (s < p) return; out += esc(orig.slice(p, s)) + '<mark>' + esc(orig.slice(s, e)) + '</mark>'; p = e; });
+  r.forEach(([a, b]) => { if (a < p) return; const s0 = idx[a]; let e0 = b >= idx.length ? orig.length : idx[b]; if (s0 < p) return; out += esc(orig.slice(p, s0)) + '<mark>' + esc(orig.slice(s0, e0)) + '</mark>'; p = e0; });
   return out + esc(orig.slice(p));
 }
 function openSearch() {
@@ -441,10 +441,12 @@ function openSearch() {
 }
 function resItem(m, toks) {
   const K = D[m.k - 1], B = K.babs[m.bi];
+  const mp = m.mp || (m.mp = nmap(m.text).idx);
   let i = toks ? m.nt.indexOf(toks[0]) : 0; if (i < 0) i = 0;
-  const s = Math.max(0, i - 60), e = Math.min(m.text.length, s + 190);
-  const piece2 = m.text.slice(s, e), ns = m.nt.slice(s, e);
-  return '<a class="k' + m.k + '" href="#' + m.id + '"><small>' + esc(K.title) + ' · ' + esc(B.t) + ' · مسألة ' + ad(m.no) + '</small><p>' + (s ? '… ' : '') + (toks ? hl(piece2, ns, toks) : esc(piece2)) + (e < m.text.length ? ' …' : '') + '</p></a>';
+  const si = Math.max(0, i - 60), ei = Math.min(mp.length, si + 190);
+  const s0 = mp[si] || 0, e0 = ei >= mp.length ? m.text.length : mp[ei];
+  const piece2 = sd(m.text.slice(s0, e0));
+  return '<a class="k' + m.k + '" href="#' + m.id + '"><small>' + T(K.title) + ' · ' + T(B.t) + ' · مسألة ' + ad(m.no) + '</small><p>' + (s0 ? '… ' : '') + (toks ? hl(piece2, toks) : esc(piece2)) + (e0 < m.text.length ? ' …' : '') + '</p></a>';
 }
 function bmList(sc) {
   const res = $('#res', sc), all = allM.filter(m => S.bm[m.id]);
@@ -474,13 +476,13 @@ function drawCard() {
   const top = '<div class="fc-top"><button class="ibtn" data-a="fcclose" aria-label="إغلاق">' + I.close + '</button><div class="bar"><b style="width:' + Math.round(fc.done / Math.max(1, fc.total) * 100) + '%"></b></div><span>' + ad(fc.done) + '/' + ad(fc.total) + '</span></div>';
   if (!fc.deck.length) {
     el.className = 'fc k' + (cur || 0);
-    el.innerHTML = top + '<div class="fc-card"><div class="fc-done"><h3>أحسنت</h3><p>' + esc(fc.title) + ': أنهيت ' + ad(fc.total) + ' بطاقة.<br>بطاقات اليوم ' + ad(dn) + ' من ' + ad(GOAL) + (streak() ? ' · ' + ad(streak()) + ' يوم متتابع' : '') + '</p><div class="fc-btns"><button class="ok" data-a="fcquiz">اختبر نفسك الآن</button><button class="no" data-a="fcclose">رجوع</button></div></div></div>';
+    el.innerHTML = top + '<div class="fc-card"><div class="fc-done"><h3>أحسنت</h3><p>' + T(fc.title) + ': أنهيت ' + ad(fc.total) + ' بطاقة.<br>بطاقات اليوم ' + ad(dn) + ' من ' + ad(GOAL) + (streak() ? ' · ' + ad(streak()) + ' يوم متتابع' : '') + '</p><div class="fc-btns"><button class="ok" data-a="fcquiz">اختبر نفسك الآن</button><button class="no" data-a="fcclose">رجوع</button></div></div></div>';
     return;
   }
   const m = fc.deck[0], B = D[m.k - 1].babs[m.bi];
   el.className = 'fc k' + m.k;
   const isNew = fc.nw.has(m.id), c = S.srs[m.id];
-  const head = '<div class="q"><span>' + esc(D[m.k - 1].title) + ' · ' + esc(B.t) + ' · مسألة ' + ad(m.no) + '</span><em class="bdg ' + (isNew ? 'nw' : 'rv2') + '">' + (isNew ? 'جديدة' : c && c.d < today() ? 'متأخرة' : 'مراجعة') + '</em></div>';
+  const head = '<div class="q"><span>' + T(D[m.k - 1].title) + ' · ' + T(B.t) + ' · مسألة ' + ad(m.no) + '</span><em class="bdg ' + (isNew ? 'nw' : 'rv2') + '">' + (isNew ? 'جديدة' : c && c.d < today() ? 'متأخرة' : 'مراجعة') + '</em></div>';
   const n = Math.min(m.t.length, m.ts + 5);
   let body;
   m.mk = null;
@@ -496,7 +498,7 @@ const FRAC = new Set(['نصف', 'ثلث', 'ثلثا', 'ثلثي', 'ربع'].map(
 const grp = r => FRAC.has(r) ? 'f' : TIMES.has(r) ? 't' : 'c';
 let numPool = null;
 function numParts(raw) {
-  for (let j = 0; j <= 4 && j < raw.length - 1; j++) {
+  for (let j = 0; j <= 9 && j < raw.length - 1; j++) {
     const core = raw.slice(j), r = rn(core);
     if (NUMS.has(r) && (j === 0 || PRE.test(rn(raw.slice(0, j))))) {
       const lead = raw.slice(0, j), mm = /^(.*?[ء-ْ])([^ء-ْ]*)$/.exec(core);
@@ -508,7 +510,7 @@ function numParts(raw) {
 function getPool() {
   if (numPool) return numPool;
   numPool = new Map();
-  allM.forEach(m => m.t.forEach(x => { if (x.n) { const p = numParts(x.w); if (p && !numPool.has(p.r)) numPool.set(p.r, p.w.replace(/[ً-ٟ]/g, '')); } }));
+  allM.forEach(m => m.t.forEach(x => { if (x.n) { const p = numParts(x.w); if (p && !numPool.has(p.r)) numPool.set(p.r, sd(p.w)); } }));
   return numPool;
 }
 function snippet(m, a, b, blank) {
@@ -516,7 +518,7 @@ function snippet(m, a, b, blank) {
   let out = (from > m.ts ? '… ' : '');
   for (let i = from; i < to; i++) {
     if (i >= a && i <= b) { if (i === a) out += blank + ' '; continue; }
-    const x = m.t[i]; out += (x.im ? '<span class="im ' + x.im + '">' + esc(x.w) + '</span>' : esc(x.w)) + ' ';
+    const x = m.t[i]; out += (x.im ? '<span class="im ' + x.im + '">' + esc(dw(x)) + '</span>' : esc(dw(x))) + ' ';
   }
   return out + (to < m.t.length ? '…' : '');
 }
@@ -526,8 +528,8 @@ function qWho(m) {
   const ims = Array.from(new Set(m.t.slice(a, b).filter(x => x.im).map(x => x.im)));
   if (ims.length !== 1) return null;
   let txt = '', prevBlank = false;
-  for (let i = a; i < b; i++) { const x = m.t[i]; if (x.im) { if (!prevBlank) txt += '<span class="blank">﹍﹍﹍</span> '; prevBlank = true; } else { txt += esc(x.w) + ' '; prevBlank = false; } }
-  const head = m.t.slice(m.segs[0][0], Math.min(m.segs[0][1], m.segs[0][0] + 22)).map(x => x.w).join(' ');
+  for (let i = a; i < b; i++) { const x = m.t[i]; if (x.im) { if (!prevBlank) txt += '<span class="blank">﹍﹍﹍</span> '; prevBlank = true; } else { txt += esc(dw(x)) + ' '; prevBlank = false; } }
+  const head = m.t.slice(m.segs[0][0], Math.min(m.segs[0][1], m.segs[0][0] + 22)).map(x => dw(x)).join(' ');
   return { type: 'who', m, label: 'من صاحب هذا القول؟', ctx: head + ' …', text: txt, opts: ['h', 'y', 'm', 'z'].map(k => ({ v: k, h: '<span class="imc ' + k + '">' + IM[k][1] + '</span>' + IM[k][0] })), ans: ims[0] };
 }
 function qNum(m) {
@@ -540,8 +542,8 @@ function qNum(m) {
   if (same.length >= 3) cands = same;
   const picks = shuf(cands).slice(0, 3).map(([, w]) => w);
   if (picks.length < 2) return null;
-  const ans = p.w.replace(/[ً-ٟ]/g, '');
-  return { type: 'num', m, label: 'أكمل بالعدد الصحيح', text: snippet(m, i, i, (p.pre ? esc(p.pre) : '') + '<span class="blank">﹍﹍﹍</span>' + esc(p.tail)), opts: shuf([ans].concat(picks)).map(w => ({ v: w, h: esc(w) })), ans };
+  const ans = sd(p.w);
+  return { type: 'num', m, label: 'أكمل بالعدد الصحيح', text: snippet(m, i, i, (p.pre ? esc(sd(p.pre)) : '') + '<span class="blank">﹍﹍﹍</span>' + esc(sd(p.tail))), opts: shuf([ans].concat(picks)).map(w => ({ v: w, h: esc(w) })), ans };
 }
 function qRule(m) {
   const ix = []; m.t.forEach((x, i) => { if (x.r && !x.rp && i >= m.ts) ix.push(i); });
@@ -584,14 +586,14 @@ function drawQ() {
     const pc = qz.score / qz.qs.length, msg = pc === 1 ? 'ممتاز، أتقنت هذه الأسئلة' : pc >= .7 ? 'جيد، راجع ما أخطأت فيه' : 'الخطأ بداية الحفظ، وقد أُضيفت هذه المسائل إلى مراجعتك';
     el.className = 'fc qz k' + qz.qs[0].m.k;
     el.innerHTML = top + '<div class="fc-card"><div class="fc-done"><h3>' + ad(qz.score) + ' من ' + ad(qz.qs.length) + '</h3><p>' + msg + '</p>' +
-      (qz.wrong.length ? '<div class="qres" data-close>' + qz.wrong.map(m => '<a href="#' + m.id + '">' + esc(D[m.k - 1].babs[m.bi].t) + ' · مسألة ' + ad(m.no) + '</a>').join('') + '</div>' : '') +
+      (qz.wrong.length ? '<div class="qres" data-close>' + qz.wrong.map(m => '<a href="#' + m.id + '">' + T(D[m.k - 1].babs[m.bi].t) + ' · مسألة ' + ad(m.no) + '</a>').join('') + '</div>' : '') +
       '<div class="fc-btns">' + (qz.wrong.length ? '<button class="ok" data-a="qwrong">راجع الأخطاء بالبطاقات</button>' : '') + '<button class="' + (qz.wrong.length ? 'no' : 'ok') + '" data-a="qretry">اختبار جديد</button><button class="no" data-a="fcclose">رجوع</button></div></div></div>';
     return;
   }
   const q = qz.qs[qz.i], m = q.m;
   el.className = 'fc qz k' + m.k;
   const picked = qz.picked;
-  let h = top + '<div class="fc-card"><div class="card"><div class="q"><span>' + esc(D[m.k - 1].babs[m.bi].t) + ' · مسألة ' + ad(m.no) + '</span><em class="bdg nw">' + q.label + '</em></div>';
+  let h = top + '<div class="fc-card"><div class="card"><div class="q"><span>' + T(D[m.k - 1].babs[m.bi].t) + ' · مسألة ' + ad(m.no) + '</span><em class="bdg nw">' + q.label + '</em></div>';
   if (q.ctx) h += '<div class="qctx">' + esc(q.ctx) + '</div>';
   h += '<div class="mt qtx">' + q.text + '</div><div class="opts' + (q.type === 'rule' ? ' col' : '') + '">';
   q.opts.forEach(o => {
@@ -611,7 +613,7 @@ app.addEventListener('click', e => {
   const b = e.target.closest('[data-a]');
   if (!b) { if (e.target.closest('[data-close] a')) closeOverlays(); return; }
   const a = b.dataset.a, v = b.dataset.v;
-  if (!['set', 'fs', 'lvl', 'kh', 'th', 'reset', 'rc'].includes(a) && !b.closest('.pop')) { const p = $('.pop'); if (p) p.remove(); }
+  if (!['set', 'fs', 'lvl', 'kh', 'th', 'reset', 'rc', 'tk'].includes(a) && !b.closest('.pop')) { const p = $('.pop'); if (p) p.remove(); }
   switch (a) {
     case 'blank': { const s = document.createElement('span'); s.className = 'rv'; s.textContent = b.dataset.w; b.replaceWith(s); break; }
     case 'ok': { const art = b.closest('.m'), id = art.dataset.id; if (isL(id)) delete S.srs[id]; else S.srs[id] = { b: 1, d: today() + 1 }; save(); art.classList.toggle('done', isL(id)); b.setAttribute('aria-pressed', String(isL(id))); updProgress(); break; }
@@ -624,6 +626,7 @@ app.addEventListener('click', e => {
     case 'set': openSettings(); break;
     case 'fs': S.fs = Math.max(0, Math.min(FS.length - 1, S.fs + (+v))); applyFs(); save(); break;
     case 'lvl': S.lvl = +v; save(); $$('.pop [data-a="lvl"]').forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.v === S.lvl))); if (S.mode === 'mem') refresh(); break;
+    case 'tk': { S.tk = !S.tk; save(); const y = window.scrollY; cur ? kitab(cur) : home(); window.scrollTo(0, y); openSettings(); break; }
     case 'rc': S.rc = !S.rc; applyTheme(); save(); b.setAttribute('aria-pressed', String(S.rc)); break;
     case 'kh': S.khilaf = !S.khilaf; save(); b.setAttribute('aria-pressed', String(S.khilaf)); refresh(); break;
     case 'th': S.theme = v; applyTheme(); save(); $$('.pop [data-a="th"]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.v === S.theme))); break;

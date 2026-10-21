@@ -6,7 +6,7 @@ A static, single-page learning site for the Hanafi matn *Mukhtasar al-Quduri*
 No framework and no runtime dependencies. Fonts come from Google Fonts.
 
 ## Features
-- 5 Kitabs → 22 parts/themes → 46 babs → 431 masa'il, each Kitab with its own colour world
+- 5 Kitabs → 22 parts/themes, fully vowelled (tashkeel toggle in settings) → 46 babs → 431 masa'il, each Kitab with its own colour world
 - Meaning colours: rulings (wajib / sunnah / jaiz / makruh / forbidden), numbers, imams (ح ي م ز), ayat and ahadith
 - Read mode and Memorize mode (cloze, 3 levels, rulings and numbers hidden first)
 - Spaced-repetition review cards (Leitner: 1, 3, 7, 16, 35 days), daily goal and streak

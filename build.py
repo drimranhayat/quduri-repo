@@ -1,3 +1,4 @@
+import re
 import json, re, pathlib, sys
 
 root = pathlib.Path(__file__).parent
@@ -14,7 +15,7 @@ for name in order:
             kitabs.append({'n': int(n), 'title': title, 'babs': []})
         elif line.startswith('@bab'):
             title = line[4:].split('|', 1)[1].strip()
-            kitabs[-1]['babs'].append({'t': title, 'ed': not title.startswith('باب'), 'items': []})
+            kitabs[-1]['babs'].append({'t': title, 'ed': not re.sub('[\u064B-\u0652\u0670]','',title).startswith('باب'), 'items': []})
         elif line.startswith('~ '):
             kitabs[-1]['babs'][-1]['items'].append(['f', line[2:].strip()])
         elif line.startswith('# '):
@@ -68,19 +69,17 @@ frag = (f'<title>مختصر القدوري</title>\n<meta name="claude:viewport-
         f'<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
         f'<link rel="stylesheet" href="{fonts}">\n<style>\n{css}\n</style>\n'
         f'<div id="app" class="k0" dir="rtl" lang="ar"></div>\n<script>\n{js}\n</script>\n')
-page = ('<!doctype html>\n<html lang="ar" dir="rtl"><head><meta charset="utf-8">\n'
-        '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
-        '<meta name="description" content="مختصر القدوري: متن الفقه الحنفي مرتبًا للتعلم والحفظ والمراجعة">\n'
-        + frag.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '')
-        + '</body></html>\n')
-page = page.replace('<div id="app"', '</head><body>\n<div id="app"', 1)
-out = root / 'docs'; out.mkdir(exist_ok=True)
-(out / 'index.html').write_text(page, encoding='utf-8')
-(root / 'index.html').write_text(page, encoding='utf-8')
-(out / '.nojekyll').write_text('', encoding='utf-8')
+test = ('<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+        '<title>مختصر القدوري</title><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui}[hidden]{display:none!important}</style></head><body>'
+        + frag + '</body></html>')
+(root / 'docs').mkdir(exist_ok=True)
+(root / 'docs' / 'index.html').write_text(test, encoding='utf-8')
+(root / 'index.html').write_text(test, encoding='utf-8')
+
 tot = 0
 for k in kitabs:
     m = sum(1 for b in k['babs'] for it in b['items'] if it[0] == 'm')
     tot += m
     print(k['n'], k['title'], 'babs', len(k['babs']), 'masail', m)
-print('total masail', tot)
+print('total masail', tot, '| html bytes', len(frag.encode('utf-8')))
